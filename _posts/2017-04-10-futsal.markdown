@@ -1,0 +1,9 @@
+---
+layout: treino
+title:  "Futsal"
+date:   2016-02-01 15:08:10 -0500
+img: img/treinos/futsal.png
+modalID: modalTreinoFutsal
+category: Treino
+---
+Treinos de Futsal.

@@ -1,0 +1,9 @@
+---
+layout: treino
+title:  "Xadrez"
+date:   2016-02-01 15:08:10 -0500
+img: img/treinos/xadrez.png
+modalID: modalTreinoXadrez
+category: Treino
+---
+Treinos de Xadrez.

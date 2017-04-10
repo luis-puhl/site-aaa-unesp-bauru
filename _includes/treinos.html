@@ -1,0 +1,25 @@
+<section id="treinos" class="grid-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Treinos</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			{% for post in site.posts %}{% if post.category != "Treino" %}{% else %}
+				<div class="col-sm-4 grid-item">
+					<a href="#{{ post.modalID }}" class="grid-link" data-toggle="modal">
+						<div class="grid-caption">
+							<div class="grid-caption-content">
+								<i class="fa fa-search-plus fa-3x"></i>
+							</div>
+						</div>
+						<img src="{{ site.baseurl }}/{{ post.img }}" class="img-responsive" alt="">
+						<h3 class="grid-title">{{ post.title }}</h3>
+					</a>
+				</div>
+			{% endif %}{% endfor %}
+		</div>
+	</div>
+</section>

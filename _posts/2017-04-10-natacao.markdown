@@ -1,0 +1,9 @@
+---
+layout: treino
+title:  "Natação"
+date:   2016-02-01 15:08:10 -0500
+img: img/treinos/natacao.png
+modalID: modalTreinoNatacao
+category: Treino
+---
+Treinos de Natação.

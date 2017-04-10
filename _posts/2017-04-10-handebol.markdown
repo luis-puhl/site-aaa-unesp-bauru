@@ -1,0 +1,9 @@
+---
+layout: treino
+title:  "Handebol"
+date:   2016-02-01 15:08:10 -0500
+img: img/treinos/handebol.png
+modalID: modalTreinoHandebol
+category: Treino
+---
+Treinos de Handebol.
