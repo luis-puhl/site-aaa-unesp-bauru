@@ -3,6 +3,12 @@ header {
 	color: black;
 }
 
+img.quadro{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+}
 
 .grid-item {
 	margin: 0 0 15px;

@@ -7,18 +7,8 @@
 			</div>
 		</div>
 		<div class="row">
-			{% for post in site.posts %}{% if post.category != "Torcida" %}{% else %}
-				<div class="col-sm-4 grid-item">
-					<a href="#{{ post.modalID }}" class="grid-link" data-toggle="modal">
-						<div class="grid-caption">
-							<div class="grid-caption-content">
-								<i class="fa fa-search-plus fa-3x"></i>
-							</div>
-						</div>
-						<img src="{{ site.baseurl }}/{{ post.img }}" class="img-responsive" alt="">
-						<h3 class="grid-title">{{ post.title }}</h3>
-					</a>
-				</div>
+			{% for post in site.posts %}{% if post.category == "Torcida" %}
+				{% include tile-sm-4.html %}
 			{% endif %}{% endfor %}
 		</div>
 	</div>

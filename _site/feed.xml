@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atlética UNESP Bauru</title>
-    <description>Web Developer - Graphic Artist - User Experience Designer
+    <description>Associação Atlética Acadêmica Unesp Bauru
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Apr 2017 19:04:12 -0300</pubDate>
-    <lastBuildDate>Mon, 10 Apr 2017 19:04:12 -0300</lastBuildDate>
+    <pubDate>Tue, 11 Apr 2017 08:39:28 -0300</pubDate>
+    <lastBuildDate>Tue, 11 Apr 2017 08:39:28 -0300</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -91,6 +91,19 @@
       </item>
     
       <item>
+        <title>Gestão Atual</title>
+        <description>&lt;p&gt;Gestão Atual&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Feb 2016 02:23:23 -0200</pubDate>
+        <link>http://localhost:4000/gestao/2016/02/02/gestao-atual.html</link>
+        <guid isPermaLink="true">http://localhost:4000/gestao/2016/02/02/gestao-atual.html</guid>
+        
+        
+        <category>Gestao</category>
+        
+      </item>
+    
+      <item>
         <title>Xadrez</title>
         <description>&lt;p&gt;Treinos de Xadrez.&lt;/p&gt;
 </description>
@@ -139,19 +152,6 @@
         
         
         <category>Torcida</category>
-        
-      </item>
-    
-      <item>
-        <title>Tênis de Mesa</title>
-        <description>&lt;p&gt;Treinos de Tenis de Mesa.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 01 Feb 2016 18:08:10 -0200</pubDate>
-        <link>http://localhost:4000/treino/2016/02/01/tenis-mesa.html</link>
-        <guid isPermaLink="true">http://localhost:4000/treino/2016/02/01/tenis-mesa.html</guid>
-        
-        
-        <category>Treino</category>
         
       </item>
     
