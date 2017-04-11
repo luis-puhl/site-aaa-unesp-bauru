@@ -6,89 +6,9 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Apr 2017 08:39:28 -0300</pubDate>
-    <lastBuildDate>Tue, 11 Apr 2017 08:39:28 -0300</lastBuildDate>
+    <pubDate>Tue, 11 Apr 2017 08:51:23 -0300</pubDate>
+    <lastBuildDate>Tue, 11 Apr 2017 08:51:23 -0300</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
-    
-      <item>
-        <title>Cabin</title>
-        <description>&lt;p&gt;Use this area of the page to describe your project. The icon above is part of a free icon set by &lt;a href=&quot;https://sellfy.com/p/8Q9P/jV3VZ/&quot;&gt;Flat Icons&lt;/a&gt;. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!&lt;/p&gt;
-
-&lt;p&gt;In the Jekyll version of Freelancer, each portfolio item is a separate post that you can edit using markdown!&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 06 Feb 2016 18:08:10 -0200</pubDate>
-        <link>http://localhost:4000/design/2016/02/06/cabin.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/2016/02/06/cabin.html</guid>
-        
-        
-        <category>Design</category>
-        
-      </item>
-    
-      <item>
-        <title>Cake</title>
-        <description>&lt;p&gt;Use this area of the page to describe your project. The icon above is part of a free icon set by &lt;a href=&quot;https://sellfy.com/p/8Q9P/jV3VZ/&quot;&gt;Flat Icons&lt;/a&gt;. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!&lt;/p&gt;
-
-&lt;p&gt;In the Jekyll version of Freelancer, each portfolio item is a separate post that you can edit using markdown!&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 05 Feb 2016 18:08:10 -0200</pubDate>
-        <link>http://localhost:4000/design/2016/02/05/cake.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/2016/02/05/cake.html</guid>
-        
-        
-        <category>Design</category>
-        
-      </item>
-    
-      <item>
-        <title>Circus</title>
-        <description>&lt;p&gt;Use this area of the page to describe your project. The icon above is part of a free icon set by &lt;a href=&quot;https://sellfy.com/p/8Q9P/jV3VZ/&quot;&gt;Flat Icons&lt;/a&gt;. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!&lt;/p&gt;
-
-&lt;p&gt;In the Jekyll version of Freelancer, each portfolio item is a separate post that you can edit using markdown!&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 04 Feb 2016 18:08:10 -0200</pubDate>
-        <link>http://localhost:4000/design/2016/02/04/circus.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/2016/02/04/circus.html</guid>
-        
-        
-        <category>Design</category>
-        
-      </item>
-    
-      <item>
-        <title>Game</title>
-        <description>&lt;p&gt;Use this area of the page to describe your project. The icon above is part of a free icon set by &lt;a href=&quot;https://sellfy.com/p/8Q9P/jV3VZ/&quot;&gt;Flat Icons&lt;/a&gt;. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!&lt;/p&gt;
-
-&lt;p&gt;In the Jekyll version of Freelancer, each portfolio item is a separate post that you can edit using markdown!&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 03 Feb 2016 18:08:10 -0200</pubDate>
-        <link>http://localhost:4000/design/2016/02/03/game.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/2016/02/03/game.html</guid>
-        
-        
-        <category>Design</category>
-        
-      </item>
-    
-      <item>
-        <title>Safe</title>
-        <description>&lt;p&gt;Use this area of the page to describe your project. The icon above is part of a free icon set by &lt;a href=&quot;https://sellfy.com/p/8Q9P/jV3VZ/&quot;&gt;Flat Icons&lt;/a&gt;. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!&lt;/p&gt;
-
-&lt;p&gt;In the Jekyll version of Freelancer, each portfolio item is a separate post that you can edit using markdown!&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 02 Feb 2016 18:08:10 -0200</pubDate>
-        <link>http://localhost:4000/design/2016/02/02/safe.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/2016/02/02/safe.html</guid>
-        
-        
-        <category>Design</category>
-        
-      </item>
     
       <item>
         <title>Gestão Atual</title>
@@ -152,6 +72,71 @@
         
         
         <category>Torcida</category>
+        
+      </item>
+    
+      <item>
+        <title>Texugo da Páscoa</title>
+        <description>&lt;p&gt;Texugo da Páscoa&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 18:08:10 -0200</pubDate>
+        <link>http://localhost:4000/galeria/2016/02/01/texugo-pascoa.html</link>
+        <guid isPermaLink="true">http://localhost:4000/galeria/2016/02/01/texugo-pascoa.html</guid>
+        
+        
+        <category>Galeria</category>
+        
+      </item>
+    
+      <item>
+        <title>Tênis de Mesa</title>
+        <description>&lt;p&gt;Treinos de Tenis de Mesa.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 18:08:10 -0200</pubDate>
+        <link>http://localhost:4000/treino/2016/02/01/tenis-mesa.html</link>
+        <guid isPermaLink="true">http://localhost:4000/treino/2016/02/01/tenis-mesa.html</guid>
+        
+        
+        <category>Treino</category>
+        
+      </item>
+    
+      <item>
+        <title>Tênis de Campo</title>
+        <description>&lt;p&gt;Treinos de Tênis de Campo.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 18:08:10 -0200</pubDate>
+        <link>http://localhost:4000/treino/2016/02/01/tenis-campo.html</link>
+        <guid isPermaLink="true">http://localhost:4000/treino/2016/02/01/tenis-campo.html</guid>
+        
+        
+        <category>Treino</category>
+        
+      </item>
+    
+      <item>
+        <title>Samba Canção</title>
+        <description>&lt;p&gt;Samba Canção&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 18:08:10 -0200</pubDate>
+        <link>http://localhost:4000/produto/2016/02/01/produto-samba-cancao.html</link>
+        <guid isPermaLink="true">http://localhost:4000/produto/2016/02/01/produto-samba-cancao.html</guid>
+        
+        
+        <category>Produto</category>
+        
+      </item>
+    
+      <item>
+        <title>Caneca</title>
+        <description>&lt;p&gt;Caneca&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 18:08:10 -0200</pubDate>
+        <link>http://localhost:4000/produto/2016/02/01/produto-caneca.html</link>
+        <guid isPermaLink="true">http://localhost:4000/produto/2016/02/01/produto-caneca.html</guid>
+        
+        
+        <category>Produto</category>
         
       </item>
     
