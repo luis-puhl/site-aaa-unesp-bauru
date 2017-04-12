@@ -760,113 +760,28 @@ plataforma escolhida pela Contratante.</p>
 <p>Para a escolha de hospedagem do site e os seus recursos associados, 3 plataformas são propostas. Em
 cada uma delas existe variação de custo de aquisição, hospedagem, modelo de desenvolvimento e custo
 de desenvolvimento.</p>
-<p>Os custos a partir de hospedagem gratuita são:</p>
-<table>
-<thead>
-<tr>
-<th>Plataformas</th>
-<th style="text-align:center">GitHub-Pages</th>
-<th style="text-align:center">Hostinger</th>
-<th style="text-align:center">Google FireBase</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Domínio</td>
-<td style="text-align:center">.github.io</td>
-<td style="text-align:center">.com.br</td>
-<td style="text-align:center">.com.br</td>
-</tr>
-<tr>
-<td>Custo hospedagem¹</td>
-<td style="text-align:center">Grátis (100 GB/m)</td>
-<td style="text-align:center">Grátis (100 GB/m)</td>
-<td style="text-align:center">Grátis (10 GB/m)</td>
-</tr>
-<tr>
-<td>Registro Domínio</td>
-<td style="text-align:center">não oferece</td>
-<td style="text-align:center">R$ 67.58 (Hostinger)</td>
-<td style="text-align:center">R$ 45.90 (godaddy)</td>
-</tr>
-<tr>
-<td>Registro SSL</td>
-<td style="text-align:center">Grátis (github)</td>
-<td style="text-align:center">R$ 23.99 (Comodo)</td>
-<td style="text-align:center">Grátis (google)</td>
-</tr>
-<tr>
-<td>CMS</td>
-<td style="text-align:center">Jekyll (github)</td>
-<td style="text-align:center">WP (PHP)</td>
-<td style="text-align:center">Polymer (firebase)</td>
-</tr>
-<tr>
-<td>CDN (fotos, documentos)</td>
-<td style="text-align:center">Google Drive/Photos</td>
-<td style="text-align:center">GD/GP ou uso de banda</td>
-<td style="text-align:center">GD/GP ou firebase <br> (Grátis 1GB/dia, 50k op)</td>
-</tr>
-<tr>
-<td>Tempo Desenvolvimento</td>
-<td style="text-align:center">20 horas</td>
-<td style="text-align:center">100 horas</td>
-<td style="text-align:center">100 horas</td>
-</tr>
-</tbody>
-</table>
-<p><strong>¹:</strong> <em>Cada acesso único utiliza aproximadamente 1 MB de transmissão de dados, portanto nas camadas
-grátis das plataformas acima são 100 mil, 100 mil e 10 mil acessos grátis por mês, respectivamente.</em></p>
-<p>Estes limites de acesso na hospedagem gratuita indicam que  após o uso da franquia máxima desses
-recursos é necessário pagar o serviço de hospedagem. A plataforma GitHub-Pages não oferece uma opção de hospedagem paga.</p>
-<table>
-<thead>
-<tr>
-<th>Plataformas</th>
-<th style="text-align:center">Hostinger</th>
-<th style="text-align:center">Google Flame (USD)</th>
-<th style="text-align:center">Google Blaze (USD)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Custo mensal</td>
-<td style="text-align:center">R$ 7</td>
-<td style="text-align:center">USD $ 25</td>
-<td style="text-align:center">Pay as you go</td>
-</tr>
-<tr>
-<td>Armazenamento</td>
-<td style="text-align:center">ilimitado</td>
-<td style="text-align:center">10 GB</td>
-<td style="text-align:center">$ 0,026/GB</td>
-</tr>
-<tr>
-<td>Rede</td>
-<td style="text-align:center">ilimitado</td>
-<td style="text-align:center">50 GB/m</td>
-<td style="text-align:center">$ 0,15/GB</td>
-</tr>
-<tr>
-<td>CDN Arm.</td>
-<td style="text-align:center">ilimitado</td>
-<td style="text-align:center">50 GB</td>
-<td style="text-align:center">$ 0,026/GB</td>
-</tr>
-<tr>
-<td>CDN Rede</td>
-<td style="text-align:center">ilimitado</td>
-<td style="text-align:center">50 GB/m</td>
-<td style="text-align:center">$ 0,12/GB</td>
-</tr>
-<tr>
-<td>Desenvolvimento</td>
-<td style="text-align:center">500 horas</td>
-<td style="text-align:center">100 horas</td>
-<td style="text-align:center">100 horas</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><strong>GitHub-Pages</strong> (já demonstrada <a href="https://luis-puhl.github.io/site-aaa-unesp-bauru/">https://luis-puhl.github.io/site-aaa-unesp-bauru/</a>):<ul>
+<li><strong>Hospedagem:</strong> Gratuita com 100 mil acessos mensais;</li>
+<li><strong>Gerenciador de conteúdo:</strong> Jekyll que é fácil de construtir (10 horas de desenvolvimento) mas complicado para editar o conteúdo;</li>
+<li><strong>Sem domínio próprio</strong> (<code>.github.io</code> ao invés de <code>.com.br</code>).</li>
+</ul>
+</li>
+<li><strong>Hostinger</strong> (servidor mais barato que conheço):<ul>
+<li><strong>Hospedagem free:</strong> 100 mil acessos mensais;</li>
+<li><strong>Hospedagem paga:</strong> R$ 7,00/mês para acessos ilimitados;</li>
+<li><strong>Gerenciador de conteúdo:</strong> Angular + PHP que é o mais complexo para construtir (100 horas de desenvolvimento) e a aplicação fica igual ao FireBase;</li>
+<li><strong>Domínio anual:</strong> R$ 67.58 + R$ 23.99 (SSL).</li>
+</ul>
+</li>
+<li><strong>Google FireBase</strong> (melhor infraestrutura):<ul>
+<li><strong>Hospedagem free:</strong> <em>10 mil</em> acessos mensais;</li>
+<li><strong>Hospedagem paga:</strong> <em>On-Demand</em> conforme a necessidade, USD $25/mês no pior caso;</li>
+<li><strong>Gerenciador de conteúdo:</strong> Angular + FireBase (35 horas de desenvolvimento);</li>
+<li><strong>Domínio anual:</strong> R$ 44.90, SSL é free;</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h1 id="restri-es">Restrições</h1>
 <h2 id="open-source-nda">Open-Source / NDA</h2>
@@ -881,14 +796,15 @@ maior.</p>
 <p>Em contrato separado.</p>
 <hr>
 <h1 id="pontos-de-entrega">Pontos de Entrega</h1>
-<p>Em aberto.</p>
+<ul>
+<li>Layout populado com Jekyll: 11/04/2017.</li>
+</ul>
 <hr>
 <h1 id="or-amento-prazo">Orçamento / Prazo</h1>
 <table>
 <thead>
 <tr>
 <th>Plataforma</th>
-<th style="text-align:center">Github</th>
 <th style="text-align:center">Hostinger</th>
 <th style="text-align:center">Google Firebase</th>
 </tr>
@@ -896,45 +812,43 @@ maior.</p>
 <tbody>
 <tr>
 <td>CMS</td>
-<td style="text-align:center">Jekyll</td>
-<td style="text-align:center">WordPress / PHP / Angular</td>
-<td style="text-align:center">Polymer / Angular</td>
+<td style="text-align:center">PHP / Angular</td>
+<td style="text-align:center">Firebase / Angular</td>
 </tr>
 <tr>
 <td>Tempo de desenvolvimento</td>
-<td style="text-align:center">20 horas</td>
-<td style="text-align:center">100 horas</td>
-<td style="text-align:center">100 horas</td>
+<td style="text-align:center">50 horas</td>
+<td style="text-align:center">35 horas</td>
 </tr>
 <tr>
 <td>Custo por hora</td>
 <td style="text-align:center">R$ 15/hora</td>
-<td style="text-align:center">R$ 20/hora</td>
 <td style="text-align:center">R$ 10/hora</td>
 </tr>
 <tr>
 <td><strong>Custo de desenvolvimento</strong></td>
-<td style="text-align:center"><strong>R$ 300,00</strong></td>
-<td style="text-align:center"><strong>R$ 2 000,00</strong></td>
-<td style="text-align:center"><strong>R$ 1 000,00</strong></td>
+<td style="text-align:center"><strong>R$ 750,00</strong></td>
+<td style="text-align:center"><strong>R$ 350,00</strong></td>
 </tr>
 <tr>
 <td>Domínio (anual)</td>
-<td style="text-align:center">R$ 0</td>
 <td style="text-align:center">R$ 91,57</td>
 <td style="text-align:center">R$ 44,99</td>
 </tr>
 <tr>
 <td>Servidores Free</td>
-<td style="text-align:center">R$ 0 <em>(100k acessos)</em></td>
-<td style="text-align:center">R$ 0 <em>(100k acessos)</em></td>
-<td style="text-align:center">R$ 0    <em>(10k acessos)</em></td>
+<td style="text-align:center"><em>(100k acessos)</em></td>
+<td style="text-align:center"><em>(10k acessos)</em></td>
 </tr>
 <tr>
-<td>Servidores Pagos (mensal)</td>
-<td style="text-align:center">Não disponível</td>
-<td style="text-align:center">R$ 6,99</td>
-<td style="text-align:center">R$ 80    (USD $25) ou <em>On-Demand</em></td>
+<td><strong>Custo Total de Lançamento</strong></td>
+<td style="text-align:center"><strong>R$ 850,00</strong></td>
+<td style="text-align:center"><strong>R$ 400,00</strong></td>
+</tr>
+<tr>
+<td>Servidores Pagos (opcional)</td>
+<td style="text-align:center">R$ 6,99/mês</td>
+<td style="text-align:center"><em>On-Demand</em> mensal <br> (R$ 80 no pior caso)</td>
 </tr>
 </tbody>
 </table></body>

@@ -153,32 +153,20 @@ Para a escolha de hospedagem do site e os seus recursos associados, 3 plataforma
 cada uma delas existe variação de custo de aquisição, hospedagem, modelo de desenvolvimento e custo
 de desenvolvimento.
 
-Os custos a partir de hospedagem gratuita são:
-
-| Plataformas				| GitHub-Pages			| Hostinger				| Google FireBase		|
-| ----------------- 		|:-------------------:	|:--------------:		|:---------------------:|
-| Domínio					| .github.io			| .com.br				| .com.br				|
-| Custo hospedagem¹			| Grátis (100 GB/m)		| Grátis (100 GB/m)		| Grátis (10 GB/m)		|
-| Registro Domínio			| não oferece			| R$ 67.58 (Hostinger)	| R$ 45.90 (godaddy)	|
-| Registro SSL				| Grátis (github)		| R$ 23.99 (Comodo)		| Grátis (google)		|
-| CMS 						| Jekyll (github)		| WP (PHP)				| Polymer (firebase)	|
-| CDN (fotos, documentos)	| Google Drive/Photos	| GD/GP ou uso de banda	| GD/GP ou firebase <br> (Grátis 1GB/dia, 50k op)	|
-| Tempo Desenvolvimento		| 20 horas				| 100 horas				| 100 horas				|
-
-**¹:** *Cada acesso único utiliza aproximadamente 1 MB de transmissão de dados, portanto nas camadas
-grátis das plataformas acima são 100 mil, 100 mil e 10 mil acessos grátis por mês, respectivamente.*
-
-Estes limites de acesso na hospedagem gratuita indicam que  após o uso da franquia máxima desses
-recursos é necessário pagar o serviço de hospedagem. A plataforma GitHub-Pages não oferece uma opção de hospedagem paga.
-
-| Plataformas	| Hostinger	| Google Flame (USD)| Google Blaze (USD)|
-| -----------	|:---------:|:---------:		|:---------:		|
-| Custo mensal	| R$ 7		| USD $ 25			| Pay as you go		|
-| Armazenamento	| ilimitado	| 10 GB				| $ 0,026/GB		|
-| Rede			| ilimitado	| 50 GB/m			| $ 0,15/GB			|
-| CDN Arm.		| ilimitado	| 50 GB				| $ 0,026/GB		|
-| CDN Rede		| ilimitado	| 50 GB/m			| $ 0,12/GB			|
-| Desenvolvimento| 500 horas| 100 horas			| 100 horas			|
+- **GitHub-Pages** (já demonstrada https://luis-puhl.github.io/site-aaa-unesp-bauru/):
+	- **Hospedagem:** Gratuita com 100 mil acessos mensais;
+	- **Gerenciador de conteúdo:** Jekyll que é fácil de construtir (10 horas de desenvolvimento) mas complicado para editar o conteúdo;
+	- **Sem domínio próprio** (`.github.io` ao invés de `.com.br`).
+- **Hostinger** (servidor mais barato que conheço):
+	- **Hospedagem free:** 100 mil acessos mensais;
+	- **Hospedagem paga:** R$ 7,00/mês para acessos ilimitados;
+	- **Gerenciador de conteúdo:** Angular + PHP que é o mais complexo para construtir (100 horas de desenvolvimento) e a aplicação fica igual ao FireBase;
+	- **Domínio anual:** R$ 67.58 + R$ 23.99 (SSL).
+- **Google FireBase** (melhor infraestrutura):
+	- **Hospedagem free:** *10 mil* acessos mensais;
+	- **Hospedagem paga:** *On-Demand* conforme a necessidade, USD $25/mês no pior caso;
+	- **Gerenciador de conteúdo:** Angular + FireBase (35 horas de desenvolvimento);
+	- **Domínio anual:** R$ 44.90, SSL é free;
 
 ---
 # Restrições
@@ -201,17 +189,18 @@ Em contrato separado.
 ---
 # Pontos de Entrega
 
-Em aberto.
+- Layout populado com Jekyll: 11/04/2017.
 
 ---
 # Orçamento / Prazo
 
-| Plataforma					| Github				|	Hostinger				|	Google Firebase 				|
-| ----------					| :----------:			| :----------:				| :----------:						|
-| CMS							| Jekyll				| WordPress / PHP / Angular	| Polymer / Angular					|
-| Tempo de desenvolvimento		| 20 horas				| 100 horas					| 100 horas							|
-| Custo por hora				| R$ 15/hora			| R$ 20/hora				| R$ 10/hora						|
-| **Custo de desenvolvimento**	| **R$ 300,00**			| **R$ 2 000,00**			| **R$ 1 000,00**					|
-| Domínio (anual)				| R$ 0					| R$ 91,57					| R$ 44,99							|
-| Servidores Free				| R$ 0 *(100k acessos)*	| R$ 0 *(100k acessos)*		| R$ 0	*(10k acessos)*				|
-| Servidores Pagos (mensal)		| Não disponível		| R$ 6,99 					| R$ 80	(USD $25) ou *On-Demand*	|
+| Plataforma					|	Hostinger			|	Google Firebase 				|
+| ----------					| :----------:			| :----------:						|
+| CMS							| PHP / Angular			| Firebase / Angular				|
+| Tempo de desenvolvimento		| 50 horas				| 35 horas							|
+| Custo por hora				| R$ 15/hora			| R$ 10/hora						|
+| **Custo de desenvolvimento**	| **R$ 750,00**			| **R$ 350,00**						|
+| Domínio (anual)				| R$ 91,57				| R$ 44,99							|
+| Servidores Free				| *(100k acessos)*		| *(10k acessos)*					|
+| **Custo Total de Lançamento**	| **R$ 850,00**			| **R$ 400,00**						|
+| Servidores Pagos (opcional)	| R$ 6,99/mês			| *On-Demand* mensal <br> (R$ 80 no pior caso)	|
