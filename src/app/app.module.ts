@@ -6,15 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
-import { HomeHeaderComponent } from './home-header/home-header.component';
+import { HomeGestoesComponent } from './home-gestoes/home-gestoes.component';
+import { HomeTileComponent } from './home-tile/home-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HomeNavbarComponent,
-    HomeHeaderComponent
+    HomeGestoesComponent,
+    HomeTileComponent
   ],
   imports: [
     BrowserModule,

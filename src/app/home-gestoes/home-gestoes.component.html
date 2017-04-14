@@ -1,0 +1,22 @@
+<!-- Gestoes -->
+<section id="gestoes">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Gestões</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			<app-home-tile 
+					*ngFor="let gestao of gestoes"
+					class="col-sm-6 grid-item"
+					[modalID]="gestao.modal"
+					[tileImgSrc]="gestao.img"
+					[tileTitle]="gestao.titulo"
+				>
+				Home Tile...
+			</app-home-tile>
+		</div>
+	</div>
+</section>
