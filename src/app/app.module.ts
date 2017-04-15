@@ -8,21 +8,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HomeGestoesComponent } from './home-gestoes/home-gestoes.component';
 import { HomeTileComponent } from './home-tile/home-tile.component';
+import { HomeTreinosComponent } from './home-treinos/home-treinos.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    HomeGestoesComponent,
-    HomeTileComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HomeComponent,
+		HomeGestoesComponent,
+		HomeTileComponent,
+		HomeTreinosComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule,
+		AppRoutingModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
