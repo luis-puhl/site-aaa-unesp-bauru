@@ -1,4 +1,4 @@
-export class HomeTreino {
+export class Torcida {
 	public modalId: string;
 	public img: string;
 	public titulo: string;

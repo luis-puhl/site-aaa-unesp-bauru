@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { HomeGestoesComponent } from './home-gestoes/home-gestoes.component';
 import { HomeTileComponent } from './home-tile/home-tile.component';
 import { HomeTreinosComponent } from './home-treinos/home-treinos.component';
+import { HomeTorcidasComponent } from './home-torcidas/home-torcidas.component';
+import { HomeProdutosComponent } from './home-produtos/home-produtos.component';
 
 @NgModule({
 	declarations: [
@@ -16,7 +18,9 @@ import { HomeTreinosComponent } from './home-treinos/home-treinos.component';
 		HomeComponent,
 		HomeGestoesComponent,
 		HomeTileComponent,
-		HomeTreinosComponent
+		HomeTreinosComponent,
+		HomeTorcidasComponent,
+		HomeProdutosComponent
 	],
 	imports: [
 		BrowserModule,
