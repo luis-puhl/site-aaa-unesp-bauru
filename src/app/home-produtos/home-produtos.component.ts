@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HomeProduto } from '../home-produto';
+import { CarouselItem } from '../carousel-item';
 import { ProdutosService } from '../produtos.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { ProdutosService } from '../produtos.service';
 	providers: [ProdutosService]
 })
 export class HomeProdutosComponent implements OnInit {
-	public produtos: HomeProduto[];
+	public produtosCarousel: CarouselItem[];
 
 	constructor(
 		private produtosService: ProdutosService
 	) { }
 
 	ngOnInit() {
-		this.produtosService.getHomeProdutos().then(produtos => this.produtos = produtos);
+		this.produtosService.getProdutosCarousel().then(produtos => this.produtosCarousel = produtos);
 	}
 
 

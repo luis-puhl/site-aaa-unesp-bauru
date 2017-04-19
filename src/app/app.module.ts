@@ -11,6 +11,7 @@ import { HomeTileComponent } from './home-tile/home-tile.component';
 import { HomeTreinosComponent } from './home-treinos/home-treinos.component';
 import { HomeTorcidasComponent } from './home-torcidas/home-torcidas.component';
 import { HomeProdutosComponent } from './home-produtos/home-produtos.component';
+import { BootstrapCarouselComponent } from './bootstrap-carousel/bootstrap-carousel.component';
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,8 @@ import { HomeProdutosComponent } from './home-produtos/home-produtos.component';
 		HomeTileComponent,
 		HomeTreinosComponent,
 		HomeTorcidasComponent,
-		HomeProdutosComponent
+		HomeProdutosComponent,
+		BootstrapCarouselComponent
 	],
 	imports: [
 		BrowserModule,

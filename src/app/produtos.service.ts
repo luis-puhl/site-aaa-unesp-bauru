@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Produto } from './produto';
-import { HomeProduto } from './home-produto';
+import { CarouselItem } from './carousel-item';
 import { PRODUTO_MOCK } from './mock-produtos';
 
 
@@ -12,16 +12,16 @@ export class ProdutosService {
 		return new Promise<Produto[]>( (resolve, reject) => resolve(PRODUTO_MOCK) );
 	}
 
-	getHomeProdutos(): Promise<HomeProduto[]> {
-		return new Promise<HomeProduto[]>( (resolve, reject) => {
+	getProdutosCarousel(): Promise<CarouselItem[]> {
+		return new Promise<CarouselItem[]>( (resolve, reject) => {
 			return this.getProdutos().then(produtos => {
 				return resolve(produtos.map(produto => {
-					return new HomeProduto(
-							produto.modalId,
+					return new CarouselItem(
 							produto.dataSlide,
+							produto.active,
 							produto.img,
 							produto.titulo,
-							produto.active);
+							);
 				}));
 			});
 		});
