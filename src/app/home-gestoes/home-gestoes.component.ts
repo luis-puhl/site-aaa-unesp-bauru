@@ -1,30 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
-class HomeGestao {
-	constructor(
-		public modal: string,
-		public img: string,
-		public titulo: string,
-	) { }
-}
-
-const HOME_GESTOES: HomeGestao[] = [
-	{modal: 'modalGestaoAtual', img: '/img/gestoes/atual.png', titulo: 'Gestão Atual'},
-	{modal: 'modalGestaoVelhaGuarda', img: '/img/gestoes/velha-guarda.png', titulo: 'Velha Guarda'},
-];
+import { HomeGestao } from '../home-gestao';
+import { GestoesService } from '../gestoes.service';
 
 @Component({
 	selector: 'app-home-gestoes',
 	templateUrl: './home-gestoes.component.html',
-	styleUrls: ['./home-gestoes.component.css']
+	styleUrls: ['./home-gestoes.component.css'],
+	providers: [GestoesService]
 })
 export class HomeGestoesComponent implements OnInit {
 	public gestoes: HomeGestao[];
 
-	constructor() { }
+	constructor(
+		private gestoesService: GestoesService
+	) { }
 
 	ngOnInit() {
-		this.gestoes = HOME_GESTOES;
+		this.gestoesService.getHomeGestoes().then(gestoes => this.gestoes = gestoes);
 	}
 
 }

@@ -13,7 +13,7 @@ export const PRODUTO_MOCK: Produto[] = [
 			false),
 	new Produto('modalProdutoChaveiro',
 			'/produto/2016/02/01/produto-chaveiro',
-			'/img/produto/chaveiro.png',
+			'/img/produtos/chaveiro.png',
 			'Chaveiro',
 			false),
 ];

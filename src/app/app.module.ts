@@ -12,6 +12,8 @@ import { HomeTreinosComponent } from './home-treinos/home-treinos.component';
 import { HomeTorcidasComponent } from './home-torcidas/home-torcidas.component';
 import { HomeProdutosComponent } from './home-produtos/home-produtos.component';
 import { BootstrapCarouselComponent } from './bootstrap-carousel/bootstrap-carousel.component';
+import { HomeParceirosComponent } from './home-parceiros/home-parceiros.component';
+import { HomeGaleriaComponent } from './home-galeria/home-galeria.component';
 
 @NgModule({
 	declarations: [
@@ -22,7 +24,9 @@ import { BootstrapCarouselComponent } from './bootstrap-carousel/bootstrap-carou
 		HomeTreinosComponent,
 		HomeTorcidasComponent,
 		HomeProdutosComponent,
-		BootstrapCarouselComponent
+		BootstrapCarouselComponent,
+		HomeParceirosComponent,
+		HomeGaleriaComponent
 	],
 	imports: [
 		BrowserModule,
