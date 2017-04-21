@@ -1,5 +1,18 @@
+export class Galeria {
+	constructor(
+		public modalId: string,
+		public img: string,
+		public titulo: string
+	) { }
+}
 
-import { Galeria } from './galeria';
+export class HomeGaleria {
+	constructor(
+		public modalId: string,
+		public img: string,
+		public titulo: string
+	) { }
+}
 
 export const GALERIA_MOCK: Galeria[] = [
 	new Galeria('modalGaleriaTexugoPascoa',		'/img/galerias/texugo-pascoa.png',		'Texugo da Páscoa'),
