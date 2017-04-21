@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HomeGestao } from '../home-gestao';
+import { BootstrapModalData } from '../bootstrap-modal/bootstrap-modal-data';
 import { GestoesService } from '../gestoes.service';
 
 @Component({
@@ -11,13 +12,26 @@ import { GestoesService } from '../gestoes.service';
 })
 export class HomeGestoesComponent implements OnInit {
 	public gestoes: HomeGestao[];
+	public modalGestoes: BootstrapModalData[];
 
 	constructor(
 		private gestoesService: GestoesService
 	) { }
 
 	ngOnInit() {
-		this.gestoesService.getHomeGestoes().then(gestoes => this.gestoes = gestoes);
+		this.gestoesService.getHomeGestoes().then(gestoes => {
+			this.gestoes = gestoes;
+			this.modalGestoes = this.gestoes.map(gestao => {
+				return new BootstrapModalData(
+					gestao.modalId,
+					gestao.img,
+					gestao.titulo,
+					gestao.titulo,
+					gestao.titulo,
+					''
+				);
+			});
+		});
 	}
 
 }

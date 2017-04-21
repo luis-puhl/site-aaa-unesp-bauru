@@ -14,6 +14,7 @@ import { HomeProdutosComponent } from './home-produtos/home-produtos.component';
 import { BootstrapCarouselComponent } from './bootstrap-carousel/bootstrap-carousel.component';
 import { HomeParceirosComponent } from './home-parceiros/home-parceiros.component';
 import { HomeGaleriaComponent } from './home-galeria/home-galeria.component';
+import { BootstrapModalComponent } from './bootstrap-modal/bootstrap-modal.component';
 
 @NgModule({
 	declarations: [
@@ -26,7 +27,8 @@ import { HomeGaleriaComponent } from './home-galeria/home-galeria.component';
 		HomeProdutosComponent,
 		BootstrapCarouselComponent,
 		HomeParceirosComponent,
-		HomeGaleriaComponent
+		HomeGaleriaComponent,
+		BootstrapModalComponent
 	],
 	imports: [
 		BrowserModule,

@@ -1,6 +1,6 @@
 export class HomeGestao {
 	constructor(
-		public modal: string,
+		public modalId: string,
 		public img: string,
 		public titulo: string,
 	) { }
