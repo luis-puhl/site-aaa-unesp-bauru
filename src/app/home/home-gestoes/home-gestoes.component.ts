@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HomeGestao } from '../home-gestao';
+import { HomeGestao } from '../shared/gestao';
 import { BootstrapModalData } from '../bootstrap-modal/bootstrap-modal-data';
-import { GestoesService } from '../gestoes.service';
+import { GestoesService } from '../shared/gestoes.service';
 
 @Component({
 	selector: 'app-home-gestoes',

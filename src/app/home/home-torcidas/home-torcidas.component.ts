@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HomeTorcida } from '../home-torcida';
-import { TorcidasService } from '../torcidas.service';
+import { HomeTorcida } from '../shared/torcida';
+import { TorcidasService } from '../shared/torcidas.service';
 
 @Component({
 	selector: 'app-home-torcidas',

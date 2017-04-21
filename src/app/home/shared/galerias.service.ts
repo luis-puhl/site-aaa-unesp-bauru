@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Galeria } from './galeria';
-import { HomeGaleria } from './home-galeria';
-import { GALERIA_MOCK } from './mock-galerias';
+import { Galeria, HomeGaleria, GALERIA_MOCK } from './galeria';
 
 @Injectable()
 export class GaleriasService {

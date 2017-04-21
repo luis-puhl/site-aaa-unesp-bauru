@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TreinosService } from '../treinos.service';
-import { HomeTreino } from '../home-treino';
+import { HomeTreino } from '../shared/treino';
+import { TreinosService } from '../shared/treinos.service';
+
 
 @Component({
 	selector: 'app-home-treinos',

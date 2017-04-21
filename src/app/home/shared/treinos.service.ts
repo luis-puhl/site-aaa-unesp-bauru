@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Treino } from './treino';
-import { HomeTreino } from './home-treino';
-import { TREINO_MOCK } from './mock-treinos';
+import { Treino, HomeTreino, TREINO_MOCK } from './treino';
 
 @Injectable()
 export class TreinosService {

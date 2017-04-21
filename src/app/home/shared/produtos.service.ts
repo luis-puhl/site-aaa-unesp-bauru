@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Produto } from './produto';
-import { CarouselItem } from './carousel-item';
-import { PRODUTO_MOCK } from './mock-produtos';
-
+import { Produto, PRODUTO_MOCK } from './produto';
+import { CarouselItem } from '../bootstrap-carousel/carousel-item';
 
 @Injectable()
 export class ProdutosService {

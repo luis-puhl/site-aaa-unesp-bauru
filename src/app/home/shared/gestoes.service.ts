@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Gestao } from './gestao';
-import { HomeGestao } from './home-gestao';
-import { GESTOES_MOCK } from './mock-gestoes';
+import { Gestao, HomeGestao, GESTOES_MOCK } from './gestao';
 
 @Injectable()
 export class GestoesService {

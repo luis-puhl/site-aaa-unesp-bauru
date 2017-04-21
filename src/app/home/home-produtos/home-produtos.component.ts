@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CarouselItem } from '../carousel-item';
-import { ProdutosService } from '../produtos.service';
+import { CarouselItem } from '../bootstrap-carousel/carousel-item';
+import { ProdutosService } from '../shared/produtos.service';
 
 @Component({
 	selector: 'app-home-produtos',

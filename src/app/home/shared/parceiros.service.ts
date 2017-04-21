@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Parceiro } from './parceiro';
-import { HomeParceiro } from './home-parceiro';
-import { PARCEIROS_MOCK } from './mock-parceiros';
+import { Parceiro, HomeParceiro, PARCEIROS_MOCK } from './parceiro';
 
 @Injectable()
 export class ParceirosService {

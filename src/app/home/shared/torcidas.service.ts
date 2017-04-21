@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Torcida } from './torcida';
-import { HomeTorcida } from './home-torcida';
-import { TORCIDA_MOCK } from './mock-torcidas';
+import { Torcida, HomeTorcida, TORCIDA_MOCK } from './torcida';
 
 @Injectable()
 export class TorcidasService {

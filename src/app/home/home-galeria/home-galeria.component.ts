@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HomeGaleria } from '../home-galeria';
-import { GaleriasService } from '../galerias.service';
+import { HomeGaleria } from '../shared/galeria';
+import { GaleriasService } from '../shared/galerias.service';
 
 @Component({
 	selector: 'app-home-galeria',

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { CarouselItem } from '../carousel-item';
+import { CarouselItem } from '../bootstrap-carousel/carousel-item';
 
 @Component({
 	selector: 'app-bootstrap-carousel',

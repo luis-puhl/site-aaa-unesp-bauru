@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HomeParceiro } from '../home-parceiro';
-import { ParceirosService } from '../parceiros.service';
+import { HomeParceiro } from '../shared/parceiro';
+import { ParceirosService } from '../shared/parceiros.service';
 
 @Component({
 	selector: 'app-home-parceiros',
