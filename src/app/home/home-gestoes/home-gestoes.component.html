@@ -13,7 +13,7 @@
 					class="col-sm-6 grid-item"
 					[modalID]="gestao.modalId"
 					[tileImgSrc]="gestao.img"
-					[tileTitle]="gestao.titulo"
+					[tileTitle]="gestao.title"
 				>
 				Home Tile...
 			</app-home-tile>
@@ -21,4 +21,4 @@
 	</div>
 </section>
 
-<app-bootstrap-modal *ngFor="let gestao of modalGestoes" [modalData]="gestao"></app-bootstrap-modal>
+<app-bootstrap-modal *ngFor="let gestao of gestoes" [modalData]="gestao"></app-bootstrap-modal>

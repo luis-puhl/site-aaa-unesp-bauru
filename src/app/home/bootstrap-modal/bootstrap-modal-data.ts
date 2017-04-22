@@ -1,10 +1,8 @@
-export class BootstrapModalData {
-	constructor(
-		public modalId: string,
-		public img: string,
-		public title: string,
-		public text: string,
-		public category: string,
-		public date: string
-	) { }
+export interface BootstrapModalData {
+	modalId: string;
+	img: string;
+	title: string;
+	text: string;
+	category: string;
+	date: string;
 }
