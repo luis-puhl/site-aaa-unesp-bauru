@@ -6,9 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./home-tile.component.css']
 })
 export class HomeTileComponent implements OnInit {
-	@Input() modalID;
-	@Input() tileImgSrc;
-	@Input() tileTitle;
+
+	@Input()
+	public modalID;
+
+	@Input()
+	public tileImgSrc;
+
+	@Input()
+	public tileTitle;
 
 	constructor() { }
 
