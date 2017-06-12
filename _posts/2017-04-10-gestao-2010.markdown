@@ -1,0 +1,9 @@
+---
+layout: gestao
+title:  "Gestão 2010"
+date:   2016-02-01 23:23:23 -0500
+img: img/gestoes/2010.jpg
+modalID: modalGestao2010
+category: Gestao
+---
+Gestão 2010

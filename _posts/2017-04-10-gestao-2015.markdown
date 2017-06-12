@@ -1,0 +1,9 @@
+---
+layout: gestao
+title:  "Gestão 2015"
+date:   2016-02-01 23:23:23 -0500
+img: img/gestoes/2015-Ânima.jpg
+modalID: modalGestao2015
+category: Gestao
+---
+Gestão 2015 Ânima

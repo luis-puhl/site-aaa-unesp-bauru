@@ -1,0 +1,9 @@
+---
+layout: gestao
+title:  "Gestão 2003"
+date:   2016-02-01 23:23:23 -0500
+img: img/gestoes/2003.jpg
+modalID: modalGestao2003
+category: Gestao
+---
+Gestão 2003

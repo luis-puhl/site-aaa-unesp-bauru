@@ -1,0 +1,9 @@
+---
+layout: gestao
+title:  "Gestão 2011"
+date:   2016-02-01 23:23:23 -0500
+img: img/gestoes/2011-XV-de-ouro.jpg
+modalID: modalGestao2011
+category: Gestao
+---
+Gestão 2011 XV de ouro
