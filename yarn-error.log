@@ -1,0 +1,43 @@
+Arguments: 
+  /usr/local/bin/node /opt/yarn/bin/yarn.js add Polymer
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+Yarn version: 
+  0.24.6
+
+Node version: 
+  8.0.0
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "polymer-starter-kit",
+    "license": "BSD-3-Clause",
+    "version": "0.1.0",
+    "devDependencies": {
+      "eslint": "^3.19.0",
+      "eslint-config-google": "^0.7.0",
+      "eslint-plugin-html": "^2.0.0"
+    },
+    "scripts": {
+      "lint": "npm run lint:javascript",
+      "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
+      "test": "polymer test",
+      "test:integration": "polymer build # test that psk builds without error with the CLI"
+    },
+    "main": "index.js",
+    "repository": "https://github.com/luis-puhl/site-aaa-unesp-bauru.git"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EINVAL: invalid argument, symlink '../../../rimraf/bin.js' -> '/app/node_modules/del/node_modules/.bin/rimraf'
