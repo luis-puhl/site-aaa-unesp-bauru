@@ -2,20 +2,32 @@
 layout: gestao
 title:  "Gestão 2016"
 date:   2016-02-01 23:23:23 -0500
-img: img/gestoes/2016-gaia-1.jpg
+img: img/gestoes/2016-Gaia-1.jpg
 modalID: modalGestao2016
 category: Gestao
 ---
-## Gestão Gaia - 2016:
-- **Presidente:** Henrique Alcântara (Raí);
-- **Vice-Presidente:** Manuela Sanches (Manu);
-- **Secretaria:** Gabriela Monteiro (Lala);
-- **Tesouraria:** Matheus Gomyde (Tati)
-- **Gestão de Pessoas:** Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);
-- **Diretoria de Esportes:** Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);
-- **Diretoria de Comunicação:** Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);
-- **Diretoria de Ação Social:** Isabella Carvalho (Isa);
-- **Diretoria de Patrocínio:** Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);
-- **Diretoria de Patrimônio:** Jacqueline Nusch (Holla);
-- **Diretoria de Eventos:** Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)
-- **Diretoria de Externos:** Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).
+Gestão Gaia - 2016:
+
+**Presidente:** Henrique Alcântara (Raí);
+
+**Vice-Presidente:** Manuela Sanches (Manu);
+
+**Secretaria:** Gabriela Monteiro (Lala);
+
+**Tesouraria:** Matheus Gomyde (Tati)
+
+**Gestão de Pessoas:** Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);
+
+**Diretoria de Esportes:** Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);
+
+**Diretoria de Comunicação:** Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);
+
+**Diretoria de Ação Social:** Isabella Carvalho (Isa);
+
+**Diretoria de Patrocínio:** Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);
+
+**Diretoria de Patrimônio:** Jacqueline Nusch (Holla);
+
+**Diretoria de Eventos:** Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)
+
+**Diretoria de Externos:** Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).

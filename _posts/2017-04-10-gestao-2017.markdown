@@ -6,17 +6,30 @@ img: img/gestoes/2016-Gaia-0.jpg
 modalID: modalGestao2017
 category: Gestao
 ---
-## Gestão Vivá - 2017
-- **Presidente:** Flávio dos Santos (Negão)
-- **Vice-Presidente:** Danilo Lysei (Dan)
-- **Secretaria:** Helena Ortega 
-- **Tesouraria:** Matheus Gomyde (Tati)
-- **Gestão de Pessoas:** Amanda Geraldini (Feb)
-- **Diretoria de Esportes:** Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)
-- **Diretoria de Comunicação:** Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)
-- **Diretoria de Ação Social:** Isabella Carvalho (Isa), Larissa Duarte (Botafogo)
-- **Diretoria de Patrocínio:** Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)
-- **Diretoria de Patrimônio:** Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)
-- **Diretoria de Eventos:** Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)
-- **Diretoria de Externos:** Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)
+Gestão Vivá - 2017
+
+
+**Presidente:** Flávio dos Santos (Negão)
+
+**Vice-Presidente:** Danilo Lysei (Dan)
+
+**Secretaria:** Helena Ortega 
+
+**Tesouraria:** Matheus Gomyde (Tati)
+
+**Gestão de Pessoas:** Amanda Geraldini (Feb)
+
+**Diretoria de Esportes:** Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)
+
+**Diretoria de Comunicação:** Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)
+
+**Diretoria de Ação Social:** Isabella Carvalho (Isa), Larissa Duarte (Botafogo)
+
+**Diretoria de Patrocínio:** Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)
+
+**Diretoria de Patrimônio:** Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)
+
+**Diretoria de Eventos:** Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)
+
+**Diretoria de Externos:** Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)
 
