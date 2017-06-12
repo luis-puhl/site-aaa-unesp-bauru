@@ -49,5 +49,3 @@ As Texuguetes são as cheerleaders do campus da Unesp Bauru e elas também alegr
 Para participar dos treinos, não precisa ser ginasta ou ter experiência, basta ter vontade! 
 
 [facebook](fb.com/texuguetes)
-
-
