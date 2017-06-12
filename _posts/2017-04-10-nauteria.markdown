@@ -2,7 +2,7 @@
 layout: torcida
 title:  "Nauteria"
 date:   2016-02-01 15:08:10 -0500
-img: img/torcidas/Logo-Nauteria.png
+img: img/torcidas/Logo-Naumteria.png
 modalID: modalTorcidaNauteria
 category: Torcida
 ---
