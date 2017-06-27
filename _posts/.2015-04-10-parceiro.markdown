@@ -3,7 +3,6 @@ layout: parceiro
 title: <title>
 date: <date>
 img: img_key
-modalID: modalGestao2001
-category: Parceiros
+category: Parceiro
 ---
 Parceiro

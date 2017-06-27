@@ -1,9 +1,8 @@
 ---
 layout: parceiro
 title: "elevenfit"
-date: 2017-06-27 04:49:25 +0000
+date: 2017-06-27 05:02:54 +0000
 img: img/parceiros/elevenfit/elevenfit.png
-modalID: modalGestao2001
-category: Parceiros
+category: Parceiro
 ---
 Parceiro
