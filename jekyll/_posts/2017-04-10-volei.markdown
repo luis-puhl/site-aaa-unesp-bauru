@@ -1,9 +1,0 @@
----
-layout: treino
-title:  "Vôlei"
-date:   2016-02-01 15:08:10 -0500
-img: img/treinos/volei.png
-modalID: modalTreinoVolei
-category: Treino
----
-Treinos de Vôlei.
