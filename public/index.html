@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Atlética UNESP Bauru</title>
+
+	<meta name="description" content="Associação Atlética Acadêmica Unesp Bauru">
+
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Freelancer Theme CSS -->
+	<link rel="stylesheet" href="css/freelancer.css">
+	<link rel="stylesheet" href="css/atletica.css">
+
+	<link rel="canonical" href="/">
+
+	<!-- Custom Fonts -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="page-top" class="index">
+
+		<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#page-top">Atlética UNESP Bauru</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="hidden">
+					<a href="#page-top"></a>
+				</li>
+				<li class="page-scroll">
+					<a href="#sobre">Sobre</a>
+				</li>
+				<li class="page-scroll">
+					<a href="#gestoes">Gestões</a>
+				</li>
+				<li class="page-scroll">
+					<a href="#treinos">Treinos</a>
+				</li>
+				<li class="page-scroll">
+					<a href="#torcidas">Torcidas</a>
+				</li>
+				<li class="page-scroll">
+					<a href="#produtos">Produtos</a>
+				</li>
+				<li class="page-scroll">
+					<a href="#parceiros">Parceiros</a>
+				</li>
+				<li class="page-scroll">
+					<a href="#galeria">Galeria</a>
+				</li>
+				<li class="page-scroll">
+					<a href="#contato">Contato</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+
+
+		<!-- Header -->
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<img class="img-responsive" src="img/logo-atletica.png" alt="">
+				<div class="intro-text">
+					<hr class="star-light">
+					<span class="skills">Associação Atlética Acadêmica Unesp Bauru</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<section id="sobre">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Sobre</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<img class="img-responsive quadro" src="img/1-quadro.png"
+				alt="Quadro de explicação da AAA, com foto" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="gestoes">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Gestões</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			<gestao-item v-for="gestao in gestoes" v-bind:gestao="gestao" v-bind:key="gestao.id">
+			</gestao-item>
+
+		</div>
+	</div>
+
+	<atletica-modal v-for="gestao in gestoes" v-bind:item="gestao" v-bind:key="gestao.id">
+	</atletica-modal>
+</section>
+
+
+<section id="treinos" class="grid-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Treinos</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+
+				<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoXadrez" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/xadrez.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Xadrez</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoVolei" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/volei.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Vôlei</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoVoleiPraia" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/volei-praia.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Vôlei de Praia</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoTenisMesa" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/tenis-mesa.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Tênis de Mesa</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoTenisCampo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/tenis-campo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Tênis de Campo</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoNatacao" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/natacao.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Natação</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoJudo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/judo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Judo</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoHandebol" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/handebol.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Handebol</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoFutsal" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/futsal.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Futsal</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoFutebolCampo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/futebol-campo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Futebol de Campo</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoBasquete" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/basquete.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Basquete</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoAtletismo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/atletismo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Atletismo</h3>
+				</a>
+			</div>
+
+
+					</div>
+				</div>
+			</section>
+
+
+					<section id="torcidas">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2>Torcidas</h2>
+							<hr class="star-primary">
+						</div>
+					</div>
+					<div class="row">
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTorcidaTexuguetes" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/torcidas/Logo-Texuguetes.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Texuguetes</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTorcidaNauteria" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/torcidas/Logo-Naumteria.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Nauteria</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTorcidaFebreAmarela" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/torcidas/Logo-Febre.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Febre Amarela</h3>
+				</a>
+			</div>
+
+
+		</div>
+	</div>
+</section>
+
+
+<section id="produtos">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Produtos</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+
+					<li data-target="#carousel-example-generic" data-slide-to="/produto/2016/02/01/produto-samba-cancao" ></li>
+
+					<li data-target="#carousel-example-generic" data-slide-to="/produto/2016/02/01/produto-caneca" active></li>
+
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+
+					<div class="item">
+						<img src="img/produtos/samba-cancao.png" class="img-responsive" alt="">
+						<div class="carousel-caption">
+							<h3>Samba Canção</h3>
+						</div>
+					</div>
+
+					<div class="item active">
+						<img src="img/produtos/caneca.png" class="img-responsive" alt="">
+						<div class="carousel-caption">
+							<h3>Caneca</h3>
+						</div>
+					</div>
+
+			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+</section>
+
+
+<section id="parceiros" class="grid-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Clube de Parceiros</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/polak/polak.png" class="img-responsive" alt="">
+					<h3 class="grid-title">polak</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/planning/planning.png" class="img-responsive" alt="">
+					<h3 class="grid-title">planning</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/personalize/personalize.png" class="img-responsive" alt="">
+					<h3 class="grid-title">personalize</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/oba-oba/oba-oba.png" class="img-responsive" alt="">
+					<h3 class="grid-title">oba-oba</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/new-time/new-time.png" class="img-responsive" alt="">
+					<h3 class="grid-title">new-time</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/london-eye/london-eye.png" class="img-responsive" alt="">
+					<h3 class="grid-title">london-eye</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/green-brothers/green-brothers.png" class="img-responsive" alt="">
+					<h3 class="grid-title">green-brothers</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/flipper-lanches/flipper-lanches.png" class="img-responsive" alt="">
+					<h3 class="grid-title">flipper-lanches</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/fabria-de-acai/fabria-de-acai.png" class="img-responsive" alt="">
+					<h3 class="grid-title">fabria-de-acai</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/escondidus/escondidus.png" class="img-responsive" alt="">
+					<h3 class="grid-title">escondidus</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/elevenfit/elevenfit.png" class="img-responsive" alt="">
+					<h3 class="grid-title">elevenfit</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/concreto-imoveis/concreto-imoveis.png" class="img-responsive" alt="">
+					<h3 class="grid-title">concreto-imoveis</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/acaizando/acaizando.png" class="img-responsive" alt="">
+					<h3 class="grid-title">acaizando</h3>
+				</a>
+			</div>
+
+
+					</div>
+				</div>
+			</section>
+
+
+					<section id="galeria">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2>Galeria de Eventos</h2>
+							<hr class="star-primary">
+						</div>
+					</div>
+					<div class="row">
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalGaleriaTexugoPascoa" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/galerias/texugo-pascoa.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Texugo da Páscoa</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalGaleriaDoaUnesp" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/galerias/doa-unesp.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Doa Unesp</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalGaleriaBaticun" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/galerias/baticun.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Baticun</h3>
+				</a>
+			</div>
+
+
+		</div>
+	</div>
+</section>
+
+
+<section id="contato">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Contato</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 embed-container">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.63002650651453!2d-49.032176605463725!3d-22.350591942249594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf5dfab88ecb79%3A0x49d5511878f2b402!2sDAFAE!5e0!3m2!1spt-BR!2sbr!4v1491441567610"
+				width="750" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	<style>
+		.embed-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			max-width: 100%;
+		}
+		.embed-container iframe, .embed-container object, .embed-container embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</section>
+
+
+		<!-- Footer -->
+<footer class="text-center">
+	<div class="footer-above">
+		<div class="container">
+			<div class="row">
+				<div class="footer-col col-md-4">
+					<h3>Location</h3>
+					<p>Av. Eng. Luiz Edmundo Carrijo Coube, 14-01
+						<br>Núcleo Residencial Presidente Geisel, Bauru, SP 17033-360</p>
+				</div>
+				<div class="footer-col col-md-4">
+					<h3>Around the Web</h3>
+					<ul class="list-inline">
+
+						<li>
+							<a href="https://www.facebook.com/atleticaunespbauru1" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+						</li>
+
+
+
+						<li>
+							<a href="https://github.com/luis-puhl" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+						</li>
+
+
+						<li>
+							<a href="https://www.instagram.com/atleticaunespbauru1" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
+						</li>
+
+
+
+
+
+					</ul>
+				</div>
+				<div class="footer-col col-md-4">
+					<h3>About Atlética UNESP Bauru</h3>
+					<p><a href="http://startbootstrap.com">Start Bootstrap</a> is an open source library of Bootstrap themes and templates.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-below">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					Copyright &copy; Your Website 2017
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+	<a class="btn btn-primary" href="#page-top">
+		<i class="fa fa-chevron-up"></i>
+	</a>
+</div>
+
+
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>polak</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/polak/polak.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>planning</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/planning/planning.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>personalize</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/personalize/personalize.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>oba-oba</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/oba-oba/oba-oba.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>new-time</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/new-time/new-time.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>london-eye</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/london-eye/london-eye.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>green-brothers</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/green-brothers/green-brothers.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>flipper-lanches</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/flipper-lanches/flipper-lanches.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>fabria-de-acai</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/fabria-de-acai/fabria-de-acai.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>escondidus</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/escondidus/escondidus.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>elevenfit</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/elevenfit/elevenfit.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>concreto-imoveis</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/concreto-imoveis/concreto-imoveis.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>acaizando</h2>
+						<hr class="star-primary">
+						<img src="img/parceiros/acaizando/acaizando.png" class="img-responsive img-centered" alt="">
+						<p>Parceiro</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Parceiro
+									</strong>
+							</li>
+							<li>Date:
+								<strong>June 2017
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoXadrez" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Xadrez</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/xadrez.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Xadrez.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoVolei" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Vôlei</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/volei.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Vôlei.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoVoleiPraia" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Vôlei de Praia</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/volei-praia.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Vôlei de Praia.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTorcidaTexuguetes" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Texuguetes</h2>
+						<hr class="star-primary">
+						<img src="img/torcidas/Logo-Texuguetes.png" class="img-responsive img-centered" alt="">
+						<p>Texuguetes</p>
+
+						<p>As Texuguetes são as cheerleaders do campus da Unesp Bauru e elas também alegram a galera na torcida, desde 2006! O cheerleading é um esporte de superação que envolve stunts, pirâmides, saltos, dança, música e também muita animação.</p>
+
+						<p>Para participar dos treinos, não precisa ser ginasta ou ter experiência, basta ter vontade!</p>
+
+						<p><a href="fb.com/texuguetes">facebook</a></p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Torcida
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalGaleriaTexugoPascoa" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Texugo da Páscoa</h2>
+						<hr class="star-primary">
+						<img src="img/galerias/texugo-pascoa.png" class="img-responsive img-centered" alt="">
+						<p>Texugo da Páscoa</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Galeria
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoTenisMesa" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Tênis de Mesa</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/tenis-mesa.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Tenis de Mesa.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoTenisCampo" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Tênis de Campo</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/tenis-campo.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Tênis de Campo.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalProdutoSambaCancao" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Samba Canção</h2>
+						<hr class="star-primary">
+						<img src="img/produtos/samba-cancao.png" class="img-responsive img-centered" alt="">
+						<p>Samba Canção</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Produto
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalProdutoCaneca" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Caneca</h2>
+						<hr class="star-primary">
+						<img src="img/produtos/caneca.png" class="img-responsive img-centered" alt="">
+						<p>Caneca</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Produto
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTorcidaNauteria" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Nauteria</h2>
+						<hr class="star-primary">
+						<img src="img/torcidas/Logo-Naumteria.png" class="img-responsive img-centered" alt="">
+						<p>Naumteria</p>
+
+						<p>A Naumteria é a bateria universitária da Unesp Bauru e são eles que tocam nossos hinos e quando tocam, ninguém fica parado! A ideia é apoiar os times que defendem o campus nos jogos, desde amistosos até o Inter! Além de, é claro, mostrar o quão louco é ser da Unesp.</p>
+
+						<p><a href="fb.com/naumteria.unespbauru">facebook</a></p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Torcida
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoNatacao" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Natação</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/natacao.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Natação.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoJudo" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Judo</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/judo.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Judo.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoHandebol" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Handebol</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/handebol.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Handebol.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoFutsal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Futsal</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/futsal.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Futsal.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoFutebolCampo" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Futebol de Campo</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/futebol-campo.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Futebol de Campo.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTorcidaFebreAmarela" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Febre Amarela</h2>
+						<hr class="star-primary">
+						<img src="img/torcidas/Logo-Febre.png" class="img-responsive img-centered" alt="">
+						<p>Febre Amarela</p>
+
+						<p>A Febre Amarela é a Torcida Organizada da Unesp Bauru e são eles que agitam as arquibancadas, gritando e animando o pessoal! O objetivo da Febre é incentivar os times da Unesp Bauru onde quer que eles joguem e caminhar ao lado de seus atletas!</p>
+
+						<p>Para fazer parte da Torcida é apenas preciso ter dedicação, garra. ser louco pela bata amarela e ter muito orgulho de usá-la!</p>
+
+						<p><a href="fb.com/torcidaorganizada.febreamarela">facebook</a></p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Torcida
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalGaleriaDoaUnesp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Doa Unesp</h2>
+						<hr class="star-primary">
+						<img src="img/galerias/doa-unesp.png" class="img-responsive img-centered" alt="">
+						<p>Doa Unesp</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Galeria
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalGaleriaBaticun" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Baticun</h2>
+						<hr class="star-primary">
+						<img src="img/galerias/baticun.png" class="img-responsive img-centered" alt="">
+						<p>Baticun</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Galeria
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoBasquete" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Basquete</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/basquete.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Basquete.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="modalTreinoAtletismo" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Atletismo</h2>
+						<hr class="star-primary">
+						<img src="img/treinos/atletismo.png" class="img-responsive img-centered" alt="">
+						<p>Treinos de Atletismo.</p>
+
+						<ul class="list-inline item-details">
+							<li>Category:
+								<strong>Treino
+									</strong>
+							</li>
+							<li>Date:
+								<strong>February 2016
+									</strong>
+							</li>
+						</ul>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/freelancer.js"></script>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/marked@0.3.6"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-database.js"></script>
+
+<script src="js/atletica-vue-app.js"></script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-92166189-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>
