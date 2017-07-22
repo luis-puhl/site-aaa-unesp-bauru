@@ -37,7 +37,8 @@
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header page-scroll">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -91,8 +92,7 @@
 				<img class="img-responsive" src="img/logo-atletica.png" alt="">
 				<div class="intro-text">
 					<hr class="star-light">
-					<span class="skills">Associação Atlética Acadêmica Unesp Bauru
-</span>
+					<span class="skills">Associação Atlética Acadêmica Unesp Bauru</span>
 				</div>
 			</div>
 		</div>
@@ -100,7 +100,7 @@
 </header>
 
 
-		<section id="sobre">
+<section id="sobre">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -117,8 +117,7 @@
 	</div>
 </section>
 
-
-		<section id="gestoes">
+<section id="gestoes">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -127,125 +126,31 @@
 			</div>
 		</div>
 		<div class="row">
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2017" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/gestoes/2016-Gaia-0.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2017</h3>
-	</a>
-</div>
+			<gestao-item v-for="gestao in gestoes" v-bind:gestao="gestao" v-bind:key="gestao.id">
+			</gestao-item>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2016" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+			<div class="col-sm-6 grid-item">
+				<a href="#modalGestao2017" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/gestoes/2016-Gaia-0.jpg" class="img-responsive" alt="">
+					<h3 class="grid-title">Gestão 2017</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/gestoes/2016-Gaia-1.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2016</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2015" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/gestoes/2015-Ânima.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2015</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2014" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/gestoes/2014-Invictus.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2014</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2011" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/gestoes/2011-XV-de-ouro.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2011</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2010" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/gestoes/2010.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2010</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2003" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/gestoes/2003.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2003</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-6 grid-item">
-	<a href="#modalGestao2001" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/gestoes/2001-xxxx.jpg" class="img-responsive" alt="">
-		<h3 class="grid-title">Gestão 2001</h3>
-	</a>
-</div>
-
-			
 		</div>
 	</div>
+
+
+	<atletica-modal v-for="gestao in gestoes" v-bind:item="gestao" v-bind:key="gestao.id">
+	</atletica-modal>
 </section>
 
 
-		<section id="treinos" class="grid-content">
+<section id="treinos" class="grid-content">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -254,238 +159,238 @@
 			</div>
 		</div>
 		<div class="row">
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoXadrez" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/treinos/xadrez.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Xadrez</h3>
-	</a>
-</div>
 
-			
 				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoVolei" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoXadrez" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/xadrez.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Xadrez</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/volei.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Vôlei</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoVoleiPraia" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoVolei" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/volei.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Vôlei</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/volei-praia.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Vôlei de Praia</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoTenisMesa" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoVoleiPraia" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/volei-praia.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Vôlei de Praia</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/tenis-mesa.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Tênis de Mesa</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoTenisCampo" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoTenisMesa" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/tenis-mesa.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Tênis de Mesa</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/tenis-campo.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Tênis de Campo</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoNatacao" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoTenisCampo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/tenis-campo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Tênis de Campo</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/natacao.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Natação</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoJudo" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoNatacao" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/natacao.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Natação</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/judo.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Judo</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoHandebol" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoJudo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/judo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Judo</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/handebol.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Handebol</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoFutsal" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoHandebol" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/handebol.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Handebol</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/futsal.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Futsal</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoFutebolCampo" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoFutsal" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/futsal.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Futsal</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/futebol-campo.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Futebol de Campo</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoBasquete" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoFutebolCampo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/futebol-campo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Futebol de Campo</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/basquete.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Basquete</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTreinoAtletismo" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoBasquete" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/basquete.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Basquete</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/treinos/atletismo.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Atletismo</h3>
-	</a>
-</div>
 
-			
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTreinoAtletismo" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/treinos/atletismo.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Atletismo</h3>
+				</a>
+			</div>
+
+
+					</div>
+				</div>
+			</section>
+
+
+					<section id="torcidas">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2>Torcidas</h2>
+							<hr class="star-primary">
+						</div>
+					</div>
+					<div class="row">
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTorcidaTexuguetes" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/torcidas/Logo-Texuguetes.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Texuguetes</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTorcidaNauteria" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/torcidas/Logo-Naumteria.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Nauteria</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalTorcidaFebreAmarela" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/torcidas/Logo-Febre.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Febre Amarela</h3>
+				</a>
+			</div>
+
+
 		</div>
 	</div>
 </section>
 
 
-		<section id="torcidas">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2>Torcidas</h2>
-				<hr class="star-primary">
-			</div>
-		</div>
-		<div class="row">
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTorcidaTexuguetes" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/torcidas/Logo-Texuguetes.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Texuguetes</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTorcidaNauteria" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/torcidas/Logo-Naumteria.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Nauteria</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalTorcidaFebreAmarela" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/torcidas/Logo-Febre.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Febre Amarela</h3>
-	</a>
-</div>
-
-			
-		</div>
-	</div>
-</section>
-
-
-		<section id="produtos">
+<section id="produtos">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -496,30 +401,30 @@
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
-				
+
 					<li data-target="#carousel-example-generic" data-slide-to="/produto/2016/02/01/produto-samba-cancao" ></li>
-				
+
 					<li data-target="#carousel-example-generic" data-slide-to="/produto/2016/02/01/produto-caneca" active></li>
-				
+
 			</ol>
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
-				
+
 					<div class="item">
 						<img src="img/produtos/samba-cancao.png" class="img-responsive" alt="">
 						<div class="carousel-caption">
 							<h3>Samba Canção</h3>
 						</div>
 					</div>
-				
+
 					<div class="item active">
 						<img src="img/produtos/caneca.png" class="img-responsive" alt="">
 						<div class="carousel-caption">
 							<h3>Caneca</h3>
 						</div>
 					</div>
-				
+
 			</div>
 			<!-- Controls -->
 			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -535,7 +440,7 @@
 </section>
 
 
-		<section id="parceiros" class="grid-content">
+<section id="parceiros" class="grid-content">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -544,252 +449,252 @@
 			</div>
 		</div>
 		<div class="row">
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/parceiros/polak/polak.png" class="img-responsive" alt="">
-		<h3 class="grid-title">polak</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/polak/polak.png" class="img-responsive" alt="">
+					<h3 class="grid-title">polak</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/planning/planning.png" class="img-responsive" alt="">
-		<h3 class="grid-title">planning</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/planning/planning.png" class="img-responsive" alt="">
+					<h3 class="grid-title">planning</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/personalize/personalize.png" class="img-responsive" alt="">
-		<h3 class="grid-title">personalize</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/personalize/personalize.png" class="img-responsive" alt="">
+					<h3 class="grid-title">personalize</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/oba-oba/oba-oba.png" class="img-responsive" alt="">
-		<h3 class="grid-title">oba-oba</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/oba-oba/oba-oba.png" class="img-responsive" alt="">
+					<h3 class="grid-title">oba-oba</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/new-time/new-time.png" class="img-responsive" alt="">
-		<h3 class="grid-title">new-time</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/new-time/new-time.png" class="img-responsive" alt="">
+					<h3 class="grid-title">new-time</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/london-eye/london-eye.png" class="img-responsive" alt="">
-		<h3 class="grid-title">london-eye</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/london-eye/london-eye.png" class="img-responsive" alt="">
+					<h3 class="grid-title">london-eye</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/green-brothers/green-brothers.png" class="img-responsive" alt="">
-		<h3 class="grid-title">green-brothers</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/green-brothers/green-brothers.png" class="img-responsive" alt="">
+					<h3 class="grid-title">green-brothers</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/flipper-lanches/flipper-lanches.png" class="img-responsive" alt="">
-		<h3 class="grid-title">flipper-lanches</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/flipper-lanches/flipper-lanches.png" class="img-responsive" alt="">
+					<h3 class="grid-title">flipper-lanches</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/fabria-de-acai/fabria-de-acai.png" class="img-responsive" alt="">
-		<h3 class="grid-title">fabria-de-acai</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/fabria-de-acai/fabria-de-acai.png" class="img-responsive" alt="">
+					<h3 class="grid-title">fabria-de-acai</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/escondidus/escondidus.png" class="img-responsive" alt="">
-		<h3 class="grid-title">escondidus</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/escondidus/escondidus.png" class="img-responsive" alt="">
+					<h3 class="grid-title">escondidus</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/elevenfit/elevenfit.png" class="img-responsive" alt="">
-		<h3 class="grid-title">elevenfit</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/elevenfit/elevenfit.png" class="img-responsive" alt="">
+					<h3 class="grid-title">elevenfit</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/concreto-imoveis/concreto-imoveis.png" class="img-responsive" alt="">
-		<h3 class="grid-title">concreto-imoveis</h3>
-	</a>
-</div>
 
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/concreto-imoveis/concreto-imoveis.png" class="img-responsive" alt="">
+					<h3 class="grid-title">concreto-imoveis</h3>
+				</a>
 			</div>
-		</div>
-		<img src="img/parceiros/acaizando/acaizando.png" class="img-responsive" alt="">
-		<h3 class="grid-title">acaizando</h3>
-	</a>
-</div>
 
-			
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/parceiros/acaizando/acaizando.png" class="img-responsive" alt="">
+					<h3 class="grid-title">acaizando</h3>
+				</a>
+			</div>
+
+
+					</div>
+				</div>
+			</section>
+
+
+					<section id="galeria">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2>Galeria de Eventos</h2>
+							<hr class="star-primary">
+						</div>
+					</div>
+					<div class="row">
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalGaleriaTexugoPascoa" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/galerias/texugo-pascoa.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Texugo da Páscoa</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalGaleriaDoaUnesp" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/galerias/doa-unesp.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Doa Unesp</h3>
+				</a>
+			</div>
+
+
+							<!-- tile.html -->
+			<div class="col-sm-4 grid-item">
+				<a href="#modalGaleriaBaticun" class="grid-link" data-toggle="modal">
+					<div class="grid-caption">
+						<div class="grid-caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img src="img/galerias/baticun.png" class="img-responsive" alt="">
+					<h3 class="grid-title">Baticun</h3>
+				</a>
+			</div>
+
+
 		</div>
 	</div>
 </section>
 
 
-		<section id="galeria">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2>Galeria de Eventos</h2>
-				<hr class="star-primary">
-			</div>
-		</div>
-		<div class="row">
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalGaleriaTexugoPascoa" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/galerias/texugo-pascoa.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Texugo da Páscoa</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalGaleriaDoaUnesp" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/galerias/doa-unesp.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Doa Unesp</h3>
-	</a>
-</div>
-
-			
-				<!-- tile.html -->
-<div class="col-sm-4 grid-item">
-	<a href="#modalGaleriaBaticun" class="grid-link" data-toggle="modal">
-		<div class="grid-caption">
-			<div class="grid-caption-content">
-				<i class="fa fa-search-plus fa-3x"></i>
-			</div>
-		</div>
-		<img src="img/galerias/baticun.png" class="img-responsive" alt="">
-		<h3 class="grid-title">Baticun</h3>
-	</a>
-</div>
-
-			
-		</div>
-	</div>
-</section>
-
-
-		<section id="contato">
+<section id="contato">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -799,7 +704,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12 embed-container">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.63002650651453!2d-49.032176605463725!3d-22.350591942249594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf5dfab88ecb79%3A0x49d5511878f2b402!2sDAFAE!5e0!3m2!1spt-BR!2sbr!4v1491441567610" 
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.63002650651453!2d-49.032176605463725!3d-22.350591942249594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf5dfab88ecb79%3A0x49d5511878f2b402!2sDAFAE!5e0!3m2!1spt-BR!2sbr!4v1491441567610"
 				width="750" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 		</div>
@@ -836,26 +741,26 @@
 				<div class="footer-col col-md-4">
 					<h3>Around the Web</h3>
 					<ul class="list-inline">
-						
+
 						<li>
 							<a href="https://www.facebook.com/atleticaunespbauru1" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
 						</li>
-						
-						
-						
+
+
+
 						<li>
 							<a href="https://github.com/luis-puhl" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
 						</li>
-						
-						
+
+
 						<li>
 							<a href="https://www.instagram.com/atleticaunespbauru1" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
 						</li>
-						
-						
-						
-						
-						
+
+
+
+
+
 					</ul>
 				</div>
 				<div class="footer-col col-md-4">
@@ -883,7 +788,7 @@
 </div>
 
 
-		
+
 <div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-content">
 		<div class="close-modal" data-dismiss="modal">
@@ -1356,29 +1261,29 @@
 						<img src="img/gestoes/2016-Gaia-0.jpg" class="img-responsive img-centered" alt="">
 						<p>Gestão Vivá - 2017</p>
 
-<p><strong>Presidente:</strong> Flávio dos Santos (Negão)</p>
+						<p><strong>Presidente:</strong> Flávio dos Santos (Negão)</p>
 
-<p><strong>Vice-Presidente:</strong> Danilo Lysei (Dan)</p>
+						<p><strong>Vice-Presidente:</strong> Danilo Lysei (Dan)</p>
 
-<p><strong>Secretaria:</strong> Helena Ortega</p>
+						<p><strong>Secretaria:</strong> Helena Ortega</p>
 
-<p><strong>Tesouraria:</strong> Matheus Gomyde (Tati)</p>
+						<p><strong>Tesouraria:</strong> Matheus Gomyde (Tati)</p>
 
-<p><strong>Gestão de Pessoas:</strong> Amanda Geraldini (Feb)</p>
+						<p><strong>Gestão de Pessoas:</strong> Amanda Geraldini (Feb)</p>
 
-<p><strong>Diretoria de Esportes:</strong> Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)</p>
+						<p><strong>Diretoria de Esportes:</strong> Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)</p>
 
-<p><strong>Diretoria de Comunicação:</strong> Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)</p>
+						<p><strong>Diretoria de Comunicação:</strong> Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)</p>
 
-<p><strong>Diretoria de Ação Social:</strong> Isabella Carvalho (Isa), Larissa Duarte (Botafogo)</p>
+						<p><strong>Diretoria de Ação Social:</strong> Isabella Carvalho (Isa), Larissa Duarte (Botafogo)</p>
 
-<p><strong>Diretoria de Patrocínio:</strong> Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)</p>
+						<p><strong>Diretoria de Patrocínio:</strong> Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)</p>
 
-<p><strong>Diretoria de Patrimônio:</strong> Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)</p>
+						<p><strong>Diretoria de Patrimônio:</strong> Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)</p>
 
-<p><strong>Diretoria de Eventos:</strong> Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)</p>
+						<p><strong>Diretoria de Eventos:</strong> Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)</p>
 
-<p><strong>Diretoria de Externos:</strong> Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)</p>
+						<p><strong>Diretoria de Externos:</strong> Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)</p>
 
 
 						<ul class="list-inline item-details">
@@ -1416,29 +1321,29 @@
 						<img src="img/gestoes/2016-Gaia-1.jpg" class="img-responsive img-centered" alt="">
 						<p>Gestão Gaia - 2016:</p>
 
-<p><strong>Presidente:</strong> Henrique Alcântara (Raí);</p>
+						<p><strong>Presidente:</strong> Henrique Alcântara (Raí);</p>
 
-<p><strong>Vice-Presidente:</strong> Manuela Sanches (Manu);</p>
+						<p><strong>Vice-Presidente:</strong> Manuela Sanches (Manu);</p>
 
-<p><strong>Secretaria:</strong> Gabriela Monteiro (Lala);</p>
+						<p><strong>Secretaria:</strong> Gabriela Monteiro (Lala);</p>
 
-<p><strong>Tesouraria:</strong> Matheus Gomyde (Tati)</p>
+						<p><strong>Tesouraria:</strong> Matheus Gomyde (Tati)</p>
 
-<p><strong>Gestão de Pessoas:</strong> Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);</p>
+						<p><strong>Gestão de Pessoas:</strong> Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);</p>
 
-<p><strong>Diretoria de Esportes:</strong> Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);</p>
+						<p><strong>Diretoria de Esportes:</strong> Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);</p>
 
-<p><strong>Diretoria de Comunicação:</strong> Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);</p>
+						<p><strong>Diretoria de Comunicação:</strong> Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);</p>
 
-<p><strong>Diretoria de Ação Social:</strong> Isabella Carvalho (Isa);</p>
+						<p><strong>Diretoria de Ação Social:</strong> Isabella Carvalho (Isa);</p>
 
-<p><strong>Diretoria de Patrocínio:</strong> Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);</p>
+						<p><strong>Diretoria de Patrocínio:</strong> Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);</p>
 
-<p><strong>Diretoria de Patrimônio:</strong> Jacqueline Nusch (Holla);</p>
+						<p><strong>Diretoria de Patrimônio:</strong> Jacqueline Nusch (Holla);</p>
 
-<p><strong>Diretoria de Eventos:</strong> Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)</p>
+						<p><strong>Diretoria de Eventos:</strong> Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)</p>
 
-<p><strong>Diretoria de Externos:</strong> Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).</p>
+						<p><strong>Diretoria de Externos:</strong> Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).</p>
 
 						<ul class="list-inline item-details">
 							<li>Category:
@@ -1790,11 +1695,11 @@
 						<img src="img/torcidas/Logo-Texuguetes.png" class="img-responsive img-centered" alt="">
 						<p>Texuguetes</p>
 
-<p>As Texuguetes são as cheerleaders do campus da Unesp Bauru e elas também alegram a galera na torcida, desde 2006! O cheerleading é um esporte de superação que envolve stunts, pirâmides, saltos, dança, música e também muita animação.</p>
+						<p>As Texuguetes são as cheerleaders do campus da Unesp Bauru e elas também alegram a galera na torcida, desde 2006! O cheerleading é um esporte de superação que envolve stunts, pirâmides, saltos, dança, música e também muita animação.</p>
 
-<p>Para participar dos treinos, não precisa ser ginasta ou ter experiência, basta ter vontade!</p>
+						<p>Para participar dos treinos, não precisa ser ginasta ou ter experiência, basta ter vontade!</p>
 
-<p><a href="fb.com/texuguetes">facebook</a></p>
+						<p><a href="fb.com/texuguetes">facebook</a></p>
 
 						<ul class="list-inline item-details">
 							<li>Category:
@@ -2006,9 +1911,9 @@
 						<img src="img/torcidas/Logo-Naumteria.png" class="img-responsive img-centered" alt="">
 						<p>Naumteria</p>
 
-<p>A Naumteria é a bateria universitária da Unesp Bauru e são eles que tocam nossos hinos e quando tocam, ninguém fica parado! A ideia é apoiar os times que defendem o campus nos jogos, desde amistosos até o Inter! Além de, é claro, mostrar o quão louco é ser da Unesp.</p>
+						<p>A Naumteria é a bateria universitária da Unesp Bauru e são eles que tocam nossos hinos e quando tocam, ninguém fica parado! A ideia é apoiar os times que defendem o campus nos jogos, desde amistosos até o Inter! Além de, é claro, mostrar o quão louco é ser da Unesp.</p>
 
-<p><a href="fb.com/naumteria.unespbauru">facebook</a></p>
+						<p><a href="fb.com/naumteria.unespbauru">facebook</a></p>
 
 						<ul class="list-inline item-details">
 							<li>Category:
@@ -2220,11 +2125,11 @@
 						<img src="img/torcidas/Logo-Febre.png" class="img-responsive img-centered" alt="">
 						<p>Febre Amarela</p>
 
-<p>A Febre Amarela é a Torcida Organizada da Unesp Bauru e são eles que agitam as arquibancadas, gritando e animando o pessoal! O objetivo da Febre é incentivar os times da Unesp Bauru onde quer que eles joguem e caminhar ao lado de seus atletas!</p>
+						<p>A Febre Amarela é a Torcida Organizada da Unesp Bauru e são eles que agitam as arquibancadas, gritando e animando o pessoal! O objetivo da Febre é incentivar os times da Unesp Bauru onde quer que eles joguem e caminhar ao lado de seus atletas!</p>
 
-<p>Para fazer parte da Torcida é apenas preciso ter dedicação, garra. ser louco pela bata amarela e ter muito orgulho de usá-la!</p>
+						<p>Para fazer parte da Torcida é apenas preciso ter dedicação, garra. ser louco pela bata amarela e ter muito orgulho de usá-la!</p>
 
-<p><a href="fb.com/torcidaorganizada.febreamarela">facebook</a></p>
+						<p><a href="fb.com/torcidaorganizada.febreamarela">facebook</a></p>
 
 						<ul class="list-inline item-details">
 							<li>Category:
@@ -2385,20 +2290,19 @@
 </div>
 
 
-		<!-- jQuery -->
+<!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<!-- Contact Form JavaScript
-<script src="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/js/jqBootstrapValidation.js"></script>
-<script src="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/js/contact_me.js"></script>
--->
+
 <!-- Custom Theme JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-freelancer/3.3.7/js/freelancer.min.js"></script>
+<script src="js/freelancer.js"></script>
 
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/marked@0.3.6"></script>
+<script src="js/atletica-vue-app.js"></script>
 
-	</body>
-
+</body>
 </html>
