@@ -1,53 +1,4 @@
-let gestoes = [
-	{
-		id: 'gestao-2017',
-		nome: 'Gestão 2017',
-		img: 'img/gestoes/2016-Gaia-0.jpg',
-		conteudoModal: `# Gestão 2017`,
-	},
-	{
-		id: 'gestao-2016',
-		nome: 'Gestão 2016',
-		img: 'img/gestoes/2016-Gaia-1.jpg',
-		conteudoModal: `# Gestão 2016`,
-	},
-	{
-		id: 'gestao-2015',
-		nome: 'Gestão 2015',
-		img: 'img/gestoes/2015-Ânima.jpg',
-		conteudoModal: `# Gestão 2015`,
-	},
-	{
-		id: 'gestao-2014',
-		nome: 'Gestão 2014',
-		img: 'img/gestoes/2014-Invictus.jpg',
-		conteudoModal: `# Gestão 2014`,
-	},
-	{
-		id: 'gestao-2011',
-		nome: 'Gestão 2011',
-		img: 'img/gestoes/2011-XV-de-ouro.jpg',
-		conteudoModal: `# Gestão 2011`,
-	},
-	{
-		id: 'gestao-2010',
-		nome: 'Gestão 2010',
-		img: 'img/gestoes/2010.jpg',
-		conteudoModal: `# Gestão 2010`,
-	},
-	{
-		id: 'gestao-2003',
-		nome: 'Gestão 2003',
-		img: 'img/gestoes/2003.jpg',
-		conteudoModal: `# Gestão 2003`,
-	},
-	{
-		id: 'gestao-2001',
-		nome: 'Gestão 2001',
-		img: 'img/gestoes/2001-xxxx.jpg',
-		conteudoModal: `# Gestão 2001`,
-	},
-];
+let gestoes = [];
 
 Vue.component('gestao-item', {
 	props: ['gestao'],
@@ -105,6 +56,31 @@ Vue.component('atletica-modal', {
 var gestoesApp = new Vue({
 	el: '#gestoes',
 	data: {
-		gestoes: gestoes,
+		gestoes: [],
 	}
 })
+
+
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyAP3Ad6_c_YZwUMWXEixUU4Uulg_jKV0HE",
+	authDomain: "aaa-unesp-bauru.firebaseapp.com",
+	databaseURL: "https://aaa-unesp-bauru.firebaseio.com",
+	projectId: "aaa-unesp-bauru",
+	storageBucket: "aaa-unesp-bauru.appspot.com",
+	messagingSenderId: "69608239635"
+};
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+var database = firebase.database();
+
+function writeUserData(userId, name, email, imageUrl) {
+	firebase.database().ref('gestoes/').set(gestoes);
+}
+
+let gestoesRef = firebase.database().ref('gestoes/');
+gestoesRef.on('value', function(snapshot) {
+	gestoes = snapshot.val();
+	gestoesApp.gestoes = gestoes;
+});
