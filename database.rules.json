@@ -1,0 +1,10 @@
+{
+	"rules": {
+		"gestoes": {
+			".read": true,
+			".write": "auth != null"
+		},
+		".read": "auth != null",
+		".write": "auth != null"
+	}
+}
