@@ -72,15 +72,14 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// Get a reference to the database service
 var database = firebase.database();
-
-function writeUserData(userId, name, email, imageUrl) {
-	firebase.database().ref('gestoes/').set(gestoes);
-}
+var storage = firebase.storage();
 
 let gestoesRef = firebase.database().ref('gestoes/');
 gestoesRef.on('value', function(snapshot) {
 	gestoes = snapshot.val();
+	gestoes.map(
+		gestao => storage.ref(gestao.img).getDownloadURL().then(url => gestao.img = url)
+	);
 	gestoesApp.gestoes = gestoes;
 });
