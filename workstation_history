@@ -1,0 +1,40 @@
+    1  l
+    2  yarn init 
+    3  yarn add -D webpack
+    4  ./node_modules/.bin/webpack --config webpack.config.js
+    5  yarn build
+    6  yarn add -D file-loader
+    7  yarn build
+    8  clear
+    9  yarn build
+   10  l dist
+   11  yarn add -D style-loader css-loader
+   12  yarn add -D html-webpack-plugin
+   13  yarn build
+   14  l dist
+   15  l
+   16  yarn run watch
+   17  yarn add -D webpack-dev-server
+   18  yarn start
+   19  http-server dist
+   20  yarn add vue
+   21  l
+   22  l node_modules
+   23  l node_modules/vue/
+   24  l node_modules/vue/dist
+   25  yarn start
+   26  yarn build
+   27  http-server dist
+   28  yarn build
+   29  http-server dist
+   30  yarn build && http-server dist
+   31  yarn watch & http-server dist
+   32  yarn add firebase
+   33  gst
+   34  git diff
+   35  clear
+   36  yarn buil
+   37  yarn build
+   38  http-server dist
+   39  yarn build
+   40  http-server dist
