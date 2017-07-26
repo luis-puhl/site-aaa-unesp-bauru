@@ -3,7 +3,7 @@
 # compiled output and firebase build
 /functions
 # /public
-/dist
+# /dist
 /tmp
 /out-tsc
 
