@@ -1,9 +1,13 @@
+/**
+ * Essas depencias estão no `index.html`
+ *
 import Vue from 'vue/dist/vue.common.js';
 import firebase from 'firebase/firebase.js';
 import 'firebase/firebase-app.js';
 import 'firebase/firebase-auth.js';
 import 'firebase/firebase-database.js';
 import 'firebase/firebase-storage.js';
+// */
 
 let gestoes = [];
 
