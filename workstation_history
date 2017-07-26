@@ -1,5 +1,5 @@
     1  l
-    2  yarn init 
+    2  yarn init
     3  yarn add -D webpack
     4  ./node_modules/.bin/webpack --config webpack.config.js
     5  yarn build
@@ -38,3 +38,27 @@
    38  http-server dist
    39  yarn build
    40  http-server dist
+
+$ rm -rf node_modules && yarn
+> Done in 334.33s
+
+
+$ webpack --progress
+clean-webpack-plugin: /app/public has been removed.
+Hash: e01dc6ea6bc7075272fe
+Version: webpack 3.4.1
+Time: 6686ms
+                Asset     Size  Chunks             Chunk Names
+            bundle.js    17 kB       0  [emitted]  main
+           index.html  57.9 kB          [emitted]
+          favicon.ico  51.3 kB          [emitted]
+     css/atletica.css  1.22 kB          [emitted]
+   css/freelancer.css  10.9 kB          [emitted]
+         img/icon.png  11.7 kB          [emitted]
+      img/profile.png  32.3 kB          [emitted]
+     img/1-quadro.png  34.3 kB          [emitted]
+img/logo-atletica.png   120 kB          [emitted]
+   [0] ./src/index.js 66 bytes {0} [built]
+   [1] ./src/js/atletica-vue-app.js 2.56 kB {0} [built]
+   [2] ./src/js/freelancer.js 915 bytes {0} [built]
+Done in 9.84s.

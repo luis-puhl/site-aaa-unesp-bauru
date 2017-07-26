@@ -3798,6 +3798,10 @@ webpack-dev-server@^2.6.1:
     webpack-dev-middleware "^1.11.0"
     yargs "^6.0.0"
 
+webpack-rimraf-plugin@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/webpack-rimraf-plugin/-/webpack-rimraf-plugin-0.0.1-security.tgz#8651b468bfe6ff53e700ea0bc507872831982a8a"
+
 webpack-sources@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.0.1.tgz#c7356436a4d13123be2e2426a05d1dad9cbe65cf"

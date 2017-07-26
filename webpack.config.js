@@ -2,43 +2,34 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const indexParser = function(args) {
-  console.log(args);
-  return args;
+const indexParser = function(content, path) {
+  return content;
 }
+
+const destinationFolder = 'public';
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, destinationFolder)
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: destinationFolder
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(
+      [destinationFolder],
+      {
+        "verbose": true,
+      }
+    ),
     new CopyWebpackPlugin([
-      { from: 'src/index.html' },
+      { from: 'src/index.html', transform: indexParser },
       { from: 'src/favicon.ico' },
+      { from: 'src/css/', to: 'css' },
+      { from: 'src/img/*.*', to: 'img', flatten: true },
     ]),
   ],
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-    ]
-  }
 };
