@@ -1,0 +1,54 @@
+➜  pwa git:(firebase) ✗ yarn && yarn build
+yarn install v0.27.5
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+warning fsevents@1.1.2: The platform "linux" is incompatible with this module.
+info "fsevents@1.1.2" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 775.57s.
+yarn build v0.27.5
+$ node build/build.js
+⠧ building for production...
+Starting to optimize CSS...
+Processing static/css/app.ec5053e15b2a5fe9bbc12eca316a1621.css...
+Processed static/css/app.ec5053e15b2a5fe9bbc12eca316a1621.css, before: 600, after: 528, ratio: 88%
+⠼ building for production...Total precache size is about 128 kB for 5 resources.
+Hash: 304bc2ce136799d59356
+Version: webpack 2.7.0
+Time: 22255ms
+                                                  Asset       Size  Chunks             Chunk Names
+          static/img/icons/apple-touch-icon-180x180.png    4.68 kB          [emitted]
+                  static/js/app.57c1dacf92d359311c8b.js      12 kB       0  [emitted]  app
+             static/js/manifest.ff7debc5d72d6543187e.js    1.51 kB       2  [emitted]  manifest
+    static/css/app.ec5053e15b2a5fe9bbc12eca316a1621.css  528 bytes       0  [emitted]  app
+              static/js/app.57c1dacf92d359311c8b.js.map    38.6 kB       0  [emitted]  app
+static/css/app.ec5053e15b2a5fe9bbc12eca316a1621.css.map    1.29 kB       0  [emitted]  app
+           static/js/vendor.ae75c6b5bea60f5d8cec.js.map     883 kB       1  [emitted]  vendor
+         static/js/manifest.ff7debc5d72d6543187e.js.map    14.6 kB       2  [emitted]  manifest
+                                             index.html    4.07 kB          [emitted]
+            static/img/icons/android-chrome-192x192.png    9.42 kB          [emitted]
+            static/img/icons/android-chrome-512x512.png    29.8 kB          [emitted]
+          static/img/icons/apple-touch-icon-152x152.png    4.05 kB          [emitted]
+               static/js/vendor.ae75c6b5bea60f5d8cec.js     110 kB       1  [emitted]  vendor
+          static/img/icons/apple-touch-icon-120x120.png    3.37 kB          [emitted]
+            static/img/icons/apple-touch-icon-60x60.png    1.49 kB          [emitted]
+                  static/img/icons/apple-touch-icon.png    4.68 kB          [emitted]
+            static/img/icons/apple-touch-icon-76x76.png    1.82 kB          [emitted]
+                     static/img/icons/favicon-16x16.png  799 bytes          [emitted]
+                     static/img/icons/favicon-32x32.png    1.27 kB          [emitted]
+                    static/img/icons/mstile-150x150.png    4.28 kB          [emitted]
+                 static/img/icons/safari-pinned-tab.svg    10.6 kB          [emitted]
+                                   static/manifest.json  430 bytes          [emitted]
+                           static/img/icons/favicon.ico    15.1 kB          [emitted]
+        static/img/icons/msapplication-icon-144x144.png    1.17 kB          [emitted]
+
+  Build complete.
+
+  Tip: built files are meant to be served over an HTTP server.
+  Opening index.html over file:// won't work.
+
+Done in 36.57s.
+➜  pwa git:(firebase) ✗

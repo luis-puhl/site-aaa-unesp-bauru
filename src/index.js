@@ -1,2 +1,2 @@
-import './js/atletica-vue-app.js';
-import './js/freelancer.js';
+import './components/index.js';
+import './js/index.js'; 
