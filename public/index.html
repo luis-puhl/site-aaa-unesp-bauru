@@ -126,14 +126,15 @@
 			</div>
 		</div>
 		<div class="row">
-			<gestao-item v-for="gestao in gestoes" v-bind:gestao="gestao" v-bind:key="gestao.id">
-			</gestao-item>
+			<atletica-tile v-for="gestao in gestoes" v-bind:gestao="gestao" v-bind:key="gestao.id">
+			</atletica-tile>
 
 		</div>
 	</div>
 
 	<atletica-modal v-for="gestao in gestoes" v-bind:item="gestao" v-bind:key="gestao.id">
 	</atletica-modal>
+
 </section>
 
 
@@ -1961,6 +1962,7 @@
 
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/marked@0.3.6"></script>
+<script src="https://unpkg.com/rxjs/bundles/Rx.min.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js"></script>

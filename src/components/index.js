@@ -1,7 +1,7 @@
 import AtleticaTileComponent from './atletica-tile.vue.js';
-import HelloComponent from './Hello.vue';
+import AtleticaModalComponent from './atletica-modal.vue.js';
 
 export default {
   AtleticaTileComponent,
-  HelloComponent,
+  AtleticaModalComponent,
 }
