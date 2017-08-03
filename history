@@ -1,0 +1,42 @@
+    1  clear
+    2  yarn global add vue-cli
+    3  vue --version
+    4  vue-list
+    5  vue
+    6  vue-build
+    7  vue-init
+    8  vue-init pwa site-aaa-unesp-bauru
+    9  mv site-aaa-unesp-bauru/* .
+   10  ls
+   11  l
+   12  l site-aaa-unesp-bauru
+   13  mv site-aaa-unesp-bauru/.* .
+   14  l
+   15  l site-aaa-unesp-bauru
+   16  rm -rf site-aaa-unesp-bauru
+   17  ls
+   18  l
+   19  git status
+   20  git add -A
+   21  git commit -m "vue-init pwa"
+   22  vue-build
+   23  yarn
+   24  yarn build
+   25  http-server -p 80 dist
+   26  yarn start
+   27  gst
+   28  yarn start
+   29  git add -A
+   30  gst
+   31  git commit -m "Executando o projeto inicial"
+   32  ggpush
+   33  vue
+   34  yarn global add yo generator-vue-comp
+   36  yo vue-comp:add-comp
+   37  ls
+   38  ls -lah
+   39  yo vue-comp:add-comp
+   40  l
+   41  pwd
+   42  UID
+   43  $UID

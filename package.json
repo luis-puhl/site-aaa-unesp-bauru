@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Site da Associação Atletica Acadêmica da Unesp de Bauru [take 4].",
   "author": "luis-puhl <luispuhl@gmail.com>",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",

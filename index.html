@@ -4,22 +4,44 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>site-aaa-unesp-bauru</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/icons/favicon-16x16.png">
-    <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
-    <!-- Add to home screen for Android and modern mobile browsers -->
-    <link rel="manifest" href="/static/manifest.json">
-    <meta name="theme-color" content="#4DBA87">
 
-    <!-- Add to home screen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="site-aaa-unesp-bauru">
-    <link rel="apple-touch-icon" href="/static/img/icons/apple-touch-icon-152x152.png">
-    <!-- Add to home screen for Windows -->
-    <meta name="msapplication-TileImage" content="/static/img/icons/msapplication-icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#000000">
+    <title>Atlética UNESP Bauru</title>
+    <meta name="description" content="Associação Atlética Acadêmica Unesp Bauru">
+
+    <!-- FREELANCER / CDN STUFF  -->
+      <!-- Bootstrap Core CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- Custom Fonts -->
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- END STUFF  -->
+
+    <!-- PWA DECLARATION -->
+      <link rel="icon" type="image/png" sizes="32x32" href="/static/img/icons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/static/img/icons/favicon-16x16.png">
+      <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
+      <!-- Add to home screen for Android and modern mobile browsers -->
+      <link rel="manifest" href="/static/manifest.json">
+      <meta name="theme-color" content="#4DBA87">
+
+      <!-- Add to home screen for Safari on iOS -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="site-aaa-unesp-bauru">
+      <link rel="apple-touch-icon" href="/static/img/icons/apple-touch-icon-152x152.png">
+      <!-- Add to home screen for Windows -->
+      <meta name="msapplication-TileImage" content="/static/img/icons/msapplication-icon-144x144.png">
+      <meta name="msapplication-TileColor" content="#000000">
+    <!-- END PWA DECLARATION -->
+
     <% for (var chunk of webpack.chunks) {
         for (var file of chunk.files) {
           if (file.match(/\.(js|css)$/)) { %>
@@ -27,7 +49,8 @@
   </head>
   <body>
     <noscript>
-      This is your fallback content in case JavaScript fails to load.
+      <p>Não foi possível carregar o site. Seu navegador não carregou nosso JavaScript.</p>
+      <p>Could not load site. Your browser did not load our JavaScript.</p>
     </noscript>
     <div id="app"></div>
     <!-- Todo: only include in production -->
