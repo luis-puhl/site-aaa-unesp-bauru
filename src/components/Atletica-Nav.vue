@@ -53,7 +53,20 @@
 
 <script>
 export default {
-  name: 'atletica-nav'
+  name: 'atletica-nav',
+  mounted: () => {
+    /* eslint-disable no-undef */
+    $('body').scrollspy({
+      target: '.navbar-fixed-top',
+      offset: 51
+    })
+    /* eslint-disable no-undef */
+    $('#mainNav').affix({
+      offset: {
+        top: 100
+      }
+    })
+  }
 }
 </script>
 
