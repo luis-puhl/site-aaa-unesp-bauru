@@ -8,7 +8,7 @@
 
 - [ ] :construction: Retângulo na base do A-AAA + claro que o fundo -> Fundo da imagem era amarelo, agora é transparente;
 - [ ] :newspaper: Bateria e texuguetes não são torcida, colocar na 'instituições Unesp Bauru';
-- [ ] :construction: Buraco ao lado da foto Gestçao 2015;
+- [ ] :construction: Buraco ao lado da foto Gestão 2015;
 - [ ] :newspaper: Judô falta acento;
 - [ ] :newspaper: Grafia correta é Naumteria (no site está errado, [:warning:nauteria:warning:]);
 - [ ] :newspaper: Alguns nomes de parceiros estão errados;
@@ -21,7 +21,7 @@
 
 ## Itens avaliados na reunião
 
-- Cassificação dos itens da diretoria em:
+- Classificação dos itens da diretoria em:
   - **:newspaper: conteúdo:** serão resolvidos com o editor de conteúdo,
   - **:construction: estrutura:** .
 - [ ] :construction: Imagem dos posts no [Imgur.com](imgur.com) como parte da solução para o tempo de carregamento da página;
@@ -32,7 +32,7 @@
 - [ ] :construction: Editor de conteúdo:
   - [ ] Editor de posts,
   - [ ] Login,
-  - [ ] Pemissão de usuários,
+  - [ ] Permissão de usuários,
 - [ ] **:newspaper: Corrigir conteúdo**;
 - [ ] :construction: Otimização de carregamento:
   - [ ] Dados estáticos para o first-load (placeholders na store),
