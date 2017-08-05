@@ -6,18 +6,18 @@
 
 ## Itens avaliados pela diretoria
 
-- [ ] :construction: Retângulo na base do A-AAA + claro que o fundo -> Fundo da imagem era amarelo, agora é transparente;
+- [x] :question::construction: Retângulo na base do A-AAA + claro que o fundo -> Fundo da imagem era amarelo, agora é transparente;
 - [ ] :newspaper: Bateria e texuguetes não são torcida, colocar na 'instituições Unesp Bauru';
 - [ ] :construction: Buraco ao lado da foto Gestão 2015;
-- [ ] :newspaper: Judô falta acento;
-- [ ] :newspaper: Grafia correta é Naumteria (no site está errado, [:warning:nauteria:warning:]);
+- [x] :question::newspaper: Judô falta acento;
+- [x] :question::newspaper: Grafia correta é Naumteria (no site está errado, [:warning:nauteria:warning:]);
 - [ ] :newspaper: Alguns nomes de parceiros estão errados;
 - [ ] :newspaper: Foto da gestão 2017 está errada;
 - [ ] :newspaper: Secretaria: Beatriz Scursoni (viola)
 - [ ] :newspaper: Faltam parceiros;
 - [ ] :construction: Demora [mto] para carregar as fotos (na infraestrutura da google);
 - [ ] :construction: A foto de 2014 não está alinhada -> problema com o tamanho do tile;
-- [x] :construction: Localização não está correto -> [Verificar posse no google my business](https://goo.gl/maps/xtQp7bpKhb42);
+- [x] :question::construction: Localização não está correto -> [Verificar posse no google my business](https://goo.gl/maps/xtQp7bpKhb42);
 
 ## Itens avaliados na reunião
 
@@ -26,8 +26,9 @@
   - **:construction: estrutura:** .
 - [ ] :construction: Imagem dos posts no [Imgur.com](imgur.com) como parte da solução para o tempo de carregamento da página;
 - [ ] :construction: Conteúdo e Componentes em production (www.atleticaunespbauru.com.br):
-  - [ ] Componente Tile,
-  - [ ] Pagina principal com todas as seções,
+  - [x] Pagina principal com todas as seções,
+  - [ ] Componente Tile:
+    - [ ] Fix
   - [ ] Componente Modal (talvez vire uma página),
 - [ ] :construction: Editor de conteúdo:
   - [ ] Editor de posts,

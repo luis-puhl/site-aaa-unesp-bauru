@@ -3,10 +3,16 @@
     <atletica-nav></atletica-nav>
     <atletica-header></atletica-header>
     <main>
-      <atletica-gestoes></atletica-gestoes>
-      <router-view></router-view>
+      <atletica-section v-bind:items="gestoes" v-bind:config="{nome: 'Gestões'}"></atletica-section>
+      <atletica-section v-bind:items="treinos" v-bind:config="{nome: 'Treinos'}"></atletica-section>
+      <atletica-section v-bind:items="torcidas" v-bind:config="{nome: 'Torcidas'}"></atletica-section>
+      <atletica-section v-bind:items="produtos" v-bind:config="{nome: 'Produtos'}"></atletica-section>
+      <atletica-section v-bind:items="parceiros" v-bind:config="{nome: 'Clube de Parceiros'}"></atletica-section>
+      <atletica-section v-bind:items="eventos" v-bind:config="{nome: 'Galeria de Eventos'}"></atletica-section>
+      <!-- <router-view></router-view> -->
     </main>
     <atletica-contato></atletica-contato>
+    <atletica-footer></atletica-footer>
   </div>
 </template>
 
@@ -14,8 +20,11 @@
 import AtleticaNav from '@/components/Atletica-Nav'
 import AtleticaHeader from '@/components/Atletica-Header'
 import AtleticaTile from '@/components/Atletica-Tile'
-import AtleticaGestoes from '@/components/Atletica-Gestoes'
+import AtleticaSection from '@/components/Atletica-Section'
 import AtleticaContato from '@/components/Atletica-Contato'
+import AtleticaFooter from '@/components/Atletica-Footer'
+
+import data from './api/aaa-unesp-bauru-export.json'
 
 export default {
   name: 'atletica-app',
@@ -23,8 +32,19 @@ export default {
     AtleticaNav,
     AtleticaHeader,
     AtleticaTile,
-    AtleticaGestoes,
-    AtleticaContato
+    AtleticaSection,
+    'atletica-contato': AtleticaContato,
+    AtleticaFooter
+  },
+  data () {
+    return {
+      gestoes: data['gestoes'],
+      treinos: data['treinos'],
+      torcidas: data['torcidas'],
+      produtos: data['produtos'],
+      parceiros: data['parceiros'],
+      eventos: data['eventos']
+    }
   }
 }
 </script>
