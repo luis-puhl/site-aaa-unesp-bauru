@@ -1,5 +1,5 @@
 <template>
-  <section id="gestoes">
+  <section v-bind:id="config.htmlID">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="row">
-        <atletica-tile v-for="gestao in items" v-bind:tile="gestao" v-bind:key="gestao.id">
+        <atletica-tile v-for="item in items" v-bind:tile="item" v-bind:key="item.id" v-bind:bootstrapItemClass="config.bootstrapItemClass">
         </atletica-tile>
       </div>
     </div>
@@ -19,11 +19,25 @@
 import AtleticaTile from '@/components/Atletica-Tile'
 
 export default {
-  name: 'atletica-gestoes',
-  props: [
-    'config',
-    'items'
-  ],
+  name: 'atletica-section',
+  props: {
+    'config': {
+      type: Object,
+      default: function () {
+        return {
+          htmlID: 'section',
+          nome: 'Titulo da Section',
+          bootstrapItemClass: 'col-sm-4'
+        }
+      }
+    },
+    'items': {
+      type: Array,
+      default: function () {
+        return []
+      }
+    }
+  },
   components: {
     AtleticaTile
   }

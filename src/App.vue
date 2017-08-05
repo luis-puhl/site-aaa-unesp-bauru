@@ -3,12 +3,10 @@
     <atletica-nav></atletica-nav>
     <atletica-header></atletica-header>
     <main>
-      <atletica-section v-bind:items="gestoes" v-bind:config="{nome: 'Gestões'}"></atletica-section>
-      <atletica-section v-bind:items="treinos" v-bind:config="{nome: 'Treinos'}"></atletica-section>
-      <atletica-section v-bind:items="torcidas" v-bind:config="{nome: 'Torcidas'}"></atletica-section>
-      <atletica-section v-bind:items="produtos" v-bind:config="{nome: 'Produtos'}"></atletica-section>
-      <atletica-section v-bind:items="parceiros" v-bind:config="{nome: 'Clube de Parceiros'}"></atletica-section>
-      <atletica-section v-bind:items="eventos" v-bind:config="{nome: 'Galeria de Eventos'}"></atletica-section>
+      <atletica-section
+        v-for="section in sections" v-bind:key="section.config.htmlID"
+        v-bind:items="section.items" v-bind:config="section.config">
+      </atletica-section>
       <!-- <router-view></router-view> -->
     </main>
     <atletica-contato></atletica-contato>
@@ -26,6 +24,8 @@ import AtleticaFooter from '@/components/Atletica-Footer'
 
 import data from './api/aaa-unesp-bauru-export.json'
 
+window.data = data
+
 export default {
   name: 'atletica-app',
   components: {
@@ -38,12 +38,44 @@ export default {
   },
   data () {
     return {
-      gestoes: data['gestoes'],
-      treinos: data['treinos'],
-      torcidas: data['torcidas'],
-      produtos: data['produtos'],
-      parceiros: data['parceiros'],
-      eventos: data['eventos']
+      mockData: data,
+      sections: [
+        { gestoes: data['gestoes'] },
+        { treinos: data['treinos'] },
+        { torcidas: data['torcidas'] },
+        { produtos: data['produtos'] },
+        { parceiros: data['parceiros'] },
+        { eventos: data['eventos'] }
+      ].map(
+        section => ({
+          items: Object.values(section)[0],
+          k: Object.keys(section)[0],
+          config: {
+            nome: 'nome',
+            htmlID: 'id'
+          }
+        })
+      ).map(
+        section => ({
+          section,
+          nome: ((k) => {
+            switch (k) {
+              case 'treinos':
+                return 'Treinos'
+              case 'torcidas':
+                return 'Torcidas'
+              case 'produtos':
+                return 'Produtos'
+              case 'parceiros':
+                return 'Clube de Parceiros'
+              case 'eventos':
+                return 'Galeria de Eventos'
+              default:
+                return 'section'
+            }
+          })(section.k)
+        })
+      )
     }
   }
 }

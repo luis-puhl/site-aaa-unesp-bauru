@@ -24,11 +24,13 @@
 - Classificação dos itens da diretoria em:
   - **:newspaper: conteúdo:** serão resolvidos com o editor de conteúdo,
   - **:construction: estrutura:** .
-- [ ] :construction: Imagem dos posts no [Imgur.com](imgur.com) como parte da solução para o tempo de carregamento da página;
+- [x] :construction: Imagem dos posts no [Imgur.com](imgur.com) como parte da solução para o tempo de carregamento da página;
 - [ ] :construction: Conteúdo e Componentes em production (www.atleticaunespbauru.com.br):
   - [x] Pagina principal com todas as seções,
   - [ ] Componente Tile:
-    - [ ] Fix
+    - [x] Controle do número de colunas;
+    - [ ] Fix tamanho das fotos;
+    - [ ] Use grid layout;
   - [ ] Componente Modal (talvez vire uma página),
 - [ ] :construction: Editor de conteúdo:
   - [ ] Editor de posts,
