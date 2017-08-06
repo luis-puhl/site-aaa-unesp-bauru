@@ -38,7 +38,7 @@
             <a href="#parceiros">Parceiros</a>
           </li>
           <li class="page-scroll">
-            <a href="#galeria">Galeria</a>
+            <a href="#eventos">Galeria</a>
           </li>
           <li class="page-scroll">
             <a href="#contato">Contato</a>

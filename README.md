@@ -29,7 +29,9 @@
   - [x] Pagina principal com todas as seções,
   - [ ] Componente Tile:
     - [x] Controle do número de colunas;
-    - [ ] Fix tamanho das fotos;
+    - [ ] Fix tamanho das fotos:
+      - [x] Tiles com Tamanho padrão [position absolute](http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/);
+      - [ ] Cortar as fotos para um tamanho fixo.
     - [ ] Use grid layout;
   - [ ] Componente Modal (talvez vire uma página),
 - [ ] :construction: Editor de conteúdo:

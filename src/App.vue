@@ -22,9 +22,9 @@ import AtleticaSection from '@/components/Atletica-Section'
 import AtleticaContato from '@/components/Atletica-Contato'
 import AtleticaFooter from '@/components/Atletica-Footer'
 
-import data from './api/aaa-unesp-bauru-export.json'
+import { sections } from '@/api/local-data'
 
-window.data = data
+window.sections = sections
 
 export default {
   name: 'atletica-app',
@@ -38,44 +38,7 @@ export default {
   },
   data () {
     return {
-      mockData: data,
-      sections: [
-        { gestoes: data['gestoes'] },
-        { treinos: data['treinos'] },
-        { torcidas: data['torcidas'] },
-        { produtos: data['produtos'] },
-        { parceiros: data['parceiros'] },
-        { eventos: data['eventos'] }
-      ].map(
-        section => ({
-          items: Object.values(section)[0],
-          k: Object.keys(section)[0],
-          config: {
-            nome: 'nome',
-            htmlID: 'id'
-          }
-        })
-      ).map(
-        section => ({
-          section,
-          nome: ((k) => {
-            switch (k) {
-              case 'treinos':
-                return 'Treinos'
-              case 'torcidas':
-                return 'Torcidas'
-              case 'produtos':
-                return 'Produtos'
-              case 'parceiros':
-                return 'Clube de Parceiros'
-              case 'eventos':
-                return 'Galeria de Eventos'
-              default:
-                return 'section'
-            }
-          })(section.k)
-        })
-      )
+      sections
     }
   }
 }
