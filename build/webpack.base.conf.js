@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../static/img/icons/favicon.ico'),
+        from: path.resolve(__dirname, '../static/img/atletica-icons-alpha/favicon.ico'),
         to: config.build.assetsRoot
       }
     ])
