@@ -41,3 +41,9 @@ export let sections = [
     }
   })
 )
+
+export let posts = Object.values(data)
+  .reduce(
+    (posts, section) => posts.concat(section),
+    []
+  )

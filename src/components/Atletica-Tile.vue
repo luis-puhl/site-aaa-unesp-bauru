@@ -1,6 +1,6 @@
 <template>
   <div class="grid-item tile" v-bind:class="[tile.class, bootstrapItemClass]">
-    <a v-bind:href="'#modal-' + tile.id" class="grid-link" data-toggle="modal">
+    <router-link :to="'post/' + tile.id" class="grid-link">
       <div class="grid-caption">
         <div class="grid-caption-content">
           <i class="fa fa-search-plus fa-3x"></i>
@@ -10,7 +10,7 @@
         <img v-bind:src="tile.img" class="img-responsive tile-image" v-bind:alt="tile.img">
       </div>
       <h3 class="grid-title">{{ tile.nome }}</h3>
-    </a>
+    </router-link>
   </div>
 </template>
 

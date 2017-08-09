@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import AtleticaHome from '@/components/Atletica-Home'
+import AtleticaPost from '@/components/Atletica-Post'
 
 Vue.use(Router)
 
@@ -8,8 +9,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      component: AtleticaHome
+    },
+    {
+      path: '/post/:id',
+      component: AtleticaPost,
+      props: (route) => ({ id: route.params.id })
     }
   ]
 })
