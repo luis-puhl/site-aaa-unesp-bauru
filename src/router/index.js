@@ -6,6 +6,7 @@ import AtleticaPost from '@/components/Atletica-Post'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -16,5 +17,17 @@ export default new Router({
       component: AtleticaPost,
       props: (route) => ({ id: route.params.id })
     }
-  ]
+  ],
+  scrollBehavior: function (to, from, savedPosition) {
+    console.log({
+      scrollBehavior: {
+        to, from, savedPosition
+      }
+    })
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })

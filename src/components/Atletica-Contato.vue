@@ -7,6 +7,7 @@
           <hr class="star-primary">
         </div>
       </div>
+      <!--
       <div class="row">
         <div class="col-12 embed-container">
           <iframe width="750" height="450" frameborder="0" style="border:0" allowfullscreen
@@ -15,6 +16,7 @@
           ></iframe>
         </div>
       </div>
+    -->
     </div>
   </section>
 </template>
