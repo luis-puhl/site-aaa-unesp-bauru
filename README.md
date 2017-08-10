@@ -33,20 +33,43 @@
       - [x] Tiles com Tamanho padrão [position absolute](http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/);
       - [ ] Cortar as fotos para um tamanho fixo.
     - [ ] Use grid layout;
-  - [ ] Componente Modal (talvez vire uma página),
+  - [x] ~~Componente Modal (talvez vire uma página)~~ Componente Postagem,
 - [ ] :construction: Editor de conteúdo:
   - [ ] Editor de posts,
   - [ ] Login,
   - [ ] Permissão de usuários,
 - [ ] **:newspaper: Corrigir conteúdo**;
 - [ ] :construction: Otimização de carregamento:
-  - [ ] Dados estáticos para o first-load (placeholders na store),
+  - [ ] Dados estáticos para o first-load
+    - [x] Dados estáticos;
+    - [ ] Uso do vuex Store;
   - [ ] Bibliotecas em CDN,
-  - [ ] Fotos em CDN (imgur),
+  - [x] Fotos em CDN (imgur),
   - [ ] Fotos responsivas à rede (blur inicial),
 - Dead-lines :skull:
   - [ ] Apresentação do funcionamento do site (atulazações) para o pessoal de comunicação da Atlética em 2017-08-18 (em 2 semanas);
   - [ ] Entrega final do site em 2017-08-25 (em 3 semanas);
+- Bugs conhecidos:
+  - **Menu**
+    - [ ] Menu não desaparece quando um item é selecionado;
+    - [ ] Menu fica por cima de alguns items;
+  - **Pagina principal**
+    - [ ] Os Tiles tem tamanhos diferentes;
+
+# Lighthouse Reports
+
+ - 10-08-2016:
+  - *PWA*: 100%
+  - *Performance*: 49%
+    - 7.9s para carregar;
+    - 4.3s para o primeiro desenho;
+    - *Onde melhorar*:
+      - [ ] Imagens menores (3s)
+      - [ ] Não carregar imagens fora da tela inicial (2s)
+      - [ ] Reduzir estilos que bloqueiam a renderização (1s)
+  - *a11y*: 100%
+  - *Best Practices*: 92% (google maps)
+
 
 # Build Setup
 
