@@ -24,6 +24,13 @@ export default new Router({
         to, from, savedPosition
       }
     })
+    if (to && to.path === '/' && from && from.params && from.params.id) {
+      const selector = {
+        selector: '#' + from.params.id
+      }
+      console.log(selector)
+      return selector
+    }
     if (savedPosition) {
       return savedPosition
     } else {

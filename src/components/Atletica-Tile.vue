@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-item tile" v-bind:class="[tile.class, bootstrapItemClass]">
+  <div class="grid-item tile" v-bind:id="tile.id" v-bind:class="[tile.class, bootstrapItemClass]">
     <router-link :to="'post/' + tile.id" class="grid-link">
       <div class="grid-caption">
         <div class="grid-caption-content">

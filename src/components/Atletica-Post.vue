@@ -5,9 +5,9 @@
           <div class="modal-body">
              <h2 class="post-title">{{ post.nome }}</h2>
              <hr class="star-primary">
-             <img v-bind:src=" post.img " class="img-responsive img-centered" alt="">
+             <img v-bind:src="post.img" class="img-responsive img-centered" alt="">
              <div v-html="compiledMarkdown"></div>
-             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+             <button type="button" onClick="history.back()" class="btn btn-default">Voltar</button>
           </div>
        </div>
      </div>
