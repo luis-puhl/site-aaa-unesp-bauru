@@ -19,22 +19,25 @@ export default new Router({
     }
   ],
   scrollBehavior: function (to, from, savedPosition) {
+    /**
+     * Inspired by https://github.com/vuejs/vue-router/blob/dev/examples/scroll-behavior/app.js
+     */
+    let position = {}
+    if (to && to.path === '/' && from && from.params && from.params.id) {
+      position.selector = '#' + from.params.id
+    } else if (to.hash) {
+      position.selector = to.hash
+    } else if (savedPosition) {
+      position = savedPosition
+    } else {
+      position.x = 0
+      position.y = 0
+    }
     console.log({
       scrollBehavior: {
-        to, from, savedPosition
+        to, from, savedPosition, position
       }
     })
-    if (to && to.path === '/' && from && from.params && from.params.id) {
-      const selector = {
-        selector: '#' + from.params.id
-      }
-      console.log(selector)
-      return selector
-    }
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
-    }
+    return position
   }
 })
