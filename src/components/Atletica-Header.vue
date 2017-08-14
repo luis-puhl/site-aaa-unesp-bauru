@@ -4,7 +4,7 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-12">
-                  <img class="img-responsive" src="../assets/logo-atletica-tranparent.png"
+                  <img class="img-responsive" src="../assets/logo-atletica-tiny.png"
                   alt="Logo Horizontal Associação Atlética Acadêmica Unesp Bauru"
                   width="1140" height="252"
                   >
