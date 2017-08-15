@@ -4,7 +4,7 @@ import Vue from 'vue'
 
 import AtleticaApp from '@/AtleticaApp'
 import router from '@/router'
-import store from '@/store'
+import { AtleticaStore } from '@/store'
 
 import '@/css/freelancer.css'
 import '@/css/atletica.css'
@@ -15,7 +15,7 @@ Vue.config.productionTip = false
 window.vueApp = new Vue({
   el: '#app',
   router,
-  store,
+  store: AtleticaStore,
   template: '<atletica-app/>',
   components: {
     'atletica-app': AtleticaApp

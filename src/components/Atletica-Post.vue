@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { posts } from '@/api/local-data'
 import marked from 'marked'
 
 export default {
@@ -26,6 +25,11 @@ export default {
       default: function () {
         return ''
       }
+    }
+  },
+  data () {
+    return {
+      post: this.$store.state.dummyPost
     }
   },
   watch: {
@@ -44,28 +48,21 @@ export default {
     // don't forget to call next()
     return next()
   },
+  created () {
+    this.$store.dispatch('getPosts').then(
+      post => {
+        console.log({'atletica-post -> subscribe': post, 'atletica-post': this})
+        this.post = post
+      }
+    )
+  },
   computed: {
-    post: function () {
-      const dummyPost = {
-        id: 0,
-        nome: 'Titulo do Tile',
-        class: 'tile-tile',
-        img: '',
-        conteudoModal: '# Conteúdo do post'
-      }
-      if (!this.id) {
-        return dummyPost
-      }
-      const currPosts = posts.filter(
-        post => post.id === this.id
-      )
-      if (!currPosts || currPosts.length <= 0) {
-        return dummyPost
-      }
-      return currPosts[0]
-    },
     compiledMarkdown: function () {
-      return marked(this.post.conteudoModal, { sanitize: true })
+      let conteudoMarkdown = this.post.conteudoModal
+      if (!conteudoMarkdown) {
+        conteudoMarkdown = 'Este post ainda não tem conteúdo'
+      }
+      return marked(conteudoMarkdown, { sanitize: true })
     }
   }
 }

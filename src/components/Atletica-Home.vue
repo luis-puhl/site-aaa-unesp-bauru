@@ -15,8 +15,6 @@ import AtleticaSection from '@/components/Atletica-Section'
 import AtleticaHeader from '@/components/Atletica-Header'
 import AtleticaContato from '@/components/Atletica-Contato'
 
-import { sections } from '@/api/local-data'
-
 export default {
   name: 'atletica-home',
   components: {
@@ -24,9 +22,9 @@ export default {
     AtleticaContato,
     AtleticaSection
   },
-  data () {
-    return {
-      sections
+  computed: {
+    sections () {
+      return this.$store.state.sections
     }
   }
 }
