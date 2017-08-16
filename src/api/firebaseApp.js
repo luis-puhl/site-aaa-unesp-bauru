@@ -28,12 +28,17 @@ FirebaseApp.init()
 export const firebaseDatabase = FirebaseApp.database
 export const firebaseStorage = FirebaseApp.storage
 
+export function getSections () {
+  console.log('FirebaseApp: getSections')
+  return new BehaviorSubject(sections)
+}
+
 export function getPosts () {
+  console.log('FirebaseApp: getPosts')
   const posts = sections.reduce(
     (posts, section) => posts.concat(section.items),
     []
   )
-  console.log(posts)
   const postsSubject = new BehaviorSubject(posts)
   FirebaseApp.database.ref('/gestoes').on(
     'value',
@@ -47,13 +52,18 @@ export function getPosts () {
 }
 
 export function getPost (id) {
-  const postsSubject = new BehaviorSubject(sections)
-  FirebaseApp.database.ref(`/gestoes/${id}`).on(
+  console.log('FirebaseApp: getPost')
+  const posts = sections.reduce(
+    (posts, section) => posts.concat(section.items),
+    []
+  )
+  const postsSubject = new BehaviorSubject(posts.find(post => post.id === id))
+  FirebaseApp.database.ref(`/gestoes`).on(
     'value',
     dataSnapshot => {
       const data = dataSnapshot.val()
       console.log({'getPost': id, 'firebaseResult': data})
-      postsSubject.next(data)
+      postsSubject.next(data.find(post => post.id === id))
     }
   )
   return postsSubject.filter(value => value !== null)

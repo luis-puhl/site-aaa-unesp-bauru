@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <atletica-nav></atletica-nav>
-    <router-view></router-view>
+    <div class="clear-top">
+      <router-view></router-view>
+    </div>
     <atletica-footer></atletica-footer>
   </div>
 </template>
@@ -20,4 +22,12 @@ export default {
 </script>
 
 <style>
+.clear-top {
+  margin-top: 50px;
+}
+@media (min-width: 768px) {
+  .clear-top {
+    margin-top: 150px;
+  }
+}
 </style>

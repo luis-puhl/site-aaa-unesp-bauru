@@ -27,9 +27,19 @@ export default {
       }
     }
   },
-  data () {
-    return {
-      post: this.$store.state.dummyPost
+  created () {
+    this.$store.dispatch('getPost', this.id)
+  },
+  computed: {
+    post () {
+      return this.$store.getters.postByIdOrDummy(this.id)
+    },
+    compiledMarkdown () {
+      let conteudoMarkdown = this.post.conteudoModal
+      if (!conteudoMarkdown) {
+        conteudoMarkdown = 'Este post ainda não tem conteúdo'
+      }
+      return marked(conteudoMarkdown, { sanitize: true })
     }
   },
   watch: {
@@ -47,23 +57,6 @@ export default {
     // react to route changes...
     // don't forget to call next()
     return next()
-  },
-  created () {
-    this.$store.dispatch('getPosts').then(
-      post => {
-        console.log({'atletica-post -> subscribe': post, 'atletica-post': this})
-        this.post = post
-      }
-    )
-  },
-  computed: {
-    compiledMarkdown: function () {
-      let conteudoMarkdown = this.post.conteudoModal
-      if (!conteudoMarkdown) {
-        conteudoMarkdown = 'Este post ainda não tem conteúdo'
-      }
-      return marked(conteudoMarkdown, { sanitize: true })
-    }
   }
 }
 </script>
@@ -72,13 +65,5 @@ export default {
 <style scoped>
 h2 {
   text-align: center;
-}
-.post {
-  margin-top: 50px;
-}
-@media (min-width: 768px) {
-  .post {
-    margin-top: 150px;
-  }
 }
 </style>

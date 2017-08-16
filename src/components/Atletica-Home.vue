@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import AtleticaSection from '@/components/Atletica-Section'
 
 import AtleticaHeader from '@/components/Atletica-Header'
@@ -23,9 +25,12 @@ export default {
     AtleticaSection
   },
   computed: {
-    sections () {
-      return this.$store.state.sections
-    }
+    ...mapGetters([
+      'sections'
+    ])
+  },
+  created () {
+    this.$store.dispatch('getSections')
   }
 }
 </script>

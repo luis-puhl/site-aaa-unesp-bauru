@@ -4,7 +4,7 @@ import Vue from 'vue'
 
 import AtleticaApp from '@/AtleticaApp'
 import router from '@/router'
-import { AtleticaStore } from '@/store'
+import { AtleticaStore } from '@/store/store'
 
 import '@/css/freelancer.css'
 import '@/css/atletica.css'

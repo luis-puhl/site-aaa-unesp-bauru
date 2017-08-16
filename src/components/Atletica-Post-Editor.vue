@@ -1,6 +1,8 @@
 <template>
-  <atletica-post :id=''>
-  </atletica-post>
+  <main>
+    <h1>Editar post</h1>
+    <atletica-post v-bind:id="id"></atletica-post>
+  </main>
 </template>
 
 <script>
@@ -18,9 +20,12 @@ export default {
       }
     }
   },
-  data () {
-    return {
-      post: this.$store.state.dummyPost
+  created () {
+    this.$store.dispatch('getPost', this.id)
+  },
+  computed: {
+    post () {
+      return this.$store.getters.postByIdOrDummy(this.id)
     }
   },
   watch: {
@@ -30,7 +35,7 @@ export default {
       })
       return to
     }
-  },
+  }
 }
 </script>
 
