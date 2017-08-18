@@ -7,7 +7,12 @@
              <hr class="star-primary">
              <img v-bind:src="post.img" class="img-responsive img-centered" alt="">
              <div v-html="compiledMarkdown"></div>
-             <button type="button" onClick="history.back()" class="btn btn-default">Voltar</button>
+             <button type="button" onClick="history.back()" class="btn btn-default">
+               Voltar
+             </button>
+             <router-link :to="{ name: 'editPost', id }" class="btn btn-default">
+               Editar
+             </router-link>
           </div>
        </div>
      </div>

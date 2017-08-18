@@ -8,7 +8,8 @@
         </div>
       </div>
       <div class="row">
-        <atletica-tile v-for="item in items" v-bind:tile="item" v-bind:key="item.id" v-bind:bootstrapItemClass="config.bootstrapItemClass">
+        <atletica-tile v-for="item in items" v-bind:tile="item" v-bind:key="item.id"
+        v-bind:bootstrapItemClass="config.bootstrapItemClass">
         </atletica-tile>
       </div>
     </div>
