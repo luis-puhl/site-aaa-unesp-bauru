@@ -1,52 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import { AtleticaFirebaseApp } from '@/api/firebaseApp'
-
-export const ADD_POST = 'ADD_POST'
-export const FIND_POST = 'FIND_POST'
-
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
-const firebase = new AtleticaFirebaseApp()
 
-const homeModule = {
-  state: {
-    sections: [
-      {
-        id: 'gestoes',
-        nome: 'Gestões',
-        posts: [
-          'gestao-2017',
-          'gestao-2016'
-        ]
-      },
-      {
-        id: 'produtos',
-        nome: 'Produtos',
-        posts: [
-          'produto-Blusa',
-          'produto-Moletom'
-        ]
-      }
-    ]
-  },
-  getters: {
-    sections: state => {
-      const sectionsWithPosts = state.homeModule.sections.map(
-        section => {
-          console.log(section)
-          return section.posts.map(
-            sectionPost => state.posts.find(post => post.id === sectionPost)
-          )
-        }
-      )
-      console.log(sectionsWithPosts)
-      return sectionsWithPosts
-    }
-  }
-}
+import { HomeModule } from './home-module'
+import { PostsModule } from './posts-module'
 
 export const AtleticaStore = new Vuex.Store({
   state: {
@@ -73,72 +33,17 @@ export const AtleticaStore = new Vuex.Store({
         'img': 'https://i.imgur.com/7JJkjR9.png',
         'nome': 'Moletom'
       }
-    ],
-    dummyPost: {
-      id: 0,
-      nome: 'Titulo do Tile',
-      class: 'tile-tile',
-      img: '',
-      conteudoModal: '# Conteúdo do post'
-    },
-    currentPostId: ''
+    ]
   },
   getters: {
-    dummyPost: state => {
-      return state.dummyPost
-    },
-    postById: (state, getters) => postId => {
-      return state.posts.find(
-        post => post.id === postId
-      )
-    },
-    postByIdOrDummy: (state, getters) => postId => {
-      return getters.postById(postId) || getters.dummyPost
-    },
-    viewPost (state, getters) {
-      return getters.postByIdOrDummy(state.currentPostId)
-    }
   },
   mutations: {
-    viewPost (state, postId) {
-      state.currentPostId = postId
-    },
-    setPosts (state, posts) {
-      state.posts = posts
-    },
-    fetchPost (state, post) {
-      // drop the old post by its ID
-      state.posts = state.posts.filter(
-        statePost => statePost.id !== post.id
-      )
-      state.posts.push(post)
-    },
-    setSections (state, sections) {
-      // state.sections = sections
-    }
   },
   actions: {
-    getSections (context) {
-      firebase.getSections().subscribe(
-        sections => context.commit('setSections', sections)
-      )
-    },
-    getPosts (context) {
-      firebase.postsSubject.subscribe(
-        posts => context.commit('setPosts', posts)
-      )
-    },
-    getPost (context, postId) {
-      if (!context.getters.postById(postId)) {
-        // fill posts with this post
-        firebase.getPost(postId).subscribe(
-          post => context.commit('fetchPost', post)
-        )
-      }
-    }
   },
   modules: {
-    homeModule
+    HomeModule,
+    PostsModule
   },
   strict: debug
 })
