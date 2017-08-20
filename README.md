@@ -29,21 +29,22 @@
   - [x] Pagina principal com todas as seções,
   - [ ] Componente Tile:
     - [x] Controle do número de colunas;
-    - [ ] Fix tamanho das fotos:
+    - [x] Fix tamanho das fotos:
       - [x] Tiles com Tamanho padrão [position absolute](http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/);
       - [ ] Cortar as fotos para um tamanho fixo.
     - [ ] Use grid layout;
   - [x] ~~Componente Modal (talvez vire uma página)~~ Componente Postagem,
 - [ ] :construction: Editor de conteúdo:
-  - [ ] Editor de posts,
+  - [x] Editor de posts,
+  - [ ] Salvar no banco de dados,
   - [ ] Login,
   - [ ] Permissão de usuários,
 - [ ] **:newspaper: Corrigir conteúdo**;
 - [ ] :construction: Otimização de carregamento:
   - [ ] Dados estáticos para o first-load
     - [x] Dados estáticos;
-    - [ ] Uso do vuex Store;
-  - [ ] Bibliotecas em CDN,
+    - [x] Uso do vuex Store;
+  - [ ] Bibliotecas em CDN (**?**),
   - [x] Fotos em CDN (imgur),
   - [ ] Fotos responsivas à rede (blur inicial),
 - Dead-lines :skull:
@@ -52,9 +53,9 @@
 - Bugs conhecidos:
   - **Menu**
     - [ ] Menu não desaparece quando um item é selecionado;
-    - [ ] Menu fica por cima de alguns items;
+    - [x] Menu fica por cima de alguns items;
   - **Pagina principal**
-    - [ ] Os Tiles tem tamanhos diferentes;
+    - [x] Os Tiles tem tamanhos diferentes;
 
 # Lighthouse Reports
 

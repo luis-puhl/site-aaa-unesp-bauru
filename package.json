@@ -4,6 +4,7 @@
   "description": "Site da Associação Atletica Acadêmica da Unesp de Bauru [take 4].",
   "author": "luis-puhl <luispuhl@gmail.com>",
   "license": "MIT",
+  "repository": "https://github.com/luis-puhl/site-aaa-unesp-bauru",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
