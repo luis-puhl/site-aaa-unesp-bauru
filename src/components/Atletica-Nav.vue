@@ -20,31 +20,31 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden">
-            <a href="#page-top"></a>
+            <a href="#mainNav"></a>
           </li>
           <li class="page-scroll">
-            <a href="/#sobre">Sobre</a>
+            <router-link to="/#sobre">Sobre</router-link>
           </li>
           <li class="page-scroll">
-            <a href="/#gestoes">Gestões</a>
+            <router-link to="/#gestoes">Gestões</router-link>
           </li>
           <li class="page-scroll">
-            <a href="/#treinos">Treinos</a>
+            <router-link to="/#treinos">Treinos</router-link>
           </li>
           <li class="page-scroll">
-            <a href="/#torcidas">Torcidas</a>
+            <router-link to="/#torcidas">Torcidas</router-link>
           </li>
           <li class="page-scroll">
-            <a href="/#produtos">Produtos</a>
+            <router-link to="/#produtos">Produtos</router-link>
           </li>
           <li class="page-scroll">
-            <a href="/#parceiros">Parceiros</a>
+            <router-link to="/#parceiros">Parceiros</router-link>
           </li>
           <li class="page-scroll">
-            <a href="/#eventos">Galeria</a>
+            <router-link to="/#eventos">Galeria</router-link>
           </li>
           <li class="page-scroll">
-            <a href="/#contato">Contato</a>
+            <router-link to="/#contato">Contato</router-link>
           </li>
         </ul>
       </div>

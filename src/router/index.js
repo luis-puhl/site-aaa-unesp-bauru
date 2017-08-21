@@ -30,7 +30,9 @@ export default new Router({
      * Inspired by https://github.com/vuejs/vue-router/blob/dev/examples/scroll-behavior/app.js
      */
     let position = {}
-    if (to && to.path === '/' && from && from.params && from.params.id) {
+    if (to && to.path === '/' && to.hash) {
+      position.selector = to.hash
+    } else if (to && to.path === '/' && from && from.params && from.params.id) {
       position.selector = '#' + from.params.id
     } else if (to.hash) {
       position.selector = to.hash
