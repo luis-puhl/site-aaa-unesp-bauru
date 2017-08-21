@@ -4,67 +4,69 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/filter'
 
-import { sections } from '@/api/local-data'
+import * as LocalData from '@/api/local-data'
 
-export const FirebaseApp = {
-  config: {
+export class AtleticaFirebaseApp {
+  config = {
     apiKey: 'AIzaSyAP3Ad6_c_YZwUMWXEixUU4Uulg_jKV0HE',
     authDomain: 'aaa-unesp-bauru.firebaseapp.com',
     databaseURL: 'https://aaa-unesp-bauru.firebaseio.com',
     projectId: 'aaa-unesp-bauru',
     storageBucket: 'aaa-unesp-bauru.appspot.com',
     messagingSenderId: '69608239635'
-  },
-  init: function () {
+  }
+  databaseRootRef
+  _postsSubject
+
+  constructor () {
     // Initialize Firebase
     firebase.initializeApp(this.config)
     this.database = firebase.database()
     this.storage = firebase.storage()
+    this.databaseRootRef = this.database.ref('/new')
   }
-}
 
-FirebaseApp.init()
+  get staticSections () {
+    return LocalData.sections
+  }
+  get staticPosts () {
+    return LocalData.sections.reduce(
+      (posts, section) => posts.concat(section.items),
+      []
+    )
+  }
 
-export const firebaseDatabase = FirebaseApp.database
-export const firebaseStorage = FirebaseApp.storage
+  getSections () {
+    return new BehaviorSubject(this.staticSections)
+  }
 
-export function getSections () {
-  console.log('FirebaseApp: getSections')
-  return new BehaviorSubject(sections)
-}
-
-export function getPosts () {
-  console.log('FirebaseApp: getPosts')
-  const posts = sections.reduce(
-    (posts, section) => posts.concat(section.items),
-    []
-  )
-  const postsSubject = new BehaviorSubject(posts)
-  FirebaseApp.database.ref('/gestoes').on(
-    'value',
-    dataSnapshot => {
-      const data = dataSnapshot.val()
-      console.log({'getPosts firebaseResult': data})
-      postsSubject.next(data)
+  get postsSubject () {
+    if (this._postsSubject) {
+      return this._postsSubject
     }
-  )
-  return postsSubject.filter(value => value !== null)
-}
+    const posts = this.staticPosts
+    const postsSubject = new BehaviorSubject(posts)
+    this.databaseRootRef.child('posts').on(
+      'value',
+      dataSnapshot => {
+        const data = dataSnapshot.val()
+        postsSubject.next(data)
+      }
+    )
+    this._postsSubject = postsSubject.filter(value => value !== null)
+    return this._postsSubject
+  }
 
-export function getPost (id) {
-  console.log('FirebaseApp: getPost')
-  const posts = sections.reduce(
-    (posts, section) => posts.concat(section.items),
-    []
-  )
-  const postsSubject = new BehaviorSubject(posts.find(post => post.id === id))
-  FirebaseApp.database.ref(`/gestoes`).on(
-    'value',
-    dataSnapshot => {
-      const data = dataSnapshot.val()
-      console.log({'getPost': id, 'firebaseResult': data})
-      postsSubject.next(data.find(post => post.id === id))
+  getPost (id) {
+    return this.postsSubject.map(
+      posts => posts.find(post => post.id === id)
+    )
+  }
+  addPost (post) {
+    const newPostKey = this.databaseRootRef.child('posts').push().key
+    const updates = {
+      ['posts/' + newPostKey]: post
     }
-  )
-  return postsSubject.filter(value => value !== null)
+    this.databaseRootRef.update(updates)
+  }
 }

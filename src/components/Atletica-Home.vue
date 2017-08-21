@@ -2,9 +2,8 @@
   <main>
     <atletica-header></atletica-header>
     <atletica-section
-      v-for="section in sections" v-bind:key="section.config.htmlID"
-      v-bind:items="section.items" v-bind:config="section.config">
-    </atletica-section>
+      v-for="section in sections" v-bind:key="section.id"
+      v-bind:section="section" />
     <atletica-contato></atletica-contato>
   </main>
 </template>
@@ -25,12 +24,13 @@ export default {
     AtleticaSection
   },
   computed: {
-    ...mapGetters([
-      'sections'
-    ])
+    ...mapGetters(
+      'HomeModule',
+      ['sections']
+    )
   },
   created () {
-    this.$store.dispatch('getSections')
+    // this.$store.dispatch('getSections')
   }
 }
 </script>

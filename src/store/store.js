@@ -38,8 +38,19 @@ export const AtleticaStore = new Vuex.Store({
   getters: {
   },
   mutations: {
+    updatePost (state, newPost) {
+      state.posts = state.posts.filter(
+        post => post.id !== newPost.id
+      ).concat([newPost])
+    }
   },
   actions: {
+    updatePost (context, newPost) {
+      context.commit('updatePost', newPost)
+    },
+    createPost (context, payload) {
+      // whell
+    }
   },
   modules: {
     HomeModule,

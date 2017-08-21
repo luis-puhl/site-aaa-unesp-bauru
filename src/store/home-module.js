@@ -21,8 +21,8 @@ export const HomeModule = {
     ]
   },
   getters: {
-    sections: (state, getters, rootState, rootGetters) => {
-      const sections = state.sections.map(
+    sections (state, getters, rootState, rootGetters) {
+      return state.sections.map(
         section => {
           section = {...section}
           section.posts = section.posts.map(
@@ -31,8 +31,6 @@ export const HomeModule = {
           return section
         }
       )
-      console.log({HomeModule: {sections}})
-      return sections
     }
   }
 }

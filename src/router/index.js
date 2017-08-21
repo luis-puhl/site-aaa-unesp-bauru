@@ -40,11 +40,6 @@ export default new Router({
       position.x = 0
       position.y = 0
     }
-    console.log({
-      scrollBehavior: {
-        to, from, savedPosition, position
-      }
-    })
     return position
   }
 })

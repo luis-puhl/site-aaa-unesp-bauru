@@ -12,7 +12,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Atlética UNESP Bauru</a>
+        <router-link class="navbar-brand" to="/">
+          Atlética UNESP Bauru
+        </router-link>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
