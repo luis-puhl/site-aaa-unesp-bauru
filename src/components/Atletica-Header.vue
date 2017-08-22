@@ -3,7 +3,7 @@
   <header>
     <!-- src="../assets/logo-atletica-tiny.png" -->
     <!-- srcset="../assets/logo-atletica-tiny.png 1x, ../assets/logo-atletica-blur.png 0.05x" -->
-    <div v-bind:style="imgResponsive">
+    <div class="img-responsive" v-bind:style="imgResponsive">
       <img class="img-responsive"
         alt="Logo Horizontal Associação Atlética Acadêmica Unesp Bauru"
         width="1140" height="251"
@@ -51,5 +51,9 @@ export default {
 <style scoped>
 header {
   padding: 5rem 0;
+  margin: 0 auto;
+}
+div.img-responsive {
+  margin: 0 auto;
 }
 </style>
