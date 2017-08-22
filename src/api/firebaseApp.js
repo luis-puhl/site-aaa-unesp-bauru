@@ -17,13 +17,30 @@ export class AtleticaFirebaseApp {
   }
   databaseRootRef
   _postsSubject
+  static _instance
 
   constructor () {
     // Initialize Firebase
     firebase.initializeApp(this.config)
+
+    // this.storage = firebase.storage()
+    this.auth = firebase.auth()
     this.database = firebase.database()
-    this.storage = firebase.storage()
+
     this.databaseRootRef = this.database.ref('/new')
+    this.googleAuthProvider = new firebase.auth.GoogleAuthProvider()
+    // this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly')=
+  }
+
+  static getInstance () {
+    self.instance
+  }
+
+  static get instance () {
+    if (!self._instance) {
+      self._instance = new AtleticaFirebaseApp()
+    }
+    return self._instance
   }
 
   get staticSections () {
@@ -68,5 +85,32 @@ export class AtleticaFirebaseApp {
       ['posts/' + newPostKey]: post
     }
     this.databaseRootRef.update(updates)
+  }
+
+  login () {
+    const userSubject = new BehaviorSubject(null)
+    firebase.auth().signInWithPopup(this.googleAuthProvider).then(
+      (result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        this.token = result.credential.accessToken
+        // The signed-in user info.
+        this.user = result.user
+        // ...
+        userSubject.next(this.user)
+      }
+    ).catch(
+      (error) => {
+        // Handle Errors here.
+        this.errorCode = error.code
+        this.errorMessage = error.message
+        // The email of the user's account used.
+        this.email = error.email
+        // The firebase.auth.AuthCredential type that was used.
+        this.credential = error.credential
+        // ...
+        throw error
+      }
+    )
+    return userSubject.filter(user => user != null)
   }
 }

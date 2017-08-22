@@ -30,7 +30,9 @@
             </ul>
           </div>
           <div class="footer-col col-md-4">
-            <h3>Sobre o site da Atlética UNESP Bauru</h3>
+            <router-link to="/login">
+              <h3 title="Login">Área dos membros</h3>
+            </router-link>
             <p><a href="http://startbootstrap.com">Start Bootstrap</a> is an open source library of Bootstrap themes and templates.</p>
           </div>
         </div>

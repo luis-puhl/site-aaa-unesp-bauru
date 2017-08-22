@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import AtleticaHome from '@/components/Atletica-Home'
+
 import AtleticaPost from '@/components/Atletica-Post'
 import AtleticaPostEditor from '@/components/Atletica-Post-Editor'
+
+import AtleticaLogin from '@/components/Atletica-Login'
 
 Vue.use(Router)
 
@@ -11,9 +15,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'home',
       component: AtleticaHome
     },
     {
+      name: 'viewPost',
       path: '/post/:id',
       component: AtleticaPost,
       props: (route) => ({ id: route.params.id })
@@ -23,6 +29,11 @@ export default new Router({
       name: 'editPost',
       component: AtleticaPostEditor,
       props: (route) => ({ id: route.params.id })
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: AtleticaLogin
     }
   ],
   scrollBehavior: function (to, from, savedPosition) {

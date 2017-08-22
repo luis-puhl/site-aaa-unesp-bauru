@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
-
-const debug = process.env.NODE_ENV !== 'production'
-
+import { AtleticaFirebaseApp } from '@/api/firebaseApp'
 import { HomeModule } from './home-module'
 import { PostsModule } from './posts-module'
+
+Vue.use(Vuex)
+const debug = process.env.NODE_ENV !== 'production'
 
 export const AtleticaStore = new Vuex.Store({
   state: {
@@ -33,15 +33,29 @@ export const AtleticaStore = new Vuex.Store({
         'img': 'https://i.imgur.com/7JJkjR9.png',
         'nome': 'Moletom'
       }
-    ]
+    ],
+    user: false
   },
   getters: {
+    user (state, getters) {
+      return state.user
+    },
+    logedInMesage (state, getters) {
+      if (state.user) {
+        return 'bemvindo ' + state.user.displayName
+      }
+      return null
+    }
   },
   mutations: {
     updatePost (state, newPost) {
       state.posts = state.posts.filter(
         post => post.id !== newPost.id
       ).concat([newPost])
+    },
+    logedIn (state, user) {
+      console.log('logedIn', user)
+      state.user = user
     }
   },
   actions: {
@@ -50,6 +64,13 @@ export const AtleticaStore = new Vuex.Store({
     },
     createPost (context, payload) {
       // whell
+    },
+    login (context /*, payload */) {
+      AtleticaFirebaseApp.instance.login()
+      .subscribe(
+        user => context.commit('logedIn', user),
+        error => console.log(error)
+      )
     }
   },
   modules: {
