@@ -56,19 +56,19 @@ module.exports = {
         include: [resolve('src'), resolve('test')]
       },
       {
+        test: /\.(jpe?g|png)(\?.*)?$/i,
+        loader: 'responsive-loader',
+        options: {
+          // If you want to enable sharp support:
+          // adapter: require('responsive-loader/sharp')
+        }
+      },
+      {
         test: /\.(ico|png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
-        }
-      },
-      {
-        test: /\.(jpe?g|png)$/i,
-        loader: 'responsive-loader',
-        options: {
-          // If you want to enable sharp support:
-          // adapter: require('responsive-loader/sharp')
         }
       },
       {

@@ -5,9 +5,9 @@
     <!-- srcset="../assets/logo-atletica-tiny.png 1x, ../assets/logo-atletica-blur.png 0.05x" -->
     <div v-bind:style="imgResponsive">
       <img class="img-responsive"
-        src="../assets/logo-atletica-tiny.png"
         alt="Logo Horizontal Associação Atlética Acadêmica Unesp Bauru"
         width="1140" height="251"
+        v-bind:src="responsiveImage.src"
         v-bind:srcset="responsiveImage.srcSet"
         v-bind:style="{opacity: isPlaceholderPresent ? 0 : ''}"
         v-on:load="imgLoaded"
@@ -41,7 +41,6 @@ export default {
   },
   methods: {
     imgLoaded () {
-      console.log('img finished loding')
       this.isPlaceholderPresent = false
       this.imgResponsive.backgroundImage = ''
     }
