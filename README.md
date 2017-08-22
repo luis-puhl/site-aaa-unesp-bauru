@@ -37,7 +37,7 @@
 - [ ] :construction: Editor de conteúdo:
   - [x] Editor de posts,
   - [ ] Salvar no banco de dados,
-  - [ ] Login,
+  - [x] Login,
   - [ ] Permissão de usuários,
 - [ ] **:newspaper: Corrigir conteúdo**;
 - [ ] :construction: Otimização de carregamento:
@@ -56,6 +56,8 @@
     - [x] Menu fica por cima de alguns items;
   - **Pagina principal**
     - [x] Os Tiles tem tamanhos diferentes;
+    - [ ] PWA não carrega '/'
+    - [ ] No celular tem muito espaço depois do logo horizontal
 
 # Lighthouse Reports
 
