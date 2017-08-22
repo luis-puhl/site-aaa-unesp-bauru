@@ -64,6 +64,14 @@ module.exports = {
         }
       },
       {
+        test: /\.(jpe?g|png)$/i,
+        loader: 'responsive-loader',
+        options: {
+          // If you want to enable sharp support:
+          // adapter: require('responsive-loader/sharp')
+        }
+      },
+      {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
