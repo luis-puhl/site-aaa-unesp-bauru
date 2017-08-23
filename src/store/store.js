@@ -64,11 +64,23 @@ export const AtleticaStore = new Vuex.Store({
       ).concat([newPost])
     },
     logedIn (state, user) {
-      console.log('logedIn', user)
-      state.user = user
+      /**
+       * displayName: (...)
+       * email: (...)
+       * phoneNumber: (...)
+       * photoURL: (...)
+       * providerId: (...)
+       * uid: (...)
+       */
+      state.user = {
+        ...user.providerData[0]
+      }
     }
   },
   actions: {
+    fetchUser (context) {
+      context.commit('logedIn', AtleticaFirebaseApp.instance.userData)
+    },
     fetchPosts (context) {
       context.dispatch('loadFirebasePosts')
     },

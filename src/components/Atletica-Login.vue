@@ -7,6 +7,7 @@
         <i class="fa fa-fw fa-google"></i>
         Login com Google
       </button>
+      <button type="button" name="button" @click="fetchUser">Check Login</button>
     </div>
   </div>
 </template>
@@ -15,8 +16,11 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'atletica-login',
+  created () {
+    this.fetchUser
+  },
   methods: {
-    ...mapActions(['login'])
+    ...mapActions(['login', 'fetchUser'])
   },
   computed: {
     ...mapGetters(['logedInMesage'])

@@ -8,6 +8,26 @@ import 'rxjs/add/operator/filter'
 import * as LocalData from '@/api/local-data'
 
 export class AtleticaFirebaseApp {
+
+  static _instance
+  static getInstance () {
+    self.instance
+  }
+  static get instance () {
+    if (!self._instance) {
+      self._instance = new AtleticaFirebaseApp()
+    }
+    window.firebaseapp = self._instance
+    return self._instance
+  }
+
+  constructor () {
+    // Initialize Firebase
+    firebase.initializeApp(this.config)
+
+    // this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly')=
+  }
+
   config = {
     apiKey: 'AIzaSyAP3Ad6_c_YZwUMWXEixUU4Uulg_jKV0HE',
     authDomain: 'aaa-unesp-bauru.firebaseapp.com',
@@ -16,33 +36,18 @@ export class AtleticaFirebaseApp {
     storageBucket: 'aaa-unesp-bauru.appspot.com',
     messagingSenderId: '69608239635'
   }
-  databaseRootRef
   _postsSubject
-  static _instance
 
-  constructor () {
-    // Initialize Firebase
-    firebase.initializeApp(this.config)
-
-    // this.storage = firebase.storage()
-    this.auth = firebase.auth()
-    this.database = firebase.database()
-
-    this.databaseRootRef = this.database.ref('/new')
-    this.googleAuthProvider = new firebase.auth.GoogleAuthProvider()
-    // this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly')=
+  get databaseRootRef () {
+    return firebase.database().ref('/new')
   }
 
-  static getInstance () {
-    self.instance
-  }
-
-  static get instance () {
-    if (!self._instance) {
-      self._instance = new AtleticaFirebaseApp()
+  _googleAuthProvider
+  get googleAuthProvider () {
+    if (!this._googleAuthProvider) {
+      this._googleAuthProvider = new firebase.auth.GoogleAuthProvider()
     }
-    window.firebaseapp = self._instance
-    return self._instance
+    return this._googleAuthProvider
   }
 
   get staticSections () {
@@ -99,29 +104,31 @@ export class AtleticaFirebaseApp {
     this.databaseRootRef.update(updates)
   }
 
+  _userData = false
+  get userData () {
+    if (!this._userData) {
+      const data = firebase.auth().currentUser
+      this._userData = data ? {...data} : null
+    }
+    return this._userData
+  }
+
   login () {
+    if (this.userData) {
+      return new BehaviorSubject(this.userData)
+    }
     const userSubject = new BehaviorSubject(null)
-    firebase.auth().signInWithPopup(this.googleAuthProvider).then(
-      (result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        this.token = result.credential.accessToken
-        // The signed-in user info.
-        this.user = result.user
-        // ...
-        userSubject.next(this.user)
-      }
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+    .then(
+      // () => firebase.auth().signInWithRedirect(this.googleAuthProvider)
+      () => firebase.auth().signInWithPopup(this.googleAuthProvider)
+      .then(
+        (result) => userSubject.next({...result.user})
+      ).catch(
+        (error) => console.error(error)
+      )
     ).catch(
-      (error) => {
-        // Handle Errors here.
-        this.errorCode = error.code
-        this.errorMessage = error.message
-        // The email of the user's account used.
-        this.email = error.email
-        // The firebase.auth.AuthCredential type that was used.
-        this.credential = error.credential
-        // ...
-        throw error
-      }
+      (error) => console.error(error)
     )
     return userSubject.filter(user => user != null)
   }
