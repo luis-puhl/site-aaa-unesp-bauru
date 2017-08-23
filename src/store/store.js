@@ -38,7 +38,8 @@ export const AtleticaStore = new Vuex.Store({
         id: 'novopost'
       }
     ],
-    user: false
+    user: false,
+    allUsers: []
   },
   getters: {
     posts (state, getters) {
@@ -46,6 +47,9 @@ export const AtleticaStore = new Vuex.Store({
     },
     user (state, getters) {
       return state.user
+    },
+    allUsers (state, getters) {
+      return state.allUsers
     },
     logedInMesage (state, getters) {
       if (state.user) {
@@ -63,23 +67,32 @@ export const AtleticaStore = new Vuex.Store({
         post => post.id !== newPost.id
       ).concat([newPost])
     },
-    logedIn (state, user) {
-      /**
-       * displayName: (...)
-       * email: (...)
-       * phoneNumber: (...)
-       * photoURL: (...)
-       * providerId: (...)
-       * uid: (...)
-       */
-      state.user = {
-        ...user.providerData[0]
+    setUser (state, user) {
+      if (!user) {
+        return
       }
+      state.user = {
+        ...user.data
+      }
+    },
+    setAllUsers (state, users) {
+      state.allUsers = users
+    },
+    logedOut (state) {
+      state.user = false
+      state.allUsers = false
     }
   },
   actions: {
     fetchUser (context) {
-      context.commit('logedIn', AtleticaFirebaseApp.instance.userData)
+      AtleticaFirebaseApp.instance.userData.subscribe(
+        (user) => context.commit('setUser', user)
+      )
+    },
+    fetchAllUsers (context) {
+      AtleticaFirebaseApp.instance.allUsers.subscribe(
+        (users) => context.commit('setAllUsers', users)
+      )
     },
     fetchPosts (context) {
       context.dispatch('loadFirebasePosts')
@@ -102,8 +115,17 @@ export const AtleticaStore = new Vuex.Store({
     login (context /*, payload */) {
       AtleticaFirebaseApp.instance.login()
       .subscribe(
-        user => context.commit('logedIn', user),
+        user => {
+          context.commit('setUser', user)
+          context.dispatch('fetchAllUsers')
+        },
         error => console.log(error)
+      )
+    },
+    logout (context /*, payload */) {
+      AtleticaFirebaseApp.instance.logout()
+      .then(
+        () => context.commit('logedOut')
       )
     }
   },

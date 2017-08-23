@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/filter'
+import 'rxjs/add/observable/fromPromise'
+import 'rxjs/add/observable/fromEvent'
 
 import * as LocalData from '@/api/local-data'
 
@@ -24,6 +26,9 @@ export class AtleticaFirebaseApp {
   constructor () {
     // Initialize Firebase
     firebase.initializeApp(this.config)
+
+    this.auth = firebase.auth()
+    this.database = firebase.database()
 
     // this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly')=
   }
@@ -104,32 +109,90 @@ export class AtleticaFirebaseApp {
     this.databaseRootRef.update(updates)
   }
 
+  get allUsers () {
+    const users = new BehaviorSubject(null)
+    firebase.database().ref('/users').on('value', (v) => users.next(v.val()))
+
+    return users
+      .filter(v => v !== null)
+      .map(users => Object.keys(users).map(
+        key => ({key, ...users[key]})
+      ))
+  }
+
+  /**
+   * displayName: (...)
+   * email: (...)
+   * phoneNumber: (...)
+   * photoURL: (...)
+   * providerId: (...)
+   * uid: (...)
+   */
   _userData = false
   get userData () {
     if (!this._userData) {
-      const data = firebase.auth().currentUser
-      this._userData = data ? {...data} : null
+      this._userData = new BehaviorSubject(null)
+      firebase.auth().onAuthStateChanged(
+        (user) => this._userData.next(user)
+      )
     }
     return this._userData
+      .filter(v => v !== null)
+      .map(
+        userData => ({
+          uid: userData.uid,
+          data: {
+            ...userData.providerData[0]
+          }
+        })
+      )
   }
 
   login () {
-    if (this.userData) {
-      return new BehaviorSubject(this.userData)
+    if (firebase.auth().currentUser) {
+      return this.userData
     }
-    const userSubject = new BehaviorSubject(null)
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
     .then(
       // () => firebase.auth().signInWithRedirect(this.googleAuthProvider)
       () => firebase.auth().signInWithPopup(this.googleAuthProvider)
       .then(
-        (result) => userSubject.next({...result.user})
+        (result) => {
+          this.updateUserInfo()
+          this._userData.next(result.user)
+        }
       ).catch(
         (error) => console.error(error)
       )
     ).catch(
       (error) => console.error(error)
     )
-    return userSubject.filter(user => user != null)
+    return this.userData
+  }
+
+  logout () {
+    if (this.userData) {
+      return firebase.auth().signOut()
+    }
+  }
+
+  updateUserInfo () {
+    this.userData
+    .map(
+      user => ({...user, data: {...user.data, lastLogin: Date.now()}})
+    )
+    .subscribe(
+      user => this.database.ref(`users/${user.uid}`).set(
+        user.data,
+        () => console.log({updateUserInfo__onComplete: user})
+      )
+      .then(
+        () => this.database.ref(`users/${user.uid}`).once('value', (v) => console.log({updateUserInfo__done: user, database: v, databaseVal: v.val()}))
+      )
+      .catch(
+        (e) => console.log({updateUserInfo__error: e})
+      ) &&
+      console.log({updateUserInfo: user})
+    )
   }
 }

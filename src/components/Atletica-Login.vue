@@ -3,11 +3,29 @@
     <div>
       <h1>{{ logedInMesage || 'Login na Área dos membros' }}</h1>
       <hr class="star-primary">
-      <button type="button" name="button" class="btn" v-on:click="login">
-        <i class="fa fa-fw fa-google"></i>
-        Login com Google
-      </button>
-      <button type="button" name="button" @click="fetchUser">Check Login</button>
+      <div v-if="!user">
+        <button type="button" name="button" class="btn" v-on:click="login">
+          <i class="fa fa-fw fa-google"></i>
+          Login com Google
+        </button>
+      </div>
+      <div class="" v-else>
+        <ul>
+          <li v-for="listedUser of allUsers">
+            <img :src="listedUser.photoURL" alt="foto do usuario" height="50" width="50">
+            {{ listedUser.displayName }}
+            <br>
+            {{ listedUser.email }}
+            <br>
+            {{ listedUser.isAtleticaAdmin ? 'Administrador' : 'Visitante' }}
+            <br>
+            Último Acesso: {{ (new Date(listedUser.lastLogin)).toLocaleString(['pt-BR', 'en-US'], {hour12: false}) }}
+          </li>
+        </ul>
+        <button type="button" name="button" @click="logout">
+          Logout
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -17,13 +35,14 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'atletica-login',
   created () {
-    this.fetchUser
+    this.fetchUser()
+    this.fetchAllUsers()
   },
   methods: {
-    ...mapActions(['login', 'fetchUser'])
+    ...mapActions(['login', 'fetchUser', 'fetchAllUsers', 'logout'])
   },
   computed: {
-    ...mapGetters(['logedInMesage'])
+    ...mapGetters(['logedInMesage', 'user', 'allUsers'])
   }
 }
 </script>
