@@ -32,11 +32,18 @@ export const AtleticaStore = new Vuex.Store({
         'id': 'produto-Moletom',
         'img': 'https://i.imgur.com/7JJkjR9.png',
         'nome': 'Moletom'
+      },
+      {
+        key: '-KsBOJzsI23yDc9kD7I5',
+        id: 'novopost'
       }
     ],
     user: false
   },
   getters: {
+    posts (state, getters) {
+      return state.posts
+    },
     user (state, getters) {
       return state.user
     },
@@ -48,6 +55,9 @@ export const AtleticaStore = new Vuex.Store({
     }
   },
   mutations: {
+    loadPosts (state, loadedPosts) {
+      state.posts = loadedPosts
+    },
     updatePost (state, newPost) {
       state.posts = state.posts.filter(
         post => post.id !== newPost.id
@@ -59,7 +69,19 @@ export const AtleticaStore = new Vuex.Store({
     }
   },
   actions: {
+    fetchPosts (context) {
+      context.dispatch('loadFirebasePosts')
+    },
+    loadFirebasePosts (context) {
+      AtleticaFirebaseApp.instance.postsSubject.subscribe(
+        (posts) => context.commit('loadPosts', posts)
+      )
+    },
+    updatePostFirebase (context, newPost) {
+      AtleticaFirebaseApp.instance.updatePost(newPost)
+    },
     updatePost (context, newPost) {
+      context.dispatch('updatePostFirebase', newPost)
       context.commit('updatePost', newPost)
     },
     createPost (context, payload) {

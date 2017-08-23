@@ -27,6 +27,8 @@ export const HomeModule = {
           section = {...section}
           section.posts = section.posts.map(
             sectionPost => rootState.posts.find(post => post.id === sectionPost)
+          ).filter(
+            posts => posts
           )
           return section
         }

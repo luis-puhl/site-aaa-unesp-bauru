@@ -34,7 +34,7 @@
         </button>
       </form>
     </div>
-    <atletica-post-view id="post" v-bind:post="sourcePost"></atletica-post-view>
+    <atletica-post-view id="post" v-if="sourcePost" v-bind:post="sourcePost"></atletica-post-view>
   </main>
 </template>
 
@@ -81,6 +81,9 @@ export default {
       const targetId = event.target.id
       const targetValue = event.target.value
       const post = {...this.sourcePost}
+      if (!post.key) {
+        return
+      }
       switch (targetId) {
         case 'postId':
           post.id = targetValue

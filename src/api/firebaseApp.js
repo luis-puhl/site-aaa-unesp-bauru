@@ -1,5 +1,6 @@
 import * as firebase from 'firebase'
 
+import { Observable } from 'rxjs/Observable'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/filter'
@@ -40,6 +41,7 @@ export class AtleticaFirebaseApp {
     if (!self._instance) {
       self._instance = new AtleticaFirebaseApp()
     }
+    window.firebaseapp = self._instance
     return self._instance
   }
 
@@ -71,6 +73,7 @@ export class AtleticaFirebaseApp {
       }
     )
     this._postsSubject = postsSubject.filter(value => value !== null)
+    .map(posts => Object.keys(posts).map(key => ({key, ...posts[key]})))
     return this._postsSubject
   }
 
@@ -80,9 +83,18 @@ export class AtleticaFirebaseApp {
     )
   }
   addPost (post) {
-    const newPostKey = this.databaseRootRef.child('posts').push().key
+    post.key = this.databaseRootRef.child('posts').push().key
     const updates = {
-      ['posts/' + newPostKey]: post
+      ['posts/' + post.key]: post
+    }
+    return Observable.fromPromise(this.databaseRootRef.update(updates))
+  }
+  updatePost (post) {
+    if (!post || !post.key) {
+      return
+    }
+    const updates = {
+      ['posts/' + post.key]: post
     }
     this.databaseRootRef.update(updates)
   }
