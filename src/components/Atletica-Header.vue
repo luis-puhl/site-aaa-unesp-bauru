@@ -1,17 +1,17 @@
 <template>
   <!-- Header -->
   <header>
-    <!-- src="../assets/logo-atletica-tiny.png" -->
+    <!-- <img src="../assets/logo-atletica-tiny.png" alt="" class="img-responsive">  -->
     <!-- srcset="../assets/logo-atletica-tiny.png 1x, ../assets/logo-atletica-blur.png 0.05x" -->
     <div class="img-responsive" v-bind:style="imgResponsive">
+      <!-- width="1140" height="251" -->
       <img class="img-responsive"
         alt="Logo Horizontal Associação Atlética Acadêmica Unesp Bauru"
-        width="1140" height="251"
         v-bind:src="responsiveImage.src"
         v-bind:srcset="responsiveImage.srcSet"
         v-bind:style="{opacity: isPlaceholderPresent ? 0 : ''}"
         v-on:load="imgLoaded"
-      >
+      />
     </div>
     <div class="intro-text">
       <hr class="star-light">
@@ -29,8 +29,8 @@ export default {
     return {
       responsiveImage,
       imgResponsive: {
-        height: responsiveImage.height + 'px',
-        width: responsiveImage.width + 'px',
+        // height: responsiveImage.height + 'px',
+        // width: responsiveImage.width + 'px',
         // height: 252 + 'px',
         // width: 1140 + 'px',
         backgroundSize: 'cover',
