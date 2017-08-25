@@ -3,7 +3,7 @@
     <div>
       <h1>{{ logedInMesage || 'Login na Área dos membros' }}</h1>
       <hr class="star-primary">
-      <div v-if="!user">
+      <div v-if="!currentUser">
         <button type="button" name="button" class="btn" v-on:click="login">
           <i class="fa fa-fw fa-google"></i>
           Login com Google
@@ -17,7 +17,7 @@
             <br>
             {{ listedUser.email }}
             <br>
-            {{ listedUser.isAtleticaAdmin ? 'Administrador' : 'Visitante' }}
+            {{ listedUser.isAdmin ? 'Administrador' : 'Visitante' }}
             <br>
             Último Acesso: {{ (new Date(listedUser.lastLogin)).toLocaleString(['pt-BR', 'en-US'], {hour12: false}) }}
           </li>
@@ -39,10 +39,10 @@ export default {
     this.fetchAllUsers()
   },
   methods: {
-    ...mapActions(['login', 'fetchUser', 'fetchAllUsers', 'logout'])
+    ...mapActions('UsersModule', ['login', 'fetchUser', 'fetchAllUsers', 'logout'])
   },
   computed: {
-    ...mapGetters(['logedInMesage', 'user', 'allUsers'])
+    ...mapGetters('UsersModule', ['logedInMesage', 'currentUser', 'allUsers'])
   }
 }
 </script>

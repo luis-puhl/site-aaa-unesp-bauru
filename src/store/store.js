@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import { AtleticaFirebaseApp } from '@/api/firebaseApp'
 import { HomeModule } from './home-module'
 import { PostsModule } from './posts-module'
+import { UsersModule } from './users-module'
 
 Vue.use(Vuex)
 const debug = process.env.NODE_ENV !== 'production'
@@ -37,25 +38,11 @@ export const AtleticaStore = new Vuex.Store({
         key: '-KsBOJzsI23yDc9kD7I5',
         id: 'novopost'
       }
-    ],
-    user: false,
-    allUsers: []
+    ]
   },
   getters: {
     posts (state, getters) {
       return state.posts
-    },
-    user (state, getters) {
-      return state.user
-    },
-    allUsers (state, getters) {
-      return state.allUsers
-    },
-    logedInMesage (state, getters) {
-      if (state.user) {
-        return 'bemvindo ' + state.user.displayName
-      }
-      return null
     }
   },
   mutations: {
@@ -66,34 +53,9 @@ export const AtleticaStore = new Vuex.Store({
       state.posts = state.posts.filter(
         post => post.id !== newPost.id
       ).concat([newPost])
-    },
-    setUser (state, user) {
-      if (!user) {
-        return
-      }
-      state.user = {
-        ...user.data
-      }
-    },
-    setAllUsers (state, users) {
-      state.allUsers = users
-    },
-    logedOut (state) {
-      state.user = false
-      state.allUsers = false
     }
   },
   actions: {
-    fetchUser (context) {
-      AtleticaFirebaseApp.instance.userData.subscribe(
-        (user) => context.commit('setUser', user)
-      )
-    },
-    fetchAllUsers (context) {
-      AtleticaFirebaseApp.instance.allUsers.subscribe(
-        (users) => context.commit('setAllUsers', users)
-      )
-    },
     fetchPosts (context) {
       context.dispatch('loadFirebasePosts')
     },
@@ -111,25 +73,10 @@ export const AtleticaStore = new Vuex.Store({
     },
     createPost (context, payload) {
       // whell
-    },
-    login (context /*, payload */) {
-      AtleticaFirebaseApp.instance.login()
-      .subscribe(
-        user => {
-          context.commit('setUser', user)
-          context.dispatch('fetchAllUsers')
-        },
-        error => console.log(error)
-      )
-    },
-    logout (context /*, payload */) {
-      AtleticaFirebaseApp.instance.logout()
-      .then(
-        () => context.commit('logedOut')
-      )
     }
   },
   modules: {
+    UsersModule,
     HomeModule,
     PostsModule
   },

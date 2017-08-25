@@ -4,24 +4,27 @@
     <div class="form">
       <form class="edit-post">
         <label>
-          Id:
-          <br>
-          <input id="postId" type="text" name="titulo" v-model="postId" @input="edit">
+          Id:<br>
+          <input type="text" size="60" id="postId" name="titulo" v-model="newPost.id" @input="edit">
         </label>
         <br>
 
         <label>
-          Título:
-          <br>
-          <input id="postTitle" type="text" name="titulo" v-model="nome" @input="edit">
+          Título:<br>
+          <input type="text" size="60" id="postTitle" name="titulo" v-model="newPost.nome" @input="edit">
         </label>
         <br>
 
         <label>
-          Post:
-          <br>
+          Imagem:<br>
+          <input type="text" size="60" id="image" name="imagem" v-model="newPost.img" @input="edit">
+        </label>
+        <br>
+
+        <label>
+          Post:<br>
           <textarea id="editarConteudoModal" name="conteudoModal" placeholder="add multiple lines"
-             rows="10" cols="60" v-model="conteudoModal" @input="edit"/>
+             rows="50" cols="60" v-model="newPost.conteudoModal" @input="edit"/>
         </label>
         <br>
 
@@ -60,9 +63,12 @@ export default {
   },
   data () {
     return {
-      postId: '',
-      nome: '',
-      conteudoModal: ''
+      newPost: {
+        id: '',
+        nome: '',
+        conteudoModal: '',
+        img: ''
+      }
     }
   },
   computed: {
@@ -72,10 +78,7 @@ export default {
   },
   methods: {
     setPost (post) {
-      const newPost = {...post}
-      this.postId = newPost.id
-      this.nome = newPost.nome
-      this.conteudoModal = newPost.conteudoModal
+      this.newPost = {...post}
     },
     edit (event) {
       const targetId = event.target.id
@@ -105,19 +108,31 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  label {
+    margin-bottom: 1rem;
+  }
+  div.form {
+    margin: 3rem;
+  }
   @media (min-width: 1080px) {
     main {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 2fr;
       grid-gap: 10px;
       grid-auto-rows: minmax(100px, auto);
     }
     h1 {
-      grid-column: 1 / 3;
+      grid-column: 1 / 4;
       text-align: center;
     }
     .form #post {
       grid-row: 2;
+    }
+    div.form {
+      grid-column: 1;
+    }
+    #post {
+      grid-column: 2 / 4;
     }
   }
 </style>

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
         <atletica-post-view v-bind:post="post"></atletica-post-view>
-        <router-link :to="{ name: 'editPost', id }" class="btn btn-default">
+        <router-link v-if="canEdit" v-bind:to="{ name: 'editPost', id }" class="btn btn-default">
           Editar
         </router-link>
       </div>
@@ -30,17 +30,24 @@ export default {
   },
   created () {
     this.fetchCurrentPostId(this.id)
+    this.fetchUser()
   },
   methods: {
     ...mapActions(
       'PostsModule',
       {fetchCurrentPostId: 'fetchCurrentPostId'}
+    ),
+    ...mapActions(
+      ['fetchUser']
     )
   },
   computed: {
     ...mapGetters(
       'PostsModule',
       {post: 'viewPost'}
+    ),
+    ...mapGetters(
+      ['canEdit']
     )
   }
 }
