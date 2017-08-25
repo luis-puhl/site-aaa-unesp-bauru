@@ -63,16 +63,6 @@ export const AtleticaStore = new Vuex.Store({
       AtleticaFirebaseApp.instance.postsSubject.subscribe(
         (posts) => context.commit('loadPosts', posts)
       )
-    },
-    updatePostFirebase (context, newPost) {
-      AtleticaFirebaseApp.instance.updatePost(newPost)
-    },
-    updatePost (context, newPost) {
-      context.dispatch('updatePostFirebase', newPost)
-      context.commit('updatePost', newPost)
-    },
-    createPost (context, payload) {
-      // whell
     }
   },
   modules: {

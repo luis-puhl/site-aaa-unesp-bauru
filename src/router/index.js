@@ -31,6 +31,12 @@ export default new Router({
       props: (route) => ({ id: route.params.id })
     },
     {
+      path: '/addPost',
+      name: 'addPost',
+      component: AtleticaPostEditor,
+      props: (route) => ({ addPost: true })
+    },
+    {
       path: '/login',
       name: 'login',
       component: AtleticaLogin

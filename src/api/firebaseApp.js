@@ -107,14 +107,5 @@ export class AtleticaFirebaseApp {
     }
     return Observable.fromPromise(this.databaseRootRef.update(updates))
   }
-  updatePost (post) {
-    if (!post || !post.key) {
-      return
-    }
-    const updates = {
-      ['posts/' + post.key]: post
-    }
-    this.databaseRootRef.update(updates)
-  }
 
 }

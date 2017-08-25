@@ -1,3 +1,5 @@
+import * as firebase from 'firebase'
+
 export const PostsModule = {
   namespaced: true,
   state: {
@@ -8,7 +10,10 @@ export const PostsModule = {
       img: '',
       conteudoModal: '# Conteúdo do post'
     },
-    currentPostId: ''
+    currentPostId: '',
+
+    newPostKey: false,
+    newPost: false
   },
   getters: {
     dummyPost (state, getters, rootState, rootGetters) {
@@ -21,16 +26,27 @@ export const PostsModule = {
         )
       }
     },
-    postByIdOrDummy: (state, getters) => postId => {
+    postByIdOrDummy: (state, getters, rootState, rootGetters) => postId => {
       return getters.postById(postId) || getters.dummyPost
     },
-    viewPost (state, getters) {
+    viewPost (state, getters, rootState, rootGetters) {
       return getters.postByIdOrDummy(state.currentPostId)
+    },
+
+    newPost (state, getters, rootState, rootGetters) {
+      return state.newPost
     }
   },
   mutations: {
     setCurrentPostId (state, payload) {
       state.currentPostId = payload
+    },
+
+    setNewPostKey (state, payload) {
+      state.newPostKey = payload
+    },
+    setNewPost (state, payload) {
+      state.newPost = payload
     }
   },
   actions: {
@@ -39,7 +55,22 @@ export const PostsModule = {
       context.dispatch('updatePost', context.getters.viewPost)
     },
     updatePost (context, payload) {
-      context.dispatch('updatePost', payload, { root: true })
+      firebase.database().ref(`new/posts/${payload.key}`).update(
+        payload
+      )
+    },
+    addPost (context /*, payload */) {
+      const newPostKey = firebase.database().ref('new/posts/').push(
+        context.state.dummyPost
+      ).key
+      context.commit('setNewPostKey', newPostKey)
+      firebase.database().ref(`new/posts/${newPostKey}`).on(
+        'value',
+        newPostSnapShot => context.commit('setNewPost', {...newPostSnapShot.val(), key: newPostKey})
+      )
+      firebase.database().ref(`new/posts/${newPostKey}`).update(
+        {...context.state.dummyPost, id: newPostKey}
+      )
     }
   }
 }

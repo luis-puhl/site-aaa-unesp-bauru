@@ -34,6 +34,9 @@
               <h3 title="Login">Área dos membros</h3>
             </router-link>
             <p><a href="http://startbootstrap.com">Start Bootstrap</a> is an open source library of Bootstrap themes and templates.</p>
+            <router-link v-if="canEdit" v-bind:to="{ name: 'addPost' }" class="btn btn-default">
+              Adicionar post
+            </router-link>
           </div>
         </div>
       </div>
@@ -53,8 +56,25 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-  name: 'atletica-footer'
+  name: 'atletica-footer',
+  created () {
+    this.fetchUser()
+  },
+  computed: {
+    ...mapGetters(
+      'UsersModule',
+      ['canEdit']
+    )
+  },
+  methods: {
+    ...mapActions(
+      'UsersModule',
+      ['fetchUser']
+    )
+  }
 }
 </script>
 

@@ -4,6 +4,12 @@
     <div class="form">
       <form class="edit-post">
         <label>
+          Key:<br>
+          <input type="text" size="60" id="postKey" name="key" v-model="newPost.key" readonly>
+        </label>
+        <br>
+
+        <label>
           Id:<br>
           <input type="text" size="60" id="postId" name="titulo" v-model="newPost.id" @input="edit">
         </label>
@@ -17,7 +23,7 @@
 
         <label>
           Imagem:<br>
-          <input type="text" size="60" id="image" name="imagem" v-model="newPost.img" @input="edit">
+          <input type="text" size="60" id="imagem" name="imagem" v-model="newPost.img" @input="edit">
         </label>
         <br>
 
@@ -42,6 +48,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import AtleticaPostView from '@/components/Atletica-Post-View'
 
 export default {
@@ -49,15 +56,17 @@ export default {
   components: {
     AtleticaPostView
   },
-  created () {
-    this.$store.dispatch('PostsModule/fetchCurrentPostId', this.id)
-    this.setPost(this.sourcePost)
-  },
   props: {
     id: {
       type: String,
       default: function () {
         return ''
+      }
+    },
+    addPost: {
+      type: Boolean,
+      default: function () {
+        return false
       }
     }
   },
@@ -71,12 +80,35 @@ export default {
       }
     }
   },
+  created () {
+    if (this.addPost) {
+      this.dispatchAddPost()
+    } else {
+      this.fetchCurrentPostId(this.id)
+    }
+    this.setPost(this.sourcePost)
+  },
   computed: {
+    ...mapGetters(
+      'PostsModule',
+      {curretSourcePost: 'viewPost', newPostSource: 'newPost'}
+    ),
     sourcePost () {
-      return this.$store.getters['PostsModule/viewPost']
+      if (this.addPost) {
+        return this.newPostSource
+      }
+      return this.curretSourcePost
     }
   },
   methods: {
+    ...mapActions(
+      'PostsModule',
+      {
+        fetchCurrentPostId: 'fetchCurrentPostId',
+        dispatchAddPost: 'addPost',
+        updatePost: 'updatePost'
+      }
+    ),
     setPost (post) {
       this.newPost = {...post}
     },
@@ -97,10 +129,13 @@ export default {
         case 'editarConteudoModal':
           post.conteudoModal = targetValue
           break
+        case 'imagem':
+          post.img = targetValue
+          break
         default:
           console.log('parte de post não encontrada: ' + targetId)
       }
-      this.$store.dispatch('PostsModule/updatePost', post)
+      this.updatePost(post)
     }
   }
 }
