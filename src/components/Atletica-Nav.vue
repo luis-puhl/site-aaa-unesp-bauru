@@ -69,9 +69,15 @@ export default {
         top: 100
       }
     })
+    // Closes the Responsive Menu on Menu Item Click
+    /* eslint-disable no-undef */
+    $('.navbar-collapse ul li a').click(function () {
+      /* eslint-disable no-undef */
+      $('.navbar-toggle:visible').click()
+    })
   }
 }
 </script>
 
-<style>
+<style scoped>
 </style>

@@ -15,6 +15,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      alias: '/index.html',
       name: 'home',
       component: AtleticaHome
     },
@@ -58,6 +59,16 @@ export default new Router({
     } else {
       position.x = 0
       position.y = 0
+    }
+
+    if (position.selector && !document.querySelector(position.selector)) {
+      position.selector = null
+      if (savedPosition) {
+        position = savedPosition
+      } else {
+        position.x = 0
+        position.y = 0
+      }
     }
     return position
   }

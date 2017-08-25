@@ -36,9 +36,9 @@
   - [x] ~~Componente Modal (talvez vire uma página)~~ Componente Postagem,
 - [ ] :construction: Editor de conteúdo:
   - [x] Editor de posts,
-  - [ ] Salvar no banco de dados,
+  - [x] Salvar no banco de dados,
   - [x] Login,
-  - [ ] Permissão de usuários,
+  - [x] Permissão de usuários,
 - [ ] **:newspaper: Corrigir conteúdo**;
 - [ ] :construction: Otimização de carregamento:
   - [ ] Dados estáticos para o first-load
@@ -52,12 +52,12 @@
   - [ ] Entrega final do site em 2017-08-25 (em 3 semanas);
 - Bugs conhecidos:
   - **Menu**
-    - [ ] Menu não desaparece quando um item é selecionado;
+    - [x] Menu não desaparece quando um item é selecionado;
     - [x] Menu fica por cima de alguns items;
   - **Pagina principal**
     - [x] Os Tiles tem tamanhos diferentes;
-    - [ ] PWA não carrega '/'
-    - [ ] No celular tem muito espaço depois do logo horizontal
+    - [x] PWA não carrega '/'
+    - [x] No celular tem muito espaço depois do logo horizontal
 
 # Lighthouse Reports
 
