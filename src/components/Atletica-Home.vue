@@ -25,7 +25,7 @@ export default {
     AtleticaContato,
     AtleticaSection
   },
-  created () {
+  beforeUpdate () {
     if (this.canEdit) {
       this.fetchAllPosts()
     }

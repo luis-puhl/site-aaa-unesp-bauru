@@ -9,8 +9,17 @@ import { UsersModule } from './users-module'
 Vue.use(Vuex)
 const debug = process.env.NODE_ENV !== 'production'
 
+const databaseReferencesStore = {
+  allUsersRef: false,
+  currentAdminRef: false,
+  currentUserRef: false,
+  onAuthStateChangedListener: false,
+  googleAuthProvider: false
+}
+
 export const AtleticaStore = new Vuex.Store({
   state: {
+    firebasePointers: {},
     posts: [
       {
         'id': 'gestao-2017',
@@ -41,11 +50,36 @@ export const AtleticaStore = new Vuex.Store({
     ]
   },
   getters: {
+    firebasePointer (state, getters) {
+      return key => state.firebasePointers[key] && databaseReferencesStore[key]
+    },
+
     posts (state, getters) {
       return state.posts
     }
   },
   mutations: {
+    setFirebasePointer (state, payload) {
+      // console.trace('mutation: setFirebasePointer', payload)
+      state.firebasePointers[payload.key] = !!payload.value
+      databaseReferencesStore[payload.key] = payload.value
+    },
+    clearDatabaseRefs (state /*, payload */) {
+      const privateRefs = [
+        'allUsersRef',
+        'currentAdminRef',
+        'currentUserRef',
+        'allPostsRef'
+      ]
+      for (let key of privateRefs) {
+        if (!state.firebasePointers[key]) {
+          continue
+        }
+        databaseReferencesStore[key].off()
+        state.firebasePointers[key] = false
+      }
+    },
+
     loadPosts (state, loadedPosts) {
       state.posts = loadedPosts
     },

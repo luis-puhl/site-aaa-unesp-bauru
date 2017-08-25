@@ -88,7 +88,16 @@ export const PostsModule = {
     },
 
     fetchAllPosts (context /*, payload */) {
-      firebase.database().ref(`new/posts`).on(
+      if (context.rootGetters.firebasePointer('allPostsRef')) {
+        return
+      }
+      const allPostsRef = firebase.database().ref(`new/posts`)
+      context.commit(
+        'setFirebasePointer',
+        {key: 'allPostsRef', value: allPostsRef},
+        { root: true }
+      )
+      allPostsRef.on(
         'value',
         allPostsSnapShot => context.commit(
           'setAllPosts',

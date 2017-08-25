@@ -68,26 +68,13 @@ function userDataValidator (userData) {
   return true
 }
 
-const databaseReferencesStore = {
-  allUsersRef: false,
-  currentAdminRef: false,
-  currentUserRef: false,
-  onAuthStateChangedListener: false,
-  googleAuthProvider: false
-}
-
 export const UsersModule = {
   namespaced: true,
   state: {
-    firebasePointers: {},
     currentUser: false,
     allUsers: []
   },
   getters: {
-    firebasePointer (state, getters, rootState, rootGetters) {
-      return key => state.firebasePointers[key] && databaseReferencesStore[key]
-    },
-
     currentUser (state, getters, rootState, rootGetters) {
       const currentUser = userDataMapper(state.currentUser)
       return userDataValidator(currentUser) ? currentUser : false
@@ -114,12 +101,6 @@ export const UsersModule = {
     }
   },
   mutations: {
-    setFirebasePointer (state, payload) {
-      // console.trace('mutation: setFirebasePointer', payload)
-      state.firebasePointers[payload.key] = !!payload.value
-      databaseReferencesStore[payload.key] = payload.value
-    },
-
     setCurrentUser (state, payload) {
       payload = userDataMapper(payload)
       // console.log('mutation: setCurrentUser', payload)
@@ -137,13 +118,6 @@ export const UsersModule = {
       state.currentUser = false
       state.allUsers = []
       // clearDatabaseRefs
-      for (let key of ['allUsersRef', 'currentAdminRef', 'currentUserRef']) {
-        if (!state.firebasePointers[key]) {
-          continue
-        }
-        databaseReferencesStore[key].off()
-        state.firebasePointers[key] = false
-      }
     }
   },
   actions: {
@@ -173,7 +147,10 @@ export const UsersModule = {
     logout (context /*, payload */) {
       if (context.getters.currentUser) {
         firebase.auth().signOut().then(
-          () => context.commit('logedOut')
+          () => {
+            context.commit('logedOut')
+            context.commit('clearDatabaseRefs', null, { root: true })
+          }
         )
       }
     },
@@ -190,7 +167,7 @@ export const UsersModule = {
     fetchAllUsers (context /*, payload */) {
       const users = new BehaviorSubject([])
       const allUsersRef = firebase.database().ref('/users')
-      context.commit('setFirebasePointer', {key: 'allUsersRef', value: allUsersRef})
+      context.commit('setFirebasePointer', {key: 'allUsersRef', value: allUsersRef}, { root: true })
       allUsersRef.on('value', (allUsersDataSnapShot) => users.next(allUsersDataSnapShot.val()))
 
       users
@@ -234,7 +211,7 @@ export const UsersModule = {
       }
       // recupera os dados do usuário
       const userRef = firebase.database().ref(`/users/${userAuth.uid}`)
-      context.commit('setFirebasePointer', {key: 'userRef', value: userRef})
+      context.commit('setFirebasePointer', {key: 'userRef', value: userRef}, { root: true })
       userRef.on(
         'value',
         userDataSnapshot => context.dispatch('onAuthStateChangedUser', {userAuth, userDataSnapshot})
@@ -245,7 +222,7 @@ export const UsersModule = {
       context.commit('setCurrentUser', {...userAuth, ...userDataSnapshot.val()})
       // recupera os dados do administrador
       const adminRef = firebase.database().ref(`/admins/${userAuth.uid}`)
-      context.commit('setFirebasePointer', {key: 'adminRef', value: adminRef})
+      context.commit('setFirebasePointer', {key: 'adminRef', value: adminRef}, { root: true })
       adminRef.on(
         'value',
         (adminDataSnapshot) => context.dispatch('onAuthStateChangedAdmin', {userAuth, userDataSnapshot, adminDataSnapshot})
@@ -264,7 +241,7 @@ export const UsersModule = {
       )
     },
     initAuthStateChangedListener (context, payload) {
-      if (context.getters.firebasePointer('onAuthStateChangedListener')) {
+      if (context.rootGetters.firebasePointer('onAuthStateChangedListener')) {
         return
       }
       const onAuthStateChangedListener =
@@ -276,7 +253,8 @@ export const UsersModule = {
       )
       context.commit(
         'setFirebasePointer',
-        {key: 'onAuthStateChangedListener', value: onAuthStateChangedListener}
+        {key: 'onAuthStateChangedListener', value: onAuthStateChangedListener},
+        { root: true }
       )
     }
   }
