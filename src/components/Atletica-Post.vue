@@ -38,6 +38,7 @@ export default {
       {fetchCurrentPostId: 'fetchCurrentPostId'}
     ),
     ...mapActions(
+      'UsersModule',
       ['fetchUser']
     )
   },
@@ -47,6 +48,7 @@ export default {
       {post: 'viewPost'}
     ),
     ...mapGetters(
+      'UsersModule',
       ['canEdit']
     )
   }

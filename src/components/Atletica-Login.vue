@@ -12,17 +12,17 @@
       <div class="" v-else>
         <ul>
           <li v-for="listedUser of allUsers">
-            <img :src="listedUser.photoURL" alt="foto do usuario" height="50" width="50">
-            {{ listedUser.displayName }}
+            <img :src="listedUser.data.photoURL" alt="foto do usuario" height="50" width="50">
+            {{ listedUser.data.displayName || 'nome' }}
             <br>
-            {{ listedUser.email }}
+            {{ listedUser.data.email || 'email' }}
             <br>
-            {{ listedUser.isAdmin ? 'Administrador' : 'Visitante' }}
+            {{ listedUser.data.isAdmin ? 'Administrador' : 'Visitante' }}
             <br>
-            Último Acesso: {{ (new Date(listedUser.lastLogin)).toLocaleString(['pt-BR', 'en-US'], {hour12: false}) }}
+            Último Acesso: {{ (new Date(listedUser.data.lastLogin)).toLocaleString(['pt-BR', 'en-US'], {hour12: false}) }}
           </li>
         </ul>
-        <button type="button" name="button" @click="logout">
+        <button type="button" name="button" class="btn" v-on:click="logout">
           Logout
         </button>
       </div>

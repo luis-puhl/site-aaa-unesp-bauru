@@ -6,20 +6,67 @@ import 'rxjs/add/operator/filter'
 import 'rxjs/add/observable/fromPromise'
 import 'rxjs/add/observable/fromEvent'
 
-const userDataMapper = userData => (!!userData && {
-  uid: userData.uid,
-  data: {
-    email: userData.email,
-    emailVerified: userData.emailVerified,
-    displayName: userData.displayName,
-    isAnonymous: userData.isAnonymous,
-    lastLogin: userData.lastLogin,
-    phoneNumber: userData.phoneNumber,
-    photoURL: userData.photoURL,
-    providerId: userData.providerId,
-    isAdmin: userData.isAdmin || false
+function userDataMapper (userData) {
+  return (!!userData && {
+    uid: userData.uid,
+    data: {
+      email: userData.email,
+      emailVerified: userData.emailVerified,
+      displayName: userData.displayName,
+      isAnonymous: userData.isAnonymous,
+      lastLogin: userData.lastLogin,
+      phoneNumber: userData.phoneNumber,
+      photoURL: userData.photoURL,
+      providerId: userData.providerId,
+      profile: userData.profile,
+      isAdmin: userData.isAdmin || false,
+      ...userData.data
+    }
+  })
+}
+
+function userDataValidator (userData) {
+  if (userData === false) {
+    return true
   }
-})
+
+  if (!userData) {
+    console.error('userData is not valid', userData)
+    return false
+  }
+
+  const mainKeys = ['uid', 'data']
+  const userKeys = Object.keys(userData).sort()
+  const hasMainKeys = mainKeys.every(
+    (element, index, array) => userKeys.indexOf(element) !== -1
+  )
+  if (!hasMainKeys) {
+    console.error('userData is not valid, no main Keys found', userData, mainKeys)
+    return false
+  }
+
+  const dataKeys = [
+    'email',
+    'emailVerified',
+    'displayName',
+    'isAnonymous',
+    // 'lastLogin',
+    // 'phoneNumber',
+    'photoURL',
+    'providerId',
+    'profile',
+    'isAdmin'
+  ]
+  const userDataKeys = Object.keys(userData.data).sort()
+  const hasDataKeys = dataKeys.every(
+    (element, index, array) => userDataKeys.indexOf(element) !== -1
+  )
+  if (!hasDataKeys) {
+    console.error('userData is not valid, no data Keys found', userData, dataKeys)
+    return false
+  }
+  return true
+}
 
 const databaseReferencesStore = {
   allUsersRef: false,
@@ -42,42 +89,61 @@ export const UsersModule = {
     },
 
     currentUser (state, getters, rootState, rootGetters) {
-      return userDataMapper(state.currentUser)
+      const currentUser = userDataMapper(state.currentUser)
+      return userDataValidator(currentUser) ? currentUser : false
     },
     allUsers (state, getters, rootState, rootGetters) {
-      return state.allUsers
+      const allUsers = state.allUsers.filter(user => !!user)
+      // console.log('UsersModule getters allUsers', allUsers)
+      return allUsers
+      .filter(user => user.uid !== state.currentUser.uid)
+      .concat([state.currentUser])
     },
 
     canEdit (state, getters, rootState, rootGetters) {
-      return getters.currentUser.isAdmin
+      try {
+        return getters.currentUser.data.isAdmin
+      } catch (e) { }
+      return false
     },
     logedInMesage (state, getters, rootState, rootGetters) {
-      if (getters.currentUser.displayName) {
-        return 'Bem-vindo ' + getters.currentUser.displayName
-      }
+      try {
+        return 'Bem-vindo ' + getters.currentUser.data.displayName
+      } catch (e) { }
       return null
     }
   },
   mutations: {
     setFirebasePointer (state, payload) {
-      console.trace('mutation: setFirebasePointer', payload)
+      // console.trace('mutation: setFirebasePointer', payload)
       state.firebasePointers[payload.key] = !!payload.value
       databaseReferencesStore[payload.key] = payload.value
     },
 
     setCurrentUser (state, payload) {
       payload = userDataMapper(payload)
-      console.trace('mutation: setCurrentUser', payload)
-      state.currentUser = payload.data || false
+      // console.log('mutation: setCurrentUser', payload)
+      state.currentUser = userDataValidator(payload) ? payload : false
     },
     setAllUsers (state, users) {
-      console.trace('mutation: setAllUsers', users)
-      state.allUsers = [state.currentUser]
+      // console.log('mutation: setAllUsers', users)
+      if (!users) {
+        users = [state.currentUser]
+      }
+      state.allUsers = users.filter(user => user.uid !== state.currentUser.uid)
     },
     logedOut (state) {
-      console.trace('mutation: logedOut')
+      // console.log('mutation: logedOut')
       state.currentUser = false
-      state.allUsers = false
+      state.allUsers = []
+      // clearDatabaseRefs
+      for (let key of ['allUsersRef', 'currentAdminRef', 'currentUserRef']) {
+        if (!state.firebasePointers[key]) {
+          continue
+        }
+        databaseReferencesStore[key].off()
+        state.firebasePointers[key] = false
+      }
     }
   },
   actions: {
@@ -91,9 +157,11 @@ export const UsersModule = {
         () => firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(
           (result) => {
-            console.log('loged in with firebase', result)
-            context.commit('setCurrentUser', result.user)
+            // console.log('loged in with firebase', result)
+            const updatedUser = {...result.user, lastLogin: Date.now(), ...result.additionalUserInfo}
+            context.commit('setCurrentUser', updatedUser)
             context.dispatch('updateUserInfo')
+            context.dispatch('fetchAllUsers')
           },
         ).catch(
           (error) => console.error(error)
@@ -104,30 +172,33 @@ export const UsersModule = {
     },
     logout (context /*, payload */) {
       if (context.getters.currentUser) {
-        context.commit('clearDatabaseRefs')
         firebase.auth().signOut().then(
           () => context.commit('logedOut')
         )
       }
     },
+
     fetchUser (context /*, payload */) {
-      const currentUser = firebase.auth().currentUser
-      console.log('fetchUser', currentUser)
+      // if (context.state.currentUser) {
+      //   return
+      // }
+      // const currentUser = firebase.auth().currentUser
+      // console.log('fetchUser', currentUser)
       context.dispatch('initAuthStateChangedListener')
-      context.commit('setCurrentUser', currentUser)
+      // context.commit('setCurrentUser', currentUser)
     },
     fetchAllUsers (context /*, payload */) {
-      const users = new BehaviorSubject([firebase.auth().currentUser])
+      const users = new BehaviorSubject([])
       const allUsersRef = firebase.database().ref('/users')
       context.commit('setFirebasePointer', {key: 'allUsersRef', value: allUsersRef})
-      allUsersRef.on('value', (v) => users.next(v.val()))
+      allUsersRef.on('value', (allUsersDataSnapShot) => users.next(allUsersDataSnapShot.val()))
 
       users
       .filter(users => !!users)
       .map(
         users => {
           if (!Array.isArray(users)) {
-            users = Object.keys(users).map(key => ({key, ...users[key]}))
+            users = Object.keys(users).map(key => ({uid: key, data: {...users[key]}}))
           }
           return users.filter(user => !!user)
         }
@@ -136,52 +207,59 @@ export const UsersModule = {
         (users) => context.commit('setAllUsers', users)
       )
     },
-    updateUserInfo (context, payload) {
-      this.userData
-      .map(
-        user => ({...user, data: {...user.data, lastLogin: Date.now()}})
-      )
-      .subscribe(
-        user => this.database.ref(`users/${user.uid}`).set(
-          user.data,
-          () => console.log({updateUserInfo__onComplete: user})
-        )
-        .then(
-          () => this.database.ref(`users/${user.uid}`).once(
-            'value',
-            (v) => console.log({updateUserInfo__done: user, database: v, databaseVal: v.val()})
-          )
-        )
-        .catch(
-          (e) => console.log({updateUserInfo__error: e})
-        ) &&
-        console.log({updateUserInfo: user})
+
+    updateUserInfo (context /*, payload */) {
+      const user = context.getters.currentUser
+      const data = {}
+      for (var key in user.data) {
+        if (user.data.hasOwnProperty(key)) {
+          if (user.data[key]) {
+            data[key] = user.data[key]
+          }
+        }
+      }
+      firebase.database().ref(`users/${user.uid}`).set(
+        data
+        // ,
+        // () => firebase.database().ref(`users/${user.uid}`).once(
+        //   'value',
+        //   (v) => console.log('UsersModule actions updateUserInfo__done', v.val())
+        // )
       )
     },
-    onAuthStateChanged  (context, userAuth) {
+    onAuthStateChanged  (context, payload) {
+      const userAuth = payload
       if (!userAuth) {
         return
       }
+      // recupera os dados do usuário
       const userRef = firebase.database().ref(`/users/${userAuth.uid}`)
       context.commit('setFirebasePointer', {key: 'userRef', value: userRef})
       userRef.on(
         'value',
-        userDataSnapshot => {
-          context.commit('setUserData', {...userAuth, ...userDataSnapshot.val()})
-          const adminRef = firebase.database().ref(`/admins/${userAuth.uid}`)
-          context.commit('setFirebasePointer', {key: 'adminRef', value: adminRef})
-          adminRef.on(
-            'value',
-            (adminDataSnapshot) => context.commit(
-              'setUserData',
-              {
-                ...userAuth,
-                ...userDataSnapshot.val(),
-                ...adminDataSnapshot.val(),
-                isAdmin: true
-              }
-            )
-          )
+        userDataSnapshot => context.dispatch('onAuthStateChangedUser', {userAuth, userDataSnapshot})
+      )
+    },
+    onAuthStateChangedUser (context, payload) {
+      const {userAuth, userDataSnapshot} = payload
+      context.commit('setCurrentUser', {...userAuth, ...userDataSnapshot.val()})
+      // recupera os dados do administrador
+      const adminRef = firebase.database().ref(`/admins/${userAuth.uid}`)
+      context.commit('setFirebasePointer', {key: 'adminRef', value: adminRef})
+      adminRef.on(
+        'value',
+        (adminDataSnapshot) => context.dispatch('onAuthStateChangedAdmin', {userAuth, userDataSnapshot, adminDataSnapshot})
+      )
+    },
+    onAuthStateChangedAdmin (context, payload) {
+      const {userAuth, userDataSnapshot, adminDataSnapshot} = payload
+      context.commit(
+        'setCurrentUser',
+        {
+          ...userAuth,
+          ...userDataSnapshot.val(),
+          ...adminDataSnapshot.val(),
+          isAdmin: true
         }
       )
     },
@@ -191,15 +269,15 @@ export const UsersModule = {
       }
       const onAuthStateChangedListener =
       firebase.auth().onAuthStateChanged(
-        (newUserAuthStateChanged) => context.commit('setCurrentUser', newUserAuthStateChanged)
+        (newUserAuthStateChanged) => {
+          context.commit('setCurrentUser', newUserAuthStateChanged)
+          context.dispatch('onAuthStateChanged', newUserAuthStateChanged)
+        }
       )
       context.commit(
         'setFirebasePointer',
         {key: 'onAuthStateChangedListener', value: onAuthStateChangedListener}
       )
-    },
-    someAction (context, payload) {
-      context.commit('someMutation', payload)
     }
   }
 }
