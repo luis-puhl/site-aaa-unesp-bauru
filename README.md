@@ -63,7 +63,7 @@
 
  - 10-08-2016:
   - *PWA*: 100%
-  - *Performance*: 49%
+  - *Performance*: 68%
     - 7.9s para carregar;
     - 4.3s para o primeiro desenho;
     - *Onde melhorar*:

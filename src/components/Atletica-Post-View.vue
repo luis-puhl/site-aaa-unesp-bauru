@@ -11,7 +11,10 @@
 </template>
 
 <script>
-import marked from 'marked'
+import MarkdownIt from 'markdown-it'
+import emoji from 'markdown-it-emoji'
+const markdown = new MarkdownIt()
+markdown.use(emoji)
 
 export default {
   name: 'atletica-post-view',
@@ -30,7 +33,7 @@ export default {
       if (!conteudoMarkdown) {
         conteudoMarkdown = 'Este post ainda não tem conteúdo'
       }
-      return marked(conteudoMarkdown, { sanitize: true })
+      return markdown.render(conteudoMarkdown)
     }
   }
 }

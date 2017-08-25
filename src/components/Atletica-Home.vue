@@ -26,9 +26,7 @@ export default {
     AtleticaSection
   },
   beforeUpdate () {
-    if (this.canEdit) {
-      this.fetchAllPosts()
-    }
+    this.checkCanEdit()
   },
   computed: {
     ...mapGetters(
@@ -48,7 +46,17 @@ export default {
     ...mapActions(
       'PostsModule',
       ['fetchAllPosts']
-    )
+    ),
+    checkCanEdit () {
+      if (this.canEdit) {
+        this.fetchAllPosts()
+      }
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.checkCanEdit()
+    }
   }
 }
 </script>

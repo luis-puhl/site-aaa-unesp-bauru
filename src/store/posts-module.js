@@ -4,11 +4,11 @@ export const PostsModule = {
   namespaced: true,
   state: {
     dummyPost: {
-      id: 0,
-      nome: 'Titulo do Tile',
-      class: 'tile-tile',
-      img: '',
-      conteudoModal: '# Conteúdo do post'
+      id: null,
+      nome: 'Post Não encontrado',
+      class: '',
+      img: 'http://alozano.clas.uconn.edu/wp-content/uploads/sites/490/2017/01/deadlink.png',
+      conteudoModal: '## O post que você procura não está aqui 😞.\n\n### [Melhor voltar para casa 🏠](/)'
     },
     currentPostId: '',
 
@@ -61,6 +61,10 @@ export const PostsModule = {
 
     setAllPosts (state, payload) {
       state.allPosts = payload
+    },
+
+    postDeleted (state, payload) {
+      state.allPosts = state.allPosts.filter(post => post.key !== payload.key)
     }
   },
   actions: {
@@ -103,6 +107,17 @@ export const PostsModule = {
           'setAllPosts',
           Object.keys(allPostsSnapShot.val()).map(key => ({...allPostsSnapShot.val()[key], key}))
         )
+      )
+    },
+
+    deletePost (context, payload) {
+      firebase.database().ref(`new/posts/${payload.key}`).remove(
+        () => {
+          context.commit('postDeleted', payload)
+          if (typeof payload.callMeBaby === 'function') {
+            payload.callMeBaby()
+          }
+        }
       )
     }
   }
