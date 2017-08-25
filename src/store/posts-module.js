@@ -13,7 +13,9 @@ export const PostsModule = {
     currentPostId: '',
 
     newPostKey: false,
-    newPost: false
+    newPost: false,
+
+    allPosts: []
   },
   getters: {
     dummyPost (state, getters, rootState, rootGetters) {
@@ -35,6 +37,14 @@ export const PostsModule = {
 
     newPost (state, getters, rootState, rootGetters) {
       return state.newPost
+    },
+
+    allPostsSection (state, getters, rootState, rootGetters) {
+      return {
+        id: 'posts',
+        nome: 'Todos os Posts',
+        posts: [...state.allPosts]
+      }
     }
   },
   mutations: {
@@ -47,6 +57,10 @@ export const PostsModule = {
     },
     setNewPost (state, payload) {
       state.newPost = payload
+    },
+
+    setAllPosts (state, payload) {
+      state.allPosts = payload
     }
   },
   actions: {
@@ -70,6 +84,16 @@ export const PostsModule = {
       )
       firebase.database().ref(`new/posts/${newPostKey}`).update(
         {...context.state.dummyPost, id: newPostKey}
+      )
+    },
+
+    fetchAllPosts (context /*, payload */) {
+      firebase.database().ref(`new/posts`).on(
+        'value',
+        allPostsSnapShot => context.commit(
+          'setAllPosts',
+          Object.keys(allPostsSnapShot.val()).map(key => ({...allPostsSnapShot.val()[key], key}))
+        )
       )
     }
   }

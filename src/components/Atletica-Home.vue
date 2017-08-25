@@ -1,6 +1,8 @@
 <template>
   <main>
     <atletica-header></atletica-header>
+    <atletica-section v-if="canEdit"
+      v-bind:section="allPostsSection" />
     <atletica-section
       v-for="section in sections" v-bind:key="section.id"
       v-bind:section="section" />
@@ -9,7 +11,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 import AtleticaSection from '@/components/Atletica-Section'
 
@@ -23,14 +25,30 @@ export default {
     AtleticaContato,
     AtleticaSection
   },
+  created () {
+    if (this.canEdit) {
+      this.fetchAllPosts()
+    }
+  },
   computed: {
     ...mapGetters(
       'HomeModule',
       ['sections']
+    ),
+    ...mapGetters(
+      'PostsModule',
+      ['allPostsSection']
+    ),
+    ...mapGetters(
+      'UsersModule',
+      ['canEdit']
     )
   },
-  created () {
-    // this.$store.dispatch('getSections')
+  methods: {
+    ...mapActions(
+      'PostsModule',
+      ['fetchAllPosts']
+    )
   }
 }
 </script>
