@@ -105,7 +105,10 @@ export const PostsModule = {
         'value',
         allPostsSnapShot => context.commit(
           'setAllPosts',
-          Object.keys(allPostsSnapShot.val()).map(key => ({...allPostsSnapShot.val()[key], key}))
+          allPostsSnapShot => (allPostsValue => allPostsValue && context.commit(
+            'setAllPosts',
+            Object.keys(allPostsValue).map(key => ({...allPostsValue[key], key}))
+          ))(allPostsSnapShot.val())
         )
       )
     },

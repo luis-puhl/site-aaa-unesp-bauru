@@ -2,6 +2,15 @@
 
 > Site da Associação Atletica Acadêmica da Unesp de Bauru [take 4].
 
+
+# Tretas
+- [ ] Navegação por ID e por FirebaseKey (por id funciona, mas quero por chave para economizar os ids)
+- [ ] Seleção de seções (componente post-editor)
+- [ ] Editor de seções (componente sections-editor)
+- [ ] Guard para posts (firebase rules)
+- [ ] Visualizar admins (vuex e firebase api)
+- [ ] Promover Usuário (componente, store, firebase)
+
 # TODO (discutido em 4 de agosto, 2017-08-4)
 
 ## Itens avaliados pela diretoria

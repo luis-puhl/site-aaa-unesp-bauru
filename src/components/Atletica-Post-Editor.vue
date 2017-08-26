@@ -83,10 +83,10 @@ export default {
     AtleticaPostView
   },
   props: {
-    id: {
+    postKey: {
       type: String,
       default: function () {
-        return ''
+        return '404'
       }
     },
     addPost: {
@@ -111,20 +111,20 @@ export default {
     if (this.addPost) {
       this.dispatchAddPost()
     } else {
-      this.fetchCurrentPostId(this.id)
+      this.fetchCurrentPostId(this.postKey)
     }
     this.setPost(this.sourcePost)
   },
   computed: {
     ...mapGetters(
       'PostsModule',
-      {curretSourcePost: 'viewPost', newPostSource: 'newPost'}
+      {editSourcePost: 'viewPost', newPostSource: 'newPost'}
     ),
     sourcePost () {
       if (this.addPost) {
         return this.newPostSource
       }
-      return this.curretSourcePost
+      return this.editSourcePost
     }
   },
   methods: {
