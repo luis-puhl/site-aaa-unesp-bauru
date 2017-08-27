@@ -25,8 +25,9 @@ export default {
     AtleticaContato,
     AtleticaSection
   },
-  beforeUpdate () {
-    this.checkCanEdit()
+  created () {
+    this.fetchSections()
+    this.fetchPosts()
   },
   computed: {
     ...mapGetters(
@@ -44,19 +45,12 @@ export default {
   },
   methods: {
     ...mapActions(
-      'PostsModule',
-      ['fetchAllPosts']
+      ['fetchPosts']
     ),
-    checkCanEdit () {
-      if (this.canEdit) {
-        this.fetchAllPosts()
-      }
-    }
-  },
-  watch: {
-    '$route' (to, from) {
-      this.checkCanEdit()
-    }
+    ...mapActions(
+      'HomeModule',
+      ['fetchSections']
+    )
   }
 }
 </script>

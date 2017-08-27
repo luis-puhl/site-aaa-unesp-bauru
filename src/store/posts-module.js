@@ -43,7 +43,7 @@ export const PostsModule = {
       return {
         id: 'posts',
         nome: 'Todos os Posts',
-        posts: [...state.allPosts]
+        posts: [...rootGetters.posts]
       }
     }
   },
@@ -60,6 +60,7 @@ export const PostsModule = {
     },
 
     setAllPosts (state, payload) {
+      console.log('PostsModule setAllPosts', payload)
       state.allPosts = payload
     },
 
@@ -73,48 +74,26 @@ export const PostsModule = {
       context.dispatch('updatePost', context.getters.viewPost)
     },
     updatePost (context, payload) {
-      firebase.database().ref(`new/posts/${payload.key}`).update(
+      firebase.database().ref(`posts/${payload.key}`).update(
         payload
       )
     },
     addPost (context /*, payload */) {
-      const newPostKey = firebase.database().ref('new/posts/').push(
+      const newPostKey = firebase.database().ref('posts/').push(
         context.state.dummyPost
       ).key
       context.commit('setNewPostKey', newPostKey)
-      firebase.database().ref(`new/posts/${newPostKey}`).on(
+      firebase.database().ref(`posts/${newPostKey}`).once(
         'value',
         newPostSnapShot => context.commit('setNewPost', {...newPostSnapShot.val(), key: newPostKey})
       )
-      firebase.database().ref(`new/posts/${newPostKey}`).update(
+      firebase.database().ref(`posts/${newPostKey}`).update(
         {...context.state.dummyPost, id: newPostKey}
       )
     },
 
-    fetchAllPosts (context /*, payload */) {
-      if (context.rootGetters.firebasePointer('allPostsRef')) {
-        return
-      }
-      const allPostsRef = firebase.database().ref(`new/posts`)
-      context.commit(
-        'setFirebasePointer',
-        {key: 'allPostsRef', value: allPostsRef},
-        { root: true }
-      )
-      allPostsRef.on(
-        'value',
-        allPostsSnapShot => context.commit(
-          'setAllPosts',
-          allPostsSnapShot => (allPostsValue => allPostsValue && context.commit(
-            'setAllPosts',
-            Object.keys(allPostsValue).map(key => ({...allPostsValue[key], key}))
-          ))(allPostsSnapShot.val())
-        )
-      )
-    },
-
     deletePost (context, payload) {
-      firebase.database().ref(`new/posts/${payload.key}`).remove(
+      firebase.database().ref(`posts/${payload.key}`).remove(
         () => {
           context.commit('postDeleted', payload)
           if (typeof payload.callMeBaby === 'function') {

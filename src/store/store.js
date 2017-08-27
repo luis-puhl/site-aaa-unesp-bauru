@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import * as firebase from 'firebase'
 import { AtleticaFirebaseApp } from '@/api/firebaseApp'
 import { HomeModule } from './home-module'
 import { PostsModule } from './posts-module'
@@ -80,7 +81,7 @@ export const AtleticaStore = new Vuex.Store({
       }
     },
 
-    loadPosts (state, loadedPosts) {
+    setPosts (state, loadedPosts) {
       state.posts = loadedPosts
     },
     updatePost (state, newPost) {
@@ -90,12 +91,24 @@ export const AtleticaStore = new Vuex.Store({
     }
   },
   actions: {
-    fetchPosts (context) {
-      context.dispatch('loadFirebasePosts')
-    },
-    loadFirebasePosts (context) {
-      AtleticaFirebaseApp.instance.postsSubject.subscribe(
-        (posts) => context.commit('loadPosts', posts)
+    fetchPosts (context /*, payload */) {
+      AtleticaFirebaseApp.instance
+      console.log('PostsModule actions fetchAllPosts')
+      if (context.rootGetters.firebasePointer('allPostsRef')) {
+        return
+      }
+      const allPostsRef = firebase.database().ref(`posts`)
+      context.commit(
+        'setFirebasePointer',
+        {key: 'allPostsRef', value: allPostsRef},
+        { root: true }
+      )
+      allPostsRef.on(
+        'value',
+        allPostsSnapShot => context.commit(
+          'setPosts',
+          Object.keys(allPostsSnapShot.val()).map(key => ({...allPostsSnapShot.val()[key], key}))
+        )
       )
     }
   },

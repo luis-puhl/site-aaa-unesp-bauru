@@ -7,10 +7,8 @@
           <hr class="star-primary">
         </div>
       </div>
-      {{ section }}
-      <div class="row" v-for="item in section.posts">
-        {{ item }}
-        <atletica-tile v-bind:tile="item"
+      <div class="row">
+        <atletica-tile v-for="item in section.posts" v-bind:tile="item"
         v-bind:bootstrapItemClass="section.bootstrapItemClass">
         </atletica-tile>
       </div>
