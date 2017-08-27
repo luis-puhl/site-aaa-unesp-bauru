@@ -7,8 +7,10 @@
           <hr class="star-primary">
         </div>
       </div>
-      <div class="row">
-        <atletica-tile v-for="item in section.posts" v-bind:tile="item" v-bind:key="item.id"
+      {{ section }}
+      <div class="row" v-for="item in section.posts">
+        {{ item }}
+        <atletica-tile v-bind:tile="item"
         v-bind:bootstrapItemClass="section.bootstrapItemClass">
         </atletica-tile>
       </div>
@@ -17,10 +19,13 @@
 </template>
 
 <script>
-import AtleticaTile from '@/components/Atletica-Tile'
+import AtleticaTile from '@/components/home/Atletica-Tile'
 
 export default {
   name: 'atletica-section',
+  components: {
+    AtleticaTile
+  },
   props: {
     'section': {
       type: Object,
@@ -41,9 +46,6 @@ export default {
         }
       }
     }
-  },
-  components: {
-    AtleticaTile
   }
 }
 </script>

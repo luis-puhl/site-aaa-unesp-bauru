@@ -13,10 +13,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AtleticaSection from '@/components/Atletica-Section'
+import AtleticaSection from '@/components/home/Atletica-Section'
 
-import AtleticaHeader from '@/components/Atletica-Header'
-import AtleticaContato from '@/components/Atletica-Contato'
+import AtleticaHeader from '@/components/home/Atletica-Header'
+import AtleticaContato from '@/components/home/Atletica-Contato'
 
 export default {
   name: 'atletica-home',

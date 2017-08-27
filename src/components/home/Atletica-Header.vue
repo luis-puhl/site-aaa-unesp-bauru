@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import responsiveImage from '../assets/logo-atletica-tiny.png?placeholder=true&sizes[]=1140,sizes[]=500,sizes[]=200,sizes[]=20'
+import responsiveImage from '@/assets/logo-atletica-tiny.png?placeholder=true&sizes[]=1140,sizes[]=500,sizes[]=200,sizes[]=20'
 
 export default {
   name: 'atletica-header',

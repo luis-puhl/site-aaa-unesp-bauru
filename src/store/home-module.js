@@ -6,33 +6,43 @@ export const HomeModule = {
         id: 'gestoes',
         nome: 'Gestões',
         posts: [
-          'gestao-2017',
-          'gestao-2016'
+          {
+            id: 'gestao-2017'
+          },
+          {
+            id: 'gestao-2016'
+          }
         ]
       },
       {
         id: 'produtos',
         nome: 'Produtos',
         posts: [
-          'produto-Blusa',
-          'produto-Moletom'
+          {
+            id: 'produto-Blusa'
+          },
+          {
+            id: 'produto-Moletom'
+          }
         ]
       }
     ]
   },
   getters: {
     sections (state, getters, rootState, rootGetters) {
-      return state.sections.map(
-        section => {
-          section = {...section}
-          section.posts = section.posts.map(
+      const sections = state.sections.map(
+        section => ({
+          ...section,
+          posts: section.posts
+          .map(
             sectionPost => rootState.posts.find(post => post.id === sectionPost)
           ).filter(
-            posts => posts
+            post => !!post && post.id
           )
-          return section
-        }
+        })
       )
+      console.log(sections)
+      return sections
     }
   }
 }

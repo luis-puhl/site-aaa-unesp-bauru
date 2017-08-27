@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import AtleticaHome from '@/components/Atletica-Home'
+import AtleticaHome from '@/components/home/Atletica-Home'
 
-import AtleticaPost from '@/components/Atletica-Post'
-import AtleticaPostEditor from '@/components/Atletica-Post-Editor'
+import AtleticaPost from '@/components/posts/Atletica-Post'
+import AtleticaPostEditor from '@/components/posts/Atletica-Post-Editor'
 
-import AtleticaLogin from '@/components/Atletica-Login'
+import AtleticaLogin from '@/components/users/Atletica-Login'
 
 Vue.use(Router)
 

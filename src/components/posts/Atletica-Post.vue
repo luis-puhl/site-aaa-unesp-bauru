@@ -13,7 +13,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import AtleticaPostView from '@/components/Atletica-Post-View'
+import AtleticaPostView from '@/components/posts/Atletica-Post-View'
 
 export default {
   name: 'atletica-post',
