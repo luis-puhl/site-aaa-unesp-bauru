@@ -1,7 +1,33 @@
+function ObjectValues (obj) {
+  if (!obj || Array.isArray(obj)) {
+    return obj
+  }
+  const values = Object.keys(obj)
+  .filter(
+    k => obj.hasOwnProperty(k)
+  )
+  .map(
+    key => {
+      if (typeof obj[key] === 'object') {
+        return {key, ...obj[key]}
+      } else {
+        return {key, [key]: obj[key]}
+      }
+    }
+  )
+  return values
+}
 
 export const HomeModule = {
   namespaced: true,
   state: {
+    dummySection: {
+      id: '',
+      key: '',
+      nome: '',
+      ordem: 0,
+      postKeys: []
+    },
     sections: {
       'firebaseSectionsKey1': {
         id: 'gestoes',
@@ -21,14 +47,18 @@ export const HomeModule = {
   },
   getters: {
     sections (state, getters, rootState, rootGetters) {
-      const loadPostFromKey = key => rootState.posts.find(post => post.key === key)
-      const ObjectValues = obj => Object.keys(obj).map(k => ({ key: k, ...obj[k] }))
+      const loadPostFromKey = key => {
+        if (!key) return
+        return rootGetters.posts.find(post => post.key === key)
+      }
 
       const sections = ObjectValues(state.sections)
       .map(
         section => ({
           ...section,
           posts: [].concat(section.postsKeys)
+          .filter(publicacao => !!publicacao && publicacao.postKey)
+          .map(publicacao => publicacao.postKey)
           .map(loadPostFromKey)
           .filter(
             post => !!post && post.id
@@ -40,7 +70,16 @@ export const HomeModule = {
   },
   mutations: {
     setSections (state, payload) {
-      state.sections = payload
+      const sections = payload
+      .map(
+        section => ({
+          ...state.dummySection,
+          ...section,
+          postsKeys: ObjectValues(section.postsKeys)
+        })
+      )
+      .sort((a, b) => a.ordem - b.ordem)
+      state.sections = sections
     }
   },
   actions: {
@@ -56,7 +95,7 @@ export const HomeModule = {
       )
       sectionsRef.on(
         'value',
-        sectionsSnapshot => context.commit('setSections', sectionsSnapshot.val())
+        sectionsSnapshot => context.commit('setSections', ObjectValues(sectionsSnapshot.val()))
         // sectionsSnapshot => context.dispatch('fetchSectionsPosts', sectionsSnapshot.val())
       )
     },

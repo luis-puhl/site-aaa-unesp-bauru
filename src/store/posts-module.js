@@ -98,6 +98,10 @@ export const PostsModule = {
       ).key
       context.commit('setNewPostKey', newPostKey)
 
+      firebase.database().ref(`posts/${newPostKey}`).update({
+        key: newPostKey
+      })
+
       return firebase.database().ref(`posts/${newPostKey}`).once(
         'value',
         newPostSnapShot => context.commit('setNewPost', {...newPostSnapShot.val(), key: newPostKey})
@@ -124,7 +128,10 @@ export const PostsModule = {
 
       firebase.database().ref(`public/${payload.key}`).set({ dataPublicacao: Date.now() })
 
-      firebase.database().ref(`sections/${payload.sectionKey}/postsKeys`).push(payload.key)
+      firebase.database().ref(`sections/${payload.sectionKey}/postsKeys`).push({
+        dataPublicacao: Date.now(),
+        postKey: payload.key
+      })
     }
   }
 }

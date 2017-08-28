@@ -1,5 +1,5 @@
 <template>
-  <h1>Adicionando novo post {{ postKey }}</h1>
+  <h1>Adicionando novo post {{ this.newPostKey }}</h1>
 </template>
 
 <script>

@@ -3,6 +3,7 @@
     <atletica-header></atletica-header>
     <atletica-section v-if="canEdit"
       v-bind:section="allPostsSection" />
+
     <atletica-section
       v-for="section in sections" v-bind:key="section.id"
       v-bind:section="section" />

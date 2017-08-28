@@ -48,5 +48,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+  section {
+    padding: 3rem 0;
+  }
 </style>
