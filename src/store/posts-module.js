@@ -128,7 +128,7 @@ export const PostsModule = {
 
       firebase.database().ref(`public/${payload.key}`).set({ dataPublicacao: Date.now() })
 
-      firebase.database().ref(`sections/${payload.sectionKey}/postsKeys`).push({
+      return firebase.database().ref(`sections/${payload.sectionKey}/postsKeys`).push({
         dataPublicacao: Date.now(),
         postKey: payload.key
       })

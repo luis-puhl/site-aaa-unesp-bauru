@@ -90,6 +90,7 @@ export default {
     AtleticaPostView
   },
   created () {
+    this.fetchAllPosts()
     this.fetchSections()
     this.fetchCurrentPostId(this.postKey).then(
       (postDataSnapshot) => {
@@ -135,8 +136,10 @@ export default {
     ),
     ...mapActions('HomeModule', ['fetchSections']),
     setPost (post) {
-      this.viewPost
-      this.editPost = {...post}
+      this.editPost = {
+        ...this.viewPost,
+        ...post
+      }
     },
     edit (event) {
       const targetId = event.target.id
@@ -171,11 +174,15 @@ export default {
     },
     publicar (event) {
       const post = {
+        postKey: this.viewPost.key,
         ...this.editPost,
         sectionKey: this.$refs.postSection.value
       }
       console.log('publicar', post)
       this.publishPost(post)
+      .then(
+        () => this.$router.push('/')
+      )
     }
   }
 }
