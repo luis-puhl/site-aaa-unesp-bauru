@@ -1,0 +1,39 @@
+{
+  "rules": {
+    "gestoes": {
+      ".read": true,
+      ".write": "auth !== null"
+    },
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid || root.child('admins/' + auth.uid).exists()",
+        ".write": "$uid === auth.uid || root.child('admins/' + auth.uid).exists()"
+      }
+    },
+    "admins": {
+      ".read": "root.child('admins/' + auth.uid).exists()",
+      ".write": "root.child('admins/' + auth.uid).exists()"
+    },
+    "posts": {
+      ".write": "root.child('admins/' + auth.uid).exists()",
+      "$uid": {
+        ".read": "root.child('public/' + $uid).exists() || root.child('admins/' + auth.uid).exists()",
+        ".write": "root.child('admins/' + auth.uid).exists()"
+      }
+    },
+    "public": {
+      ".read": true,
+      ".write": "root.child('admins/' + auth.uid).exists()"
+    },
+    "sections": {
+      ".read": true,
+      ".write": "root.child('admins/' + auth.uid).exists()",
+      ".indexOn": ".value",
+      "$uid": {
+        ".indexOn": ".value"
+      }
+    },
+    ".read": "root.child('admins/' + auth.uid).exists()",
+    ".write": false
+  }
+}
