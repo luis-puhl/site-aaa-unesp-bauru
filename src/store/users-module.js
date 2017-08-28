@@ -1,10 +1,4 @@
 
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
-import 'rxjs/add/operator/map'
-import 'rxjs/add/operator/filter'
-import 'rxjs/add/observable/fromPromise'
-import 'rxjs/add/observable/fromEvent'
-
 function userDataMapper (userData) {
   return (!!userData && {
     uid: userData.uid,
@@ -75,7 +69,17 @@ export const UsersModule = {
   },
   getters: {
     currentUser (state, getters, rootState, rootGetters) {
-      const currentUser = userDataMapper(state.currentUser)
+      if (!state.currentUser) {
+        return false
+      }
+      const currentUser = userDataMapper(
+        {
+          ...state.currentUser,
+          ...state.allUsers.find(
+            user => user.uid === state.currentUser.uid
+          )
+        }
+      )
       return userDataValidator(currentUser) ? currentUser : false
     },
     allUsers (state, getters, rootState, rootGetters) {
@@ -103,12 +107,30 @@ export const UsersModule = {
       payload = userDataMapper(payload)
       state.currentUser = userDataValidator(payload) ? payload : false
     },
+
     setAllUsers (state, users) {
       if (!users) {
         users = [state.currentUser]
       }
-      state.allUsers = users.filter(user => user.uid !== state.currentUser.uid)
+      state.allUsers = users // .filter(user => user.uid !== state.currentUser.uid)
     },
+    setAdmins (state, admins) {
+      if (!admins) {
+        admins = []
+      }
+      console.log('setAdmins', {admins})
+      state.allUsers = state.allUsers.map(
+        user => {
+          if (admins.find(admin => admin.uid === user.uid)) {
+            user.data.isAdmin = true
+          } else {
+            user.data.isAdmin = false
+          }
+          return user
+        }
+      )
+    },
+
     logedOut (state) {
       state.currentUser = false
       state.allUsers = []
@@ -148,7 +170,7 @@ export const UsersModule = {
         firebase.auth().signOut().then(
           () => {
             context.commit('logedOut')
-            context.commit('clearDatabaseRefs', null, { root: true })
+            context.commit('FirebaseModule/clearDatabaseRefs', null, { root: true })
           }
         )
       }
@@ -167,23 +189,42 @@ export const UsersModule = {
       context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
       const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
 
-      const users = new BehaviorSubject([])
       const allUsersRef = firebase.database().ref('/users')
       context.commit('FirebaseModule/setFirebasePointer', {key: 'allUsersRef', value: allUsersRef}, { root: true })
-      allUsersRef.on('value', (allUsersDataSnapShot) => users.next(allUsersDataSnapShot.val()))
+      allUsersRef.on(
+        'value',
+        (allUsersDataSnapShot) => {
+          let users = allUsersDataSnapShot.val()
+          if (!users) {
+            return
+          }
 
-      users
-      .filter(users => !!users)
-      .map(
-        users => {
           if (!Array.isArray(users)) {
             users = Object.keys(users).map(key => ({uid: key, data: {...users[key]}}))
           }
-          return users.filter(user => !!user)
+          users = users.filter(user => !!user)
+
+          context.commit('setAllUsers', users)
         }
       )
-      .subscribe(
-        (users) => context.commit('setAllUsers', users)
+
+      const allAdminsRef = firebase.database().ref('/admins')
+      context.commit('FirebaseModule/setFirebasePointer', {key: 'allAdminsRef', value: allAdminsRef}, { root: true })
+      allAdminsRef.on(
+        'value',
+        (allAdminsDataSnapShot) => {
+          let admins = allAdminsDataSnapShot.val()
+          if (!admins) {
+            return
+          }
+          console.log('got allAdminsRef value', admins)
+          if (!Array.isArray(admins)) {
+            admins = Object.keys(admins).map(key => ({uid: key, data: {...admins[key]}}))
+          }
+          admins = admins.filter(user => !!user)
+
+          context.commit('setAdmins', admins)
+        }
       )
     },
 
@@ -209,6 +250,7 @@ export const UsersModule = {
         // )
       )
     },
+
     onAuthStateChanged  (context, payload) {
       context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
       const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
@@ -268,6 +310,32 @@ export const UsersModule = {
         'FirebaseModule/setFirebasePointer',
         {key: 'onAuthStateChangedListener', value: onAuthStateChangedListener},
         { root: true }
+      )
+    },
+
+    promoverAdministrador (context, user) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
+      console.log('promoverAdministrador', {user})
+      firebase.database().ref(`admins/${user.uid}`).set(user.data)
+      // .then do nothing, O fetchAllUsers vai atualizar a listagem
+    },
+    apagarUsuario (context, payload) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
+      const user = context.getters.currentUser
+      firebase.database().ref(`users/${user.uid}`).remove().then(
+        () => {
+          // context.dispatch('logout') não funciona pq já está atualizado
+          firebase.auth().signOut().then(
+            () => {
+              context.commit('logedOut')
+              context.commit('FirebaseModule/clearDatabaseRefs', null, { root: true })
+            }
+          )
+        }
       )
     }
   }
