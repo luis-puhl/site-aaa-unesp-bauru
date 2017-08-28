@@ -18,21 +18,11 @@ export const PostsModule = {
     allPosts: []
   },
   getters: {
-    dummyPost (state, getters, rootState, rootGetters) {
-      return state.dummyPost
-    },
-    postById (state, getters, rootState, rootGetters) {
-      return postId => {
-        return rootState.posts.find(
-          post => post.id === postId
-        )
-      }
-    },
-    postByIdOrDummy: (state, getters, rootState, rootGetters) => postId => {
-      return getters.postById(postId) || getters.dummyPost
-    },
     viewPost (state, getters, rootState, rootGetters) {
-      return getters.postByIdOrDummy(state.currentPostId)
+      const post = rootState.posts.find(
+        post => post.id === state.currentPostId
+      )
+      return post || state.dummyPost
     },
 
     newPost (state, getters, rootState, rootGetters) {
@@ -74,11 +64,13 @@ export const PostsModule = {
       context.dispatch('updatePost', context.getters.viewPost)
     },
     updatePost (context, payload) {
+      context.commit('FirebaseModule/initFirebaseApp', null, { root: true })
       firebase.database().ref(`posts/${payload.key}`).update(
         payload
       )
     },
     addPost (context /*, payload */) {
+      context.commit('initFirebaseApp', null, { root: true })
       const newPostKey = firebase.database().ref('posts/').push(
         context.state.dummyPost
       ).key
@@ -93,6 +85,7 @@ export const PostsModule = {
     },
 
     deletePost (context, payload) {
+      context.commit('initFirebaseApp', null, { root: true })
       firebase.database().ref(`posts/${payload.key}`).remove(
         () => {
           context.commit('postDeleted', payload)

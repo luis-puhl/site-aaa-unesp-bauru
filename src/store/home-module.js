@@ -50,9 +50,10 @@ export const HomeModule = {
   },
   actions: {
     fetchSections (context, payload) {
+      context.commit('FirebaseModule/initFirebaseApp', null, { root: true })
       const sectionsRef = firebase.database().ref('sections')
       context.commit(
-        'setFirebasePointer',
+        'FirebaseModule/setFirebasePointer',
         {key: 'allPostsRef', value: sectionsRef},
         { root: true }
       )
@@ -62,12 +63,36 @@ export const HomeModule = {
         // sectionsSnapshot => context.dispatch('fetchSectionsPosts', sectionsSnapshot.val())
       )
     },
-    fetchSectionsPosts (context, payload) {
-      const sectionsRef = firebase.database().ref('posts')
+    fetchPublicationList (context /*, payload */) {
+      context.commit('FirebaseModule/initFirebaseApp', null, { root: true })
+      console.log('PostsModule actions fetchAllPosts')
+      if (context.rootGetters['FirebaseModule/firebasePointer']('publicPostsRef')) {
+        return
+      }
+      const publicPostsRef = firebase.database().ref(`public`)
       context.commit(
-        'setFirebasePointer',
-        {key: 'allPostsRef', value: sectionsRef},
+        'FirebaseModule/setFirebasePointer',
+        {key: 'publicPostsRef', value: publicPostsRef},
         { root: true }
+      )
+      publicPostsRef.on(
+        'value',
+        publicationsSnapShot => {
+          const firebaseObjectValues = obj => Object.keys(obj).map(key => ({...obj[key], key}))
+          const publicPostsList = firebaseObjectValues(publicationsSnapShot.val())
+          // context.commit('setPublicationList', publicPostsList, { root: true })
+
+          for (let publication of publicPostsList) {
+            firebase.database().ref(`posts/${publication.key}`).once(
+              'value',
+              postSnapshot => context.commit(
+                'updatePost',
+                {key: publication.key, ...postSnapshot.val()},
+                { root: true }
+              )
+            )
+          }
+        }
       )
     }
   }

@@ -17,9 +17,6 @@ export default {
   components: {
     AtleticaNav,
     AtleticaFooter
-  },
-  created () {
-    this.$store.dispatch('fetchPosts')
   }
 }
 </script>

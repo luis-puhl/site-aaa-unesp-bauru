@@ -8,9 +8,9 @@
         </div>
       </div>
       <div class="row">
-        <atletica-tile v-for="item in section.posts" v-bind:tile="item"
-        v-bind:bootstrapItemClass="section.bootstrapItemClass">
-        </atletica-tile>
+        <atletica-tile v-for="item in section.posts" v-bind:key="item.id"
+          v-bind:tile="item" v-bind:bootstrapItemClass="section.bootstrapItemClass"
+        />
       </div>
     </div>
   </section>

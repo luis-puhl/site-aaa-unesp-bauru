@@ -167,7 +167,7 @@ export const UsersModule = {
     fetchAllUsers (context /*, payload */) {
       const users = new BehaviorSubject([])
       const allUsersRef = firebase.database().ref('/users')
-      context.commit('setFirebasePointer', {key: 'allUsersRef', value: allUsersRef}, { root: true })
+      context.commit('FirebaseModule/setFirebasePointer', {key: 'allUsersRef', value: allUsersRef}, { root: true })
       allUsersRef.on('value', (allUsersDataSnapShot) => users.next(allUsersDataSnapShot.val()))
 
       users
@@ -211,7 +211,7 @@ export const UsersModule = {
       }
       // recupera os dados do usuário
       const userRef = firebase.database().ref(`/users/${userAuth.uid}`)
-      context.commit('setFirebasePointer', {key: 'userRef', value: userRef}, { root: true })
+      context.commit('FirebaseModule/setFirebasePointer', {key: 'userRef', value: userRef}, { root: true })
       userRef.on(
         'value',
         userDataSnapshot => context.dispatch('onAuthStateChangedUser', {userAuth, userDataSnapshot})
@@ -222,7 +222,7 @@ export const UsersModule = {
       context.commit('setCurrentUser', {...userAuth, ...userDataSnapshot.val()})
       // recupera os dados do administrador
       const adminRef = firebase.database().ref(`/admins/${userAuth.uid}`)
-      context.commit('setFirebasePointer', {key: 'adminRef', value: adminRef}, { root: true })
+      context.commit('FirebaseModule/setFirebasePointer', {key: 'adminRef', value: adminRef}, { root: true })
       adminRef.on(
         'value',
         (adminDataSnapshot) => context.dispatch('onAuthStateChangedAdmin', {userAuth, userDataSnapshot, adminDataSnapshot})
@@ -241,7 +241,7 @@ export const UsersModule = {
       )
     },
     initAuthStateChangedListener (context, payload) {
-      if (context.rootGetters.firebasePointer('onAuthStateChangedListener')) {
+      if (context.rootGetters['FirebaseModule/firebasePointer']('onAuthStateChangedListener')) {
         return
       }
       const onAuthStateChangedListener =
@@ -252,7 +252,7 @@ export const UsersModule = {
         }
       )
       context.commit(
-        'setFirebasePointer',
+        'FirebaseModule/setFirebasePointer',
         {key: 'onAuthStateChangedListener', value: onAuthStateChangedListener},
         { root: true }
       )

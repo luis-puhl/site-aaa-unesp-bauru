@@ -26,31 +26,28 @@ export default {
     AtleticaSection
   },
   created () {
+    this.fetchAllPosts()
     this.fetchSections()
-    this.fetchPosts()
+    this.fetchPublicationList()
   },
   computed: {
-    ...mapGetters(
-      'HomeModule',
-      ['sections']
-    ),
-    ...mapGetters(
-      'PostsModule',
-      ['allPostsSection']
-    ),
-    ...mapGetters(
-      'UsersModule',
-      ['canEdit']
-    )
+    ...mapGetters('HomeModule', ['sections']),
+    ...mapGetters('PostsModule', ['allPostsSection']),
+    ...mapGetters('UsersModule', ['canEdit'])
   },
   methods: {
-    ...mapActions(
-      ['fetchPosts']
-    ),
-    ...mapActions(
-      'HomeModule',
-      ['fetchSections']
-    )
+    ...mapActions(['fetchAllPosts']),
+    ...mapActions('HomeModule', ['fetchSections', 'fetchPublicationList']),
+    checkCanEdit () {
+      if (this.canEdit) {
+        this.fetchAllPosts()
+      }
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.checkCanEdit()
+    }
   }
 }
 </script>

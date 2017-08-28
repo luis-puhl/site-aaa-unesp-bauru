@@ -2,8 +2,8 @@
   <div class="post container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <atletica-post-view v-bind:post="post"></atletica-post-view>
-        <router-link class="btn btn-default" v-if="canEdit" v-bind:to="{ name: 'editPost', id: postKey }">
+        <atletica-post-view v-bind:post="viewPost"></atletica-post-view>
+        <router-link class="btn btn-default" v-if="canEdit" v-bind:to="{ name: 'editPost', id: viewPost.key }">
           Editar
         </router-link>
       </div>
@@ -28,34 +28,17 @@ export default {
       }
     }
   },
-  data () {
-    return {
-      postKey: '404'
-    }
-  },
   created () {
     this.fetchCurrentPostId(this.id)
     this.fetchUser()
   },
   computed: {
-    ...mapGetters(
-      'PostsModule',
-      {post: 'viewPost'}
-    ),
-    ...mapGetters(
-      'UsersModule',
-      ['canEdit']
-    )
+    ...mapGetters('PostsModule', ['viewPost']),
+    ...mapGetters('UsersModule', ['canEdit'])
   },
   methods: {
-    ...mapActions(
-      'PostsModule',
-      {fetchCurrentPostId: 'fetchCurrentPostId'}
-    ),
-    ...mapActions(
-      'UsersModule',
-      ['fetchUser']
-    )
+    ...mapActions('PostsModule', ['fetchCurrentPostId']),
+    ...mapActions('UsersModule', ['fetchUser'])
   }
 }
 </script>

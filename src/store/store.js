@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import * as firebase from 'firebase'
-import { AtleticaFirebaseApp } from '@/api/firebaseApp'
+import { FirebaseModule } from './firebase-module'
 import { HomeModule } from './home-module'
 import { PostsModule } from './posts-module'
 import { UsersModule } from './users-module'
@@ -10,17 +9,8 @@ import { UsersModule } from './users-module'
 Vue.use(Vuex)
 const debug = process.env.NODE_ENV !== 'production'
 
-const databaseReferencesStore = {
-  allUsersRef: false,
-  currentAdminRef: false,
-  currentUserRef: false,
-  onAuthStateChangedListener: false,
-  googleAuthProvider: false
-}
-
 export const AtleticaStore = new Vuex.Store({
   state: {
-    firebasePointers: {},
     posts: [
       {
         'id': 'gestao-2017',
@@ -51,55 +41,35 @@ export const AtleticaStore = new Vuex.Store({
     ]
   },
   getters: {
-    firebasePointer (state, getters) {
-      return key => state.firebasePointers[key] && databaseReferencesStore[key]
-    },
-
     posts (state, getters) {
       return state.posts
     }
   },
   mutations: {
-    setFirebasePointer (state, payload) {
-      // console.trace('mutation: setFirebasePointer', payload)
-      state.firebasePointers[payload.key] = !!payload.value
-      databaseReferencesStore[payload.key] = payload.value
-    },
-    clearDatabaseRefs (state /*, payload */) {
-      const privateRefs = [
-        'allUsersRef',
-        'currentAdminRef',
-        'currentUserRef',
-        'allPostsRef'
-      ]
-      for (let key of privateRefs) {
-        if (!state.firebasePointers[key]) {
-          continue
-        }
-        databaseReferencesStore[key].off()
-        state.firebasePointers[key] = false
-      }
-    },
-
     setPosts (state, loadedPosts) {
       state.posts = loadedPosts
     },
     updatePost (state, newPost) {
       state.posts = state.posts.filter(
-        post => post.id !== newPost.id
+        post => post.key !== newPost.key
       ).concat([newPost])
+    },
+
+    setPublicationList (state, payload) {
+      state.publicationsList = payload
     }
   },
   actions: {
-    fetchPosts (context /*, payload */) {
-      AtleticaFirebaseApp.instance
+    fetchAllPosts (context /*, payload */) {
+      context.commit('FirebaseModule/initFirebaseApp')
       console.log('PostsModule actions fetchAllPosts')
-      if (context.rootGetters.firebasePointer('allPostsRef')) {
+      if (context.rootGetters['FirebaseModule/firebasePointer']('allPostsRef')) {
         return
       }
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
       const allPostsRef = firebase.database().ref(`posts`)
       context.commit(
-        'setFirebasePointer',
+        'FirebaseModule/setFirebasePointer',
         {key: 'allPostsRef', value: allPostsRef},
         { root: true }
       )
@@ -113,6 +83,7 @@ export const AtleticaStore = new Vuex.Store({
     }
   },
   modules: {
+    FirebaseModule,
     UsersModule,
     HomeModule,
     PostsModule
