@@ -25,6 +25,7 @@ export const FirebaseModule = {
   getters: {
     firebaseInstance (state, getters) {
       if (state.firebaseInstance) {
+        window.firebase = firebase
         return firebase
       }
       const error = {mesage: 'firebase not initilized'}

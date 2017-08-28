@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
         <atletica-post-view v-bind:post="viewPost"></atletica-post-view>
-        <router-link class="btn btn-default" v-if="canEdit" v-bind:to="`/post/${ viewPost.key }/edit`">
+        <router-link class="btn btn-default" v-if="canEdit && id !== '404'" v-bind:to="`/post/${ viewPost.key }/edit`">
           Editar
         </router-link>
       </div>

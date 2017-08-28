@@ -5,6 +5,7 @@ import AtleticaHome from '@/components/home/Atletica-Home'
 
 import AtleticaPost from '@/components/posts/Atletica-Post'
 import AtleticaPostEditor from '@/components/posts/Atletica-Post-Editor'
+import AtleticaPostAdd from '@/components/posts/Atletica-Post-Add'
 
 import AtleticaLogin from '@/components/users/Atletica-Login'
 
@@ -34,8 +35,7 @@ export default new Router({
     {
       path: '/addPost',
       name: 'addPost',
-      component: AtleticaPostEditor,
-      props: (route) => ({ addPost: true })
+      component: AtleticaPostAdd
     },
     {
       path: '/login',

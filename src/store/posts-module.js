@@ -2,6 +2,13 @@
 export const PostsModule = {
   namespaced: true,
   state: {
+    postTemplate: {
+      key: null,
+      id: 'novopost',
+      nome: 'Titulo do Post',
+      img: '',
+      conteudoModal: 'Conteúdo do novo post :newspaper:'
+    },
     dummyPost: {
       key: '404',
       id: '404',
@@ -18,7 +25,7 @@ export const PostsModule = {
   },
   getters: {
     viewPost (state, getters, rootState, rootGetters) {
-      const post = rootState.posts.find(
+      const post = rootGetters.posts.find(
         post => post.id === state.currentPostId || post.key === state.currentPostId
       )
       return post || state.dummyPost
@@ -80,25 +87,27 @@ export const PostsModule = {
         viewPost
       )
     },
+
     addPost (context /*, payload */) {
       context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
       const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+      console.log('PostsModule addPost')
+
       const newPostKey = firebase.database().ref('posts/').push(
-        context.state.dummyPost
+        context.state.postTemplate
       ).key
       context.commit('setNewPostKey', newPostKey)
-      firebase.database().ref(`posts/${newPostKey}`).once(
+
+      return firebase.database().ref(`posts/${newPostKey}`).once(
         'value',
         newPostSnapShot => context.commit('setNewPost', {...newPostSnapShot.val(), key: newPostKey})
-      )
-      firebase.database().ref(`posts/${newPostKey}`).update(
-        {...context.state.dummyPost, id: newPostKey}
       )
     },
 
     deletePost (context, payload) {
       context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
       const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       firebase.database().ref(`posts/${payload.key}`).remove(
         () => {
           context.commit('postDeleted', payload)
@@ -107,6 +116,15 @@ export const PostsModule = {
           }
         }
       )
+    },
+
+    publishPost (context, payload) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
+      firebase.database().ref(`public/${payload.key}`).set({ dataPublicacao: Date.now() })
+
+      firebase.database().ref(`sections/${payload.sectionKey}/postsKeys`).push(payload.key)
     }
   }
 }

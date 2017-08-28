@@ -1,46 +1,48 @@
 {
-  "gestoes" : [ {
-    "conteudoModal" : "Gestão Vivá - 2017\n\n**Presidente:** Flávio dos Santos (Negão)\n\n**Vice-Presidente:** Danilo Lysei (Dan)\n\n**Secretaria:** Helena Ortega\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Amanda Geraldini (Feb)\n\n**Diretoria de Esportes:** Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)\n\n**Diretoria de Comunicação:** Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa), Larissa Duarte (Botafogo)\n\n**Diretoria de Patrocínio:** Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)\n\n**Diretoria de Patrimônio:** Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)\n\n**Diretoria de Eventos:** Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)",
-    "id" : "gestao-2017",
-    "img" : "https://i.imgur.com/QMD4iHm.jpg",
-    "nome" : "Gestão 2017"
-  }, {
-    "conteudoModal" : "Gestão Gaia - 2016:\n\n**Presidente:** Henrique Alcântara (Raí);\n\n**Vice-Presidente:** Manuela Sanches (Manu);\n\n**Secretaria:** Gabriela Monteiro (Lala);\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);\n\n**Diretoria de Esportes:** Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);\n\n**Diretoria de Comunicação:** Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa);\n\n**Diretoria de Patrocínio:** Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);\n\n**Diretoria de Patrimônio:** Jacqueline Nusch (Holla);\n\n**Diretoria de Eventos:** Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).",
-    "id" : "gestao-2016",
-    "img": "https://i.imgur.com/cXNO6D1.jpg",
-    "img2" : "https://i.imgur.com/PHD0Ur5.jpg",
-    "nome" : "Gestão 2016"
-  }, {
-    "conteudoModal" : "Gestão 2015 Ânima",
-    "id" : "gestao-2015",
-    "img" : "https://i.imgur.com/YoUxH15.jpg",
-    "nome" : "Gestão 2015"
-  }, {
-    "conteudoModal" : "Gestão 2014 Invictus",
-    "id" : "gestao-2014",
-    "img" : "https://i.imgur.com/Gg9juyB.jpg",
-    "nome" : "Gestão 2014"
-  }, {
-    "conteudoModal" : "Gestão 2011 XV de ouro",
-    "id" : "gestao-2011",
-    "img" : "https://i.imgur.com/0sKJThD.jpg",
-    "nome" : "Gestão 2011"
-  }, {
-    "conteudoModal" : "Gestão 2010",
-    "id" : "gestao-2010",
-    "img" : "https://i.imgur.com/OvnX97l.jpg",
-    "nome" : "Gestão 2010"
-  }, {
-    "conteudoModal" : "Gestão 2003",
-    "id" : "gestao-2003",
-    "img" : "https://i.imgur.com/IsM158Z.jpg",
-    "nome" : "Gestão 2003"
-  }, {
-    "conteudoModal" : "Gestão 2001",
-    "id" : "gestao-2001",
-    "img" : "https://i.imgur.com/IcFSeBt.jpg",
-    "nome" : "Gestão 2001"
-  } ],
+  "gestoes" : [
+    {
+      "conteudoModal" : "Gestão Vivá - 2017\n\n**Presidente:** Flávio dos Santos (Negão)\n\n**Vice-Presidente:** Danilo Lysei (Dan)\n\n**Secretaria:** Helena Ortega\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Amanda Geraldini (Feb)\n\n**Diretoria de Esportes:** Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)\n\n**Diretoria de Comunicação:** Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa), Larissa Duarte (Botafogo)\n\n**Diretoria de Patrocínio:** Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)\n\n**Diretoria de Patrimônio:** Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)\n\n**Diretoria de Eventos:** Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)",
+      "id" : "gestao-2017",
+      "img" : "https://i.imgur.com/QMD4iHm.jpg",
+      "nome" : "Gestão 2017"
+    }, {
+      "conteudoModal" : "Gestão Gaia - 2016:\n\n**Presidente:** Henrique Alcântara (Raí);\n\n**Vice-Presidente:** Manuela Sanches (Manu);\n\n**Secretaria:** Gabriela Monteiro (Lala);\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);\n\n**Diretoria de Esportes:** Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);\n\n**Diretoria de Comunicação:** Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa);\n\n**Diretoria de Patrocínio:** Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);\n\n**Diretoria de Patrimônio:** Jacqueline Nusch (Holla);\n\n**Diretoria de Eventos:** Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).",
+      "id" : "gestao-2016",
+      "img": "https://i.imgur.com/cXNO6D1.jpg",
+      "img2" : "https://i.imgur.com/PHD0Ur5.jpg",
+      "nome" : "Gestão 2016"
+    }, {
+      "conteudoModal" : "Gestão 2015 Ânima",
+      "id" : "gestao-2015",
+      "img" : "https://i.imgur.com/YoUxH15.jpg",
+      "nome" : "Gestão 2015"
+    }, {
+      "conteudoModal" : "Gestão 2014 Invictus",
+      "id" : "gestao-2014",
+      "img" : "https://i.imgur.com/Gg9juyB.jpg",
+      "nome" : "Gestão 2014"
+    }, {
+      "conteudoModal" : "Gestão 2011 XV de ouro",
+      "id" : "gestao-2011",
+      "img" : "https://i.imgur.com/0sKJThD.jpg",
+      "nome" : "Gestão 2011"
+    }, {
+      "conteudoModal" : "Gestão 2010",
+      "id" : "gestao-2010",
+      "img" : "https://i.imgur.com/OvnX97l.jpg",
+      "nome" : "Gestão 2010"
+    }, {
+      "conteudoModal" : "Gestão 2003",
+      "id" : "gestao-2003",
+      "img" : "https://i.imgur.com/IsM158Z.jpg",
+      "nome" : "Gestão 2003"
+    }, {
+      "conteudoModal" : "Gestão 2001",
+      "id" : "gestao-2001",
+      "img" : "https://i.imgur.com/IcFSeBt.jpg",
+      "nome" : "Gestão 2001"
+    }
+  ],
   "treinos": [
     {
       "id" : "treino-Horários dos Treinos",

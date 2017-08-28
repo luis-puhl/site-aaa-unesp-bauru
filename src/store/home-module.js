@@ -28,7 +28,7 @@ export const HomeModule = {
       .map(
         section => ({
           ...section,
-          posts: section.postsKeys
+          posts: [].concat(section.postsKeys)
           .map(loadPostFromKey)
           .filter(
             post => !!post && post.id

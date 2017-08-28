@@ -7,7 +7,7 @@
     </div>
     <div class="form" v-else>
       <form class="edit-post">
-        <button type="button" name="button" class="btn btn-default">
+        <button type="button" name="publicar" class="btn btn-default" @click="publicar">
           Publicar
         </button>
         <hr>
@@ -38,8 +38,11 @@
 
         <label class="select-section">
           Seção:<br>
-          <select id="postSection" name="postSection">
-            <option value="option">option</option>
+          <select ref="postSection" id="postSection" name="postSection">
+            <option value="none"></option>
+            <option v-for="section in sections" v-bind:value="section.key">
+              {{ section.nome }}
+            </option>
           </select>
         </label>
         <br>
@@ -73,7 +76,7 @@
       </form>
     </div>
 
-    <atletica-post-view id="post" v-if="sourcePost" v-bind:post="sourcePost"></atletica-post-view>
+    <atletica-post-view id="post" v-if="viewPost" v-bind:post="viewPost"></atletica-post-view>
   </main>
 </template>
 
@@ -86,17 +89,20 @@ export default {
   components: {
     AtleticaPostView
   },
+  created () {
+    this.fetchSections()
+    this.fetchCurrentPostId(this.postKey).then(
+      (postDataSnapshot) => {
+        this.loading = false
+        this.setPost(postDataSnapshot.val())
+      }
+    )
+  },
   props: {
     postKey: {
       type: String,
       default: function () {
         return '404'
-      }
-    },
-    addPost: {
-      type: Boolean,
-      default: function () {
-        return false
       }
     }
   },
@@ -112,26 +118,9 @@ export default {
       postDeleteAlert: false
     }
   },
-  created () {
-    if (this.addPost) {
-      this.dispatchAddPost()
-    } else {
-      this.fetchCurrentPostId(this.postKey).then(
-        (postDataSnapshot) => {
-          this.loading = false
-          this.setPost(postDataSnapshot.val())
-        }
-      )
-    }
-  },
   computed: {
     ...mapGetters('PostsModule', ['viewPost', 'newPost']),
-    sourcePost () {
-      if (this.addPost) {
-        return this.newPost
-      }
-      return this.viewPost
-    }
+    ...mapGetters('HomeModule', ['sections'])
   },
   methods: {
     ...mapActions(['fetchAllPosts']),
@@ -139,19 +128,20 @@ export default {
       'PostsModule',
       {
         fetchCurrentPostId: 'fetchCurrentPostId',
-        dispatchAddPost: 'addPost',
         updatePost: 'updatePost',
-        deletePost: 'deletePost'
+        deletePost: 'deletePost',
+        publishPost: 'publishPost'
       }
     ),
+    ...mapActions('HomeModule', ['fetchSections']),
     setPost (post) {
-      this.sourcePost
+      this.viewPost
       this.editPost = {...post}
     },
     edit (event) {
       const targetId = event.target.id
       const targetValue = event.target.value
-      const post = {...this.sourcePost}
+      const post = {...this.viewPost}
       if (!post.key) {
         return
       }
@@ -175,9 +165,17 @@ export default {
     },
     apagarPost () {
       this.deletePost({
-        key: this.sourcePost.key,
+        key: this.viewPost.key,
         callMeBaby: () => this.$router.push('/')
       })
+    },
+    publicar (event) {
+      const post = {
+        ...this.editPost,
+        sectionKey: this.$refs.postSection.value
+      }
+      console.log('publicar', post)
+      this.publishPost(post)
     }
   }
 }

@@ -42,7 +42,7 @@ export const AtleticaStore = new Vuex.Store({
   },
   getters: {
     posts (state, getters) {
-      return state.posts
+      return state.posts.filter(post => !!post.key)
     }
   },
   mutations: {
