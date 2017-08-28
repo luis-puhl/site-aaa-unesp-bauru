@@ -10,6 +10,8 @@
 - [ ] Guard para posts (firebase rules)
 - [x] Visualizar admins (vuex e firebase api)
 - [x] Promover Usuário (componente, store, firebase)
+- [ ] Ao editar postagem publicada, copiar.
+- [ ] Não permitir edição em postagens publicadas 
 - [ ] Mudar no NavBar de 'galeria' para 'eventos'
 - [ ] Adicionar 'sobre'
 - [ ] Mais TREINOS e PARCEIROS (tg)
