@@ -4,12 +4,18 @@
 
 
 # Tretas
-- [ ] Navegação por ID e por FirebaseKey (por id funciona, mas quero por chave para economizar os ids)
-- [ ] Seleção de seções (componente post-editor)
+- [x] Navegação por ID e por FirebaseKey (por id funciona, mas quero por chave para economizar os ids)
+- [x] Seleção de seções (componente post-editor)
 - [ ] Editor de seções (componente sections-editor)
 - [ ] Guard para posts (firebase rules)
-- [ ] Visualizar admins (vuex e firebase api)
-- [ ] Promover Usuário (componente, store, firebase)
+- [x] Visualizar admins (vuex e firebase api)
+- [x] Promover Usuário (componente, store, firebase)
+- [ ] Mudar no NavBar de 'galeria' para 'eventos'
+- [ ] Adicionar 'sobre'
+- [ ] Mais TREINOS e PARCEIROS (tg)
+- [ ] Mais PRODUTOS, EVENTOS e nomes das GESTÕES (altetica)
+- [ ] Mudar NavBar de hardcoded para dinâmico
+- [ ] Imagens responsivas
 
 # TODO (discutido em 4 de agosto, 2017-08-4)
 
@@ -17,12 +23,12 @@
 
 - [x] :question::construction: Retângulo na base do A-AAA + claro que o fundo -> Fundo da imagem era amarelo, agora é transparente;
 - [ ] :newspaper: Bateria e texuguetes não são torcida, colocar na 'instituições Unesp Bauru';
-- [ ] :construction: Buraco ao lado da foto Gestão 2015;
+- [x] :construction: Buraco ao lado da foto Gestão 2015;
 - [x] :question::newspaper: Judô falta acento;
 - [x] :question::newspaper: Grafia correta é Naumteria (no site está errado, [:warning:nauteria:warning:]);
 - [ ] :newspaper: Alguns nomes de parceiros estão errados;
-- [ ] :newspaper: Foto da gestão 2017 está errada;
-- [ ] :newspaper: Secretaria: Beatriz Scursoni (viola)
+- [x] :newspaper: Foto da gestão 2017 está errada;
+- [x] :newspaper: Secretaria: Beatriz Scursoni (viola)
 - [ ] :newspaper: Faltam parceiros;
 - [ ] :construction: Demora [mto] para carregar as fotos (na infraestrutura da google);
 - [ ] :construction: A foto de 2014 não está alinhada -> problema com o tamanho do tile;
@@ -57,7 +63,7 @@
   - [x] Fotos em CDN (imgur),
   - [ ] Fotos responsivas à rede (blur inicial),
 - Dead-lines :skull:
-  - [ ] Apresentação do funcionamento do site (atulazações) para o pessoal de comunicação da Atlética em 2017-08-18 (em 2 semanas);
+  - [x] Apresentação do funcionamento do site (atulazações) para o pessoal de comunicação da Atlética em 2017-08-18 (em 2 semanas);
   - [ ] Entrega final do site em 2017-08-25 (em 3 semanas);
 - Bugs conhecidos:
   - **Menu**
