@@ -1,0 +1,330 @@
+{
+  "admins" : {
+  },
+  "gestoes" : [ {
+    "conteudoModal" : "Gestão Vivá - 2017\n\n**Presidente:** Flávio dos Santos (Negão)\n\n**Vice-Presidente:** Danilo Lysei (Dan)\n\n**Secretaria:** Helena Ortega\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Amanda Geraldini (Feb)\n\n**Diretoria de Esportes:** Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)\n\n**Diretoria de Comunicação:** Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa), Larissa Duarte (Botafogo)\n\n**Diretoria de Patrocínio:** Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)\n\n**Diretoria de Patrimônio:** Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)\n\n**Diretoria de Eventos:** Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)",
+    "id" : "gestao-2017",
+    "img" : "img/gestoes/2016-Gaia-0.jpg",
+    "nome" : "Gestão 2017"
+  }, {
+    "conteudoModal" : "Gestão Gaia - 2016:\n\n**Presidente:** Henrique Alcântara (Raí);\n\n**Vice-Presidente:** Manuela Sanches (Manu);\n\n**Secretaria:** Gabriela Monteiro (Lala);\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);\n\n**Diretoria de Esportes:** Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);\n\n**Diretoria de Comunicação:** Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa);\n\n**Diretoria de Patrocínio:** Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);\n\n**Diretoria de Patrimônio:** Jacqueline Nusch (Holla);\n\n**Diretoria de Eventos:** Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).",
+    "id" : "gestao-2016",
+    "img" : "img/gestoes/2016-Gaia-1.jpg",
+    "nome" : "Gestão 2016"
+  }, {
+    "conteudoModal" : "Gestão 2015 Ânima",
+    "id" : "gestao-2015",
+    "img" : "img/gestoes/2015-Ânima.jpg",
+    "nome" : "Gestão 2015"
+  }, {
+    "conteudoModal" : "Gestão 2014 Invictus",
+    "id" : "gestao-2014",
+    "img" : "img/gestoes/2014-Invictus.jpg",
+    "nome" : "Gestão 2014"
+  }, {
+    "conteudoModal" : "Gestão 2011 XV de ouro",
+    "id" : "gestao-2011",
+    "img" : "img/gestoes/2011-XV-de-ouro.jpg",
+    "nome" : "Gestão 2011"
+  }, {
+    "conteudoModal" : "Gestão 2010",
+    "id" : "gestao-2010",
+    "img" : "img/gestoes/2010.jpg",
+    "nome" : "Gestão 2010"
+  }, {
+    "conteudoModal" : "Gestão 2003",
+    "id" : "gestao-2003",
+    "img" : "img/gestoes/2003.jpg",
+    "nome" : "Gestão 2003"
+  }, {
+    "conteudoModal" : "Gestão 2001",
+    "id" : "gestao-2001",
+    "img" : "img/gestoes/2001-xxxx.jpg",
+    "nome" : "Gestão 2001"
+  } ],
+  "posts" : {
+    "-KsP-8GTjQvqrZmMcUSb" : {
+      "class" : "",
+      "conteudoModal" : "# Gestão Vivá - 2017\n\n**Presidente:** Flávio dos Santos (Negão)\n\n**Vice-Presidente:** Danilo Lysei (Dan)\n\n**Secretaria:** Helena Ortega\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Amanda Geraldini (Feb)\n\n**Diretoria de Esportes:** Ana Júlia Delgado (Donzela), Arthur Monteiro Costa (México), Bianca Velo (Produção), Bruno Sartori, Luiz Alberto Domingos (Dodô), Rômulo Dantas (Grillo)\n\n**Diretoria de Comunicação:** Ana Carolina M. Alves (Anac), Ana Flores, Ariele Lobo (Dendê), Gabriela Staffa (Gabi), Matheus Souza (Math)\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa), Larissa Duarte (Botafogo)\n\n**Diretoria de Patrocínio:** Aline Begiato, Beatriz Santos (Alci), Giulia Mello (Dilma)\n\n**Diretoria de Patrimônio:** Laura Bernardi (Samara), Maria Eduarda Delfino (Borel)\n\n**Diretoria de Eventos:** Marcos Rezende (Veneno), Pedro Paulo Freire (Pedroca), Vanessa Kato (Tango), Vinícius Confessor (Dibre), Vinícius Silano (Cunhado)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Felipe Xavier (Walesca), Gabriel Mazzafera (Galo), Guilherme Saito Gobbi (Pacu), Helena Salla (Lena), Henrique Alcântara (Raí), Manuela Sanches (Manu), Pedro Mendonça (Lugano)",
+      "id" : "gestao-2017",
+      "img" : "https://i.imgur.com/QMD4iHm.jpg",
+      "key" : "-KsP-8GTjQvqrZmMcUSb",
+      "nome" : "Gestão 2017"
+    },
+    "-Ks_1pzZieZBoNId0_je" : {
+      "class" : "",
+      "conteudoModal" : "# Nic Cage is the :top: :poop: . \n:icecream: suckas\n\n# The big :chicken:",
+      "id" : "nic-cage",
+      "img" : "http://overmental.com/wp-content/uploads/2015/03/nic-cage-face.png",
+      "nome" : "Cagefy this"
+    },
+    "-Ksdk-e7kQB7WKKGAHBz" : {
+      "id" : "parceiro-Polak",
+      "img" : "https://i.imgur.com/AQTU8Hb.png",
+      "nome" : "Polak Vodka"
+    },
+    "-Kse8kGMhxCIiAzz4Mwy" : {
+      "conteudoModal" : "Gestão Gaia - 2016:\n\n**Presidente:** Henrique Alcântara (Raí);\n\n**Vice-Presidente:** Manuela Sanches (Manu);\n\n**Secretaria:** Gabriela Monteiro (Lala);\n\n**Tesouraria:** Matheus Gomyde (Tati)\n\n**Gestão de Pessoas:** Jaqueline Yumi Seki (Jaque), Maria Luísa Mangiolardo (Malú);\n\n**Diretoria de Esportes:** Flávio dos Santos (Negão), Guilherme Silano (Silano), Rômulo Dantas (Grillo), José Vinícius Bonfim (Zé);\n\n**Diretoria de Comunicação:** Amanda Geraldini (Feb), Ana Carolina M. Alves (Anac), Ariele Lobo Gomes (Dendê), Danilo Lysei (Dan), Nícolas Alves (Messias);\n\n**Diretoria de Ação Social:** Isabella Carvalho (Isa);\n\n**Diretoria de Patrocínio:** Fernanda Trostdorf (Beyblade), Thiago Cosin (Thiago);\n\n**Diretoria de Patrimônio:** Jacqueline Nusch (Holla);\n\n**Diretoria de Eventos:** Bianca Velo (Produção), Bruno Leite (Xorume), Gabriel Rebolla (Ex-Gordo), Lucas Rocha (Popô)\n\n**Diretoria de Externos:** Bruna Moura (Bru), Caroline Guerra (Carol), Guilherme Saito (Pacu).",
+      "id" : "gestao-2016",
+      "img" : "https://i.imgur.com/cXNO6D1.jpg",
+      "key" : "-Kse8kGMhxCIiAzz4Mwy",
+      "nome" : "Gestão 2016"
+    },
+    "-KseRFYtwieLaw_6iOSK" : {
+      "conteudoModal" : "# Gestão 2015 Ânima",
+      "id" : "gestao-2015",
+      "img" : "https://i.imgur.com/YoUxH15.jpg",
+      "key" : "-KseRFYtwieLaw_6iOSK",
+      "nome" : "Gestão 2015 Ânima"
+    },
+    "-KseRgLTs2bwTRaFwM7i" : {
+      "conteudoModal" : "Gestão 2014 Invictus",
+      "id" : "gestao-2014",
+      "img" : "https://i.imgur.com/Gg9juyB.jpg",
+      "key" : "-KseRgLTs2bwTRaFwM7i",
+      "nome" : "Gestão 2014"
+    },
+    "-KseRql_tD5xeHopV7hM" : {
+      "conteudoModal" : "Gestão 2011 XV de ouro",
+      "id" : "gestao-2011",
+      "img" : "https://i.imgur.com/0sKJThD.jpg",
+      "key" : "-KseRql_tD5xeHopV7hM",
+      "nome" : "Gestão 2011 XV de ouro"
+    },
+    "-KseS37cYs38jqZ6sbqX" : {
+      "conteudoModal" : "Gestão 2010",
+      "id" : "gestao-2010",
+      "img" : "https://i.imgur.com/OvnX97l.jpg",
+      "key" : "-KseS37cYs38jqZ6sbqX",
+      "nome" : "Gestão 2010"
+    },
+    "-KseSd3jHv1ok5xEjuFw" : {
+      "conteudoModal" : "Gestão 2003",
+      "id" : "gestao-2003",
+      "img" : "https://i.imgur.com/IsM158Z.jpg",
+      "key" : "-KseSd3jHv1ok5xEjuFw",
+      "nome" : "Gestão 2003"
+    },
+    "-KseSiUWrPCgEj12LYgc" : {
+      "conteudoModal" : "Gestão 2001",
+      "id" : "gestao-2001",
+      "img" : "https://i.imgur.com/IcFSeBt.jpg",
+      "key" : "-KseSiUWrPCgEj12LYgc",
+      "nome" : "Gestão 2001"
+    },
+    "-KseSqZbJvQXHmkxCgxw" : {
+      "conteudoModal" : "",
+      "id" : "treino-horarios",
+      "img" : "https://i.imgur.com/dspVXTD.png",
+      "key" : "-KseSqZbJvQXHmkxCgxw",
+      "nome" : "Horários dos Treinos"
+    },
+    "-KseT0lM9M3rSdgsf592" : {
+      "conteudoModal" : "",
+      "id" : "treino-Xadrez",
+      "img" : "https://i.imgur.com/axBnvV2.jpg",
+      "key" : "-KseT0lM9M3rSdgsf592",
+      "nome" : "Xadrez"
+    },
+    "-KseTAIj7oJ6NG4gMjww" : {
+      "conteudoModal" : "",
+      "id" : "torcida-Texuguetes",
+      "img" : "https://i.imgur.com/umZALVh.jpg",
+      "key" : "-KseTAIj7oJ6NG4gMjww",
+      "nome" : "Texuguetes"
+    },
+    "-KseTGmEuPSHTtdbS2IE" : {
+      "conteudoModal" : "",
+      "id" : "torcida-Febre Amarela",
+      "img" : "https://i.imgur.com/3e9hAjU.png",
+      "key" : "-KseTGmEuPSHTtdbS2IE",
+      "nome" : "Febre Amarela"
+    },
+    "-KseTNIbAt0bE47ZB-tc" : {
+      "conteudoModal" : "",
+      "id" : "produto-Blusa",
+      "img" : "https://i.imgur.com/Rep4GdT.png",
+      "key" : "-KseTNIbAt0bE47ZB-tc",
+      "nome" : "Blusa"
+    },
+    "-KseTShzB_s_hpu5ZcYg" : {
+      "conteudoModal" : "",
+      "id" : "produto-Moletom",
+      "img" : "https://i.imgur.com/7JJkjR9.png",
+      "key" : "-KseTShzB_s_hpu5ZcYg",
+      "nome" : "Moletom"
+    },
+    "-KseTaeFNz8etJ1aNGLk" : {
+      "conteudoModal" : "Flipper Lanches & Delivery",
+      "id" : "parceiro-Flipper",
+      "img" : "https://i.imgur.com/ahsMgUG.png",
+      "key" : "-KseTaeFNz8etJ1aNGLk",
+      "nome" : "Flipper Lanches & Delivery"
+    },
+    "-KseTit618CS-LWpj79x" : {
+      "conteudoModal" : "",
+      "id" : "evento-Texugo da Páscoa",
+      "img" : "",
+      "key" : "-KseTit618CS-LWpj79x",
+      "nome" : "Texugo da Páscoa"
+    }
+  },
+  "public" : {
+    "-KsP-8GTjQvqrZmMcUSb" : {
+      "dataPublicacao" : 1503949488392
+    },
+    "-Ksdk-e7kQB7WKKGAHBz" : {
+      "dataPublicacao" : 1503950507803
+    },
+    "-Kse8kGMhxCIiAzz4Mwy" : {
+      "dataPublicacao" : 1503949968183
+    },
+    "-KseRFYtwieLaw_6iOSK" : {
+      "dataPublicacao" : 1503950655808
+    },
+    "-KseRgLTs2bwTRaFwM7i" : {
+      "dataPublicacao" : 1503950741150
+    },
+    "-KseRql_tD5xeHopV7hM" : {
+      "dataPublicacao" : 1503950782870
+    },
+    "-KseS37cYs38jqZ6sbqX" : {
+      "dataPublicacao" : 1503950962872
+    },
+    "-KseSd3jHv1ok5xEjuFw" : {
+      "dataPublicacao" : 1503950986800
+    },
+    "-KseSiUWrPCgEj12LYgc" : {
+      "dataPublicacao" : 1503951015208
+    },
+    "-KseSqZbJvQXHmkxCgxw" : {
+      "dataPublicacao" : 1503951058425
+    },
+    "-KseT0lM9M3rSdgsf592" : {
+      "dataPublicacao" : 1503951089712
+    },
+    "-KseTAIj7oJ6NG4gMjww" : {
+      "dataPublicacao" : 1503951126328
+    },
+    "-KseTGmEuPSHTtdbS2IE" : {
+      "dataPublicacao" : 1503951152528
+    },
+    "-KseTNIbAt0bE47ZB-tc" : {
+      "dataPublicacao" : 1503951176344
+    },
+    "-KseTShzB_s_hpu5ZcYg" : {
+      "dataPublicacao" : 1503951203648
+    },
+    "-KseTaeFNz8etJ1aNGLk" : {
+      "dataPublicacao" : 1503951244487
+    }
+  },
+  "sections" : {
+    "-KsZixO2R4CTf9pqxtBo" : {
+      "id" : "gestoes",
+      "nome" : "Gestões",
+      "ordem" : 1,
+      "postsKeys" : {
+        "-KseMzrTa9MhHvbmz76k" : {
+          "dataPublicacao" : 1503949488409,
+          "postKey" : "-KsP-8GTjQvqrZmMcUSb"
+        },
+        "-KseOp0VY8BuzwPLUzSI" : {
+          "dataPublicacao" : 1503949968188,
+          "postKey" : "-Kse8kGMhxCIiAzz4Mwy"
+        },
+        "-KseRRtojDIhV131y1l-" : {
+          "dataPublicacao" : 1503950655815,
+          "postKey" : "-KseRFYtwieLaw_6iOSK"
+        },
+        "-KseRljI_KxAUOXMMVA-" : {
+          "dataPublicacao" : 1503950741158,
+          "postKey" : "-KseRgLTs2bwTRaFwM7i"
+        },
+        "-KseRvvBBHzp6UfE7K9b" : {
+          "dataPublicacao" : 1503950782879,
+          "postKey" : "-KseRql_tD5xeHopV7hM"
+        },
+        "-KseSbrgsfShOPFr2t5O" : {
+          "dataPublicacao" : 1503950962879,
+          "postKey" : "-KseS37cYs38jqZ6sbqX"
+        },
+        "-KseShhaqKYpyQo6oB7G" : {
+          "dataPublicacao" : 1503950986809,
+          "postKey" : "-KseSd3jHv1ok5xEjuFw"
+        },
+        "-KseSodT7FXHmUiZQjtL" : {
+          "dataPublicacao" : 1503951015217,
+          "postKey" : "-KseSiUWrPCgEj12LYgc"
+        }
+      }
+    },
+    "-KsddrXOqK3S_UNAhssE" : {
+      "id" : "produtos",
+      "nome" : "Produtos",
+      "ordem" : 4,
+      "postsKeys" : {
+        "-KseTQzH-k7SrPwAWRc6" : {
+          "dataPublicacao" : 1503951176357,
+          "postKey" : "-KseTNIbAt0bE47ZB-tc"
+        },
+        "-KseTXdvOeeIuZtgWicj" : {
+          "dataPublicacao" : 1503951203662,
+          "postKey" : "-KseTShzB_s_hpu5ZcYg"
+        }
+      }
+    },
+    "-Ksdfg3NtNif1e-KrC4i" : {
+      "id" : "treinos",
+      "nome" : "Treinos",
+      "ordem" : 2,
+      "postsKeys" : {
+        "-KseSzBjx7UTyqZAoIIG" : {
+          "dataPublicacao" : 1503951058434,
+          "postKey" : "-KseSqZbJvQXHmkxCgxw"
+        },
+        "-KseT5pb6H6Ef9XKZi0R" : {
+          "dataPublicacao" : 1503951089722,
+          "postKey" : "-KseT0lM9M3rSdgsf592"
+        }
+      }
+    },
+    "-KsdfjPrX2pNyAgrgb1Y" : {
+      "id" : "torcidas",
+      "nome" : "Torcidas",
+      "ordem" : 3,
+      "postsKeys" : {
+        "-KseTEll1tGqFXv_Tvxr" : {
+          "dataPublicacao" : 1503951126339,
+          "postKey" : "-KseTAIj7oJ6NG4gMjww"
+        },
+        "-KseTLAA9ca9CTO9VQtN" : {
+          "dataPublicacao" : 1503951152542,
+          "postKey" : "-KseTGmEuPSHTtdbS2IE"
+        }
+      }
+    },
+    "-KsdfnE7dYgqhyWktYCX" : {
+      "id" : "parceiros",
+      "nome" : "Parceiros",
+      "ordem" : 5,
+      "postsKeys" : {
+        "-KseQslAGIDW6PNWvkOv" : {
+          "dataPublicacao" : 1503950507806,
+          "postKey" : "-Ksdk-e7kQB7WKKGAHBz"
+        },
+        "-KseTgc4q-QL4LSFWk0Z" : {
+          "dataPublicacao" : 1503951244504,
+          "postKey" : "-KseTaeFNz8etJ1aNGLk"
+        }
+      }
+    },
+    "-Ksdfp6zgTq4_JwgaGl6" : {
+      "id" : "eventos",
+      "nome" : "Eventos",
+      "ordem" : 6
+    }
+  },
+  "users" : {
+  }
+}
