@@ -70,15 +70,15 @@
 
 # Lighthouse Reports
 
- - 10-08-2016:
+ - 28-08-2017:
   - *PWA*: 100%
-  - *Performance*: 68%
-    - 7.9s para carregar;
-    - 4.3s para o primeiro desenho;
+  - *Performance*: 36%
+    - 5.9s para o primeiro desenho;
+    - 10+s para carregar;
     - *Onde melhorar*:
-      - [ ] Imagens menores (3s)
+      - [ ] Imagens menores (3.8s)
       - [ ] Não carregar imagens fora da tela inicial (2s)
-      - [ ] Reduzir estilos que bloqueiam a renderização (1s)
+      - [ ] Reduzir estilos que bloqueiam a renderização (1.2s)
   - *a11y*: 100%
   - *Best Practices*: 92% (google maps)
 
