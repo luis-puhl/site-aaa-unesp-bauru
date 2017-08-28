@@ -1,16 +1,15 @@
-import * as firebase from 'firebase'
 
 export const PostsModule = {
   namespaced: true,
   state: {
     dummyPost: {
-      id: null,
+      key: '404',
+      id: '404',
       nome: 'Post Não encontrado',
-      class: '',
       img: 'http://alozano.clas.uconn.edu/wp-content/uploads/sites/490/2017/01/deadlink.png',
       conteudoModal: '## O post que você procura não está aqui 😞.\n\n### [Melhor voltar para casa 🏠](/)'
     },
-    currentPostId: '',
+    currentPostId: '404',
 
     newPostKey: false,
     newPost: false,
@@ -20,7 +19,7 @@ export const PostsModule = {
   getters: {
     viewPost (state, getters, rootState, rootGetters) {
       const post = rootState.posts.find(
-        post => post.id === state.currentPostId
+        post => post.id === state.currentPostId || post.key === state.currentPostId
       )
       return post || state.dummyPost
     },
@@ -50,27 +49,40 @@ export const PostsModule = {
     },
 
     setAllPosts (state, payload) {
-      console.log('PostsModule setAllPosts', payload)
       state.allPosts = payload
     },
 
     postDeleted (state, payload) {
       state.allPosts = state.allPosts.filter(post => post.key !== payload.key)
+    },
+    editPost (state, payload) {
+      state.editPost = payload
     }
   },
   actions: {
-    fetchCurrentPostId (context, payload) {
-      context.commit('setCurrentPostId', payload)
-      context.dispatch('updatePost', context.getters.viewPost)
+    fetchCurrentPostId (context, postKey) {
+      context.commit('setCurrentPostId', postKey)
+
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+      return firebase.database().ref(`posts/${postKey}`).once(
+        'value',
+        postSnapshot => context.commit('updatePost', postSnapshot.val(), { root: true })
+      )
+      // context.dispatch('updatePost', viewPost)
     },
-    updatePost (context, payload) {
-      context.commit('FirebaseModule/initFirebaseApp', null, { root: true })
-      firebase.database().ref(`posts/${payload.key}`).update(
-        payload
+    updatePost (context, viewPost) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
+      context.commit('updatePost', viewPost, { root: true })
+      firebase.database().ref(`posts/${viewPost.key}`).update(
+        viewPost
       )
     },
     addPost (context /*, payload */) {
-      context.commit('initFirebaseApp', null, { root: true })
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
       const newPostKey = firebase.database().ref('posts/').push(
         context.state.dummyPost
       ).key
@@ -85,7 +97,8 @@ export const PostsModule = {
     },
 
     deletePost (context, payload) {
-      context.commit('initFirebaseApp', null, { root: true })
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
       firebase.database().ref(`posts/${payload.key}`).remove(
         () => {
           context.commit('postDeleted', payload)

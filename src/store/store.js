@@ -50,7 +50,14 @@ export const AtleticaStore = new Vuex.Store({
       state.posts = loadedPosts
     },
     updatePost (state, newPost) {
-      state.posts = state.posts.filter(
+      if (!newPost) {
+        return
+      }
+      state.posts = state.posts
+      .filter(
+        post => !!post
+      )
+      .filter(
         post => post.key !== newPost.key
       ).concat([newPost])
     },
@@ -61,12 +68,12 @@ export const AtleticaStore = new Vuex.Store({
   },
   actions: {
     fetchAllPosts (context /*, payload */) {
-      context.commit('FirebaseModule/initFirebaseApp')
-      console.log('PostsModule actions fetchAllPosts')
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       if (context.rootGetters['FirebaseModule/firebasePointer']('allPostsRef')) {
         return
       }
-      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
       const allPostsRef = firebase.database().ref(`posts`)
       context.commit(
         'FirebaseModule/setFirebasePointer',

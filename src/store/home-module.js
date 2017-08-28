@@ -1,4 +1,3 @@
-import * as firebase from 'firebase'
 
 export const HomeModule = {
   namespaced: true,
@@ -22,8 +21,6 @@ export const HomeModule = {
   },
   getters: {
     sections (state, getters, rootState, rootGetters) {
-      const rootPosts = rootState.posts
-
       const loadPostFromKey = key => rootState.posts.find(post => post.key === key)
       const ObjectValues = obj => Object.keys(obj).map(k => ({ key: k, ...obj[k] }))
 
@@ -38,19 +35,19 @@ export const HomeModule = {
           )
         })
       )
-      console.log('HomeModule getters sections', {rootPosts, stateSections: state.sections, sections})
       return sections
     }
   },
   mutations: {
     setSections (state, payload) {
-      console.log('HomeModule setSections ', payload)
       state.sections = payload
     }
   },
   actions: {
     fetchSections (context, payload) {
-      context.commit('FirebaseModule/initFirebaseApp', null, { root: true })
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       const sectionsRef = firebase.database().ref('sections')
       context.commit(
         'FirebaseModule/setFirebasePointer',
@@ -64,8 +61,9 @@ export const HomeModule = {
       )
     },
     fetchPublicationList (context /*, payload */) {
-      context.commit('FirebaseModule/initFirebaseApp', null, { root: true })
-      console.log('PostsModule actions fetchAllPosts')
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       if (context.rootGetters['FirebaseModule/firebasePointer']('publicPostsRef')) {
         return
       }

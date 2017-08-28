@@ -26,13 +26,10 @@ export default new Router({
       props: (route) => ({ id: route.params.id })
     },
     {
-      path: '/post/:id/edit',
+      path: '/post/:postKey/edit',
       name: 'editPost',
       component: AtleticaPostEditor,
-      props: (route) => {
-        console.log(route.params)
-        return ({ postKey: route.params.id })
-      }
+      props: (route) => ({ postKey: route.params.postKey })
     },
     {
       path: '/addPost',

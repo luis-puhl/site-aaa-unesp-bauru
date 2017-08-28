@@ -1,7 +1,5 @@
 import * as firebase from 'firebase'
 
-let firebaseAppInstace = false
-
 const databaseReferencesStore = {
   allUsersRef: false,
   currentAdminRef: false,
@@ -27,8 +25,10 @@ export const FirebaseModule = {
   getters: {
     firebaseInstance (state, getters) {
       if (state.firebaseInstance) {
-        return firebaseAppInstace
+        return firebase
       }
+      const error = {mesage: 'firebase not initilized'}
+      console.trace(error)
       return state.firebaseInstance
     },
     firebasePointer (state, getters) {
@@ -36,14 +36,12 @@ export const FirebaseModule = {
     }
   },
   mutations: {
-    initFirebaseApp (state /*, payload */) {
+    setFirebaseApp (state, firebaseApp) {
       if (!state.firebaseInstance) {
-        firebaseAppInstace = firebase.initializeApp(state.firebaseConfig)
         state.firebaseInstance = true
       }
     },
     setFirebasePointer (state, payload) {
-      // console.trace('mutation: setFirebasePointer', payload)
       state.firebasePointers[payload.key] = !!payload.value
       databaseReferencesStore[payload.key] = payload.value
     },
@@ -64,8 +62,10 @@ export const FirebaseModule = {
     }
   },
   actions: {
-    someAction (context, payload) {
-      context.commit('someMutation', payload)
+    initFirebaseApp (context /*, payload */) {
+      if (!context.state.firebaseInstance) {
+        context.commit('setFirebaseApp', firebase.initializeApp(context.state.firebaseConfig))
+      }
     }
   }
 }

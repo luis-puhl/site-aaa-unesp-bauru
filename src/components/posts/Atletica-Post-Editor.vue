@@ -1,7 +1,11 @@
 <template>
   <main>
     <h1>Editar post</h1>
-    <div class="form">
+
+    <div class="loading" v-if="loading">
+      Aguarde, carregando post...
+    </div>
+    <div class="form" v-else>
       <form class="edit-post">
         <button type="button" name="button" class="btn btn-default">
           Publicar
@@ -10,25 +14,25 @@
 
         <label>
           Key:<br>
-          <input type="text" size="60" id="postKey" name="key" v-model="newPost.key" readonly>
+          <input type="text" size="60" id="postKey" name="key" v-model="editPost.key" readonly>
         </label>
         <br>
 
         <label>
           Id:<br>
-          <input type="text" size="60" id="postId" name="titulo" v-model="newPost.id" @input="edit">
+          <input type="text" size="60" id="postId" name="titulo" v-model="editPost.id" @input="edit">
         </label>
         <br>
 
         <label>
           Título:<br>
-          <input type="text" size="60" id="postTitle" name="titulo" v-model="newPost.nome" @input="edit">
+          <input type="text" size="60" id="postTitle" name="titulo" v-model="editPost.nome" @input="edit">
         </label>
         <br>
 
         <label>
           Imagem:<br>
-          <input type="text" size="60" id="imagem" name="imagem" v-model="newPost.img" @input="edit">
+          <input type="text" size="60" id="imagem" name="imagem" v-model="editPost.img" @input="edit">
         </label>
         <br>
 
@@ -48,7 +52,7 @@
             <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">mais emojis 😄</a>
           </small>
           <textarea id="editarConteudoModal" name="conteudoModal" placeholder="add multiple lines"
-             rows="50" cols="60" v-model="newPost.conteudoModal" @input="edit"/>
+             rows="50" cols="60" v-model="editPost.conteudoModal" @input="edit"/>
         </label>
         <br>
 
@@ -98,7 +102,8 @@ export default {
   },
   data () {
     return {
-      newPost: {
+      loading: true,
+      editPost: {
         id: '',
         nome: '',
         conteudoModal: '',
@@ -111,23 +116,25 @@ export default {
     if (this.addPost) {
       this.dispatchAddPost()
     } else {
-      this.fetchCurrentPostId(this.postKey)
+      this.fetchCurrentPostId(this.postKey).then(
+        (postDataSnapshot) => {
+          this.loading = false
+          this.setPost(postDataSnapshot.val())
+        }
+      )
     }
-    this.setPost(this.sourcePost)
   },
   computed: {
-    ...mapGetters(
-      'PostsModule',
-      {editSourcePost: 'viewPost', newPostSource: 'newPost'}
-    ),
+    ...mapGetters('PostsModule', ['viewPost', 'newPost']),
     sourcePost () {
       if (this.addPost) {
-        return this.newPostSource
+        return this.newPost
       }
-      return this.editSourcePost
+      return this.viewPost
     }
   },
   methods: {
+    ...mapActions(['fetchAllPosts']),
     ...mapActions(
       'PostsModule',
       {
@@ -138,7 +145,8 @@ export default {
       }
     ),
     setPost (post) {
-      this.newPost = {...post}
+      this.sourcePost
+      this.editPost = {...post}
     },
     edit (event) {
       const targetId = event.target.id
@@ -177,6 +185,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .loading {
+    font-size: 4rem;
+    color: orange;
+  }
   label {
     margin-bottom: 1rem;
   }

@@ -1,4 +1,3 @@
-import * as firebase from 'firebase'
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import 'rxjs/add/operator/map'
@@ -81,7 +80,6 @@ export const UsersModule = {
     },
     allUsers (state, getters, rootState, rootGetters) {
       const allUsers = state.allUsers.filter(user => !!user)
-      // console.log('UsersModule getters allUsers', allUsers)
       return allUsers
       .filter(user => user.uid !== state.currentUser.uid)
       .concat([state.currentUser])
@@ -103,25 +101,24 @@ export const UsersModule = {
   mutations: {
     setCurrentUser (state, payload) {
       payload = userDataMapper(payload)
-      // console.log('mutation: setCurrentUser', payload)
       state.currentUser = userDataValidator(payload) ? payload : false
     },
     setAllUsers (state, users) {
-      // console.log('mutation: setAllUsers', users)
       if (!users) {
         users = [state.currentUser]
       }
       state.allUsers = users.filter(user => user.uid !== state.currentUser.uid)
     },
     logedOut (state) {
-      // console.log('mutation: logedOut')
       state.currentUser = false
       state.allUsers = []
-      // clearDatabaseRefs
     }
   },
   actions: {
     login (context /*, payload */) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       if (firebase.auth().currentUser) {
         return
       }
@@ -131,7 +128,6 @@ export const UsersModule = {
         () => firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(
           (result) => {
-            // console.log('loged in with firebase', result)
             const updatedUser = {...result.user, lastLogin: Date.now(), ...result.additionalUserInfo}
             context.commit('setCurrentUser', updatedUser)
             context.dispatch('updateUserInfo')
@@ -145,6 +141,9 @@ export const UsersModule = {
       )
     },
     logout (context /*, payload */) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       if (context.getters.currentUser) {
         firebase.auth().signOut().then(
           () => {
@@ -165,6 +164,9 @@ export const UsersModule = {
       // context.commit('setCurrentUser', currentUser)
     },
     fetchAllUsers (context /*, payload */) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       const users = new BehaviorSubject([])
       const allUsersRef = firebase.database().ref('/users')
       context.commit('FirebaseModule/setFirebasePointer', {key: 'allUsersRef', value: allUsersRef}, { root: true })
@@ -186,6 +188,9 @@ export const UsersModule = {
     },
 
     updateUserInfo (context /*, payload */) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       const user = context.getters.currentUser
       const data = {}
       for (var key in user.data) {
@@ -205,6 +210,9 @@ export const UsersModule = {
       )
     },
     onAuthStateChanged  (context, payload) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       const userAuth = payload
       if (!userAuth) {
         return
@@ -218,6 +226,9 @@ export const UsersModule = {
       )
     },
     onAuthStateChangedUser (context, payload) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       const {userAuth, userDataSnapshot} = payload
       context.commit('setCurrentUser', {...userAuth, ...userDataSnapshot.val()})
       // recupera os dados do administrador
@@ -241,11 +252,13 @@ export const UsersModule = {
       )
     },
     initAuthStateChangedListener (context, payload) {
+      context.dispatch('FirebaseModule/initFirebaseApp', null, { root: true })
+      const firebase = context.rootGetters['FirebaseModule/firebaseInstance']
+
       if (context.rootGetters['FirebaseModule/firebasePointer']('onAuthStateChangedListener')) {
         return
       }
-      const onAuthStateChangedListener =
-      firebase.auth().onAuthStateChanged(
+      const onAuthStateChangedListener = firebase.auth().onAuthStateChanged(
         (newUserAuthStateChanged) => {
           context.commit('setCurrentUser', newUserAuthStateChanged)
           context.dispatch('onAuthStateChanged', newUserAuthStateChanged)
