@@ -11,13 +11,14 @@
 - [x] Visualizar admins (vuex e firebase api)
 - [x] Promover Usuário (componente, store, firebase)
 - [ ] Ao editar postagem publicada, copiar.
-- [ ] Não permitir edição em postagens publicadas 
+- [ ] Não permitir edição em postagens publicadas
 - [ ] Mudar no NavBar de 'galeria' para 'eventos'
 - [ ] Adicionar 'sobre'
 - [ ] Mais TREINOS e PARCEIROS (tg)
 - [ ] Mais PRODUTOS, EVENTOS e nomes das GESTÕES (altetica)
 - [ ] Mudar NavBar de hardcoded para dinâmico
 - [ ] Imagens responsivas
+- [x] Bug da seção fantasma
 
 # TODO (discutido em 4 de agosto, 2017-08-4)
 

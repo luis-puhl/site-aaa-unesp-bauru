@@ -65,6 +65,13 @@ export const HomeModule = {
           )
         })
       )
+      .filter(
+        section => (
+          section.posts.length > 0 &&
+          section.id !== state.dummySection.id &&
+          section.key !== state.dummySection.key
+        )
+      )
       return sections
     }
   },
