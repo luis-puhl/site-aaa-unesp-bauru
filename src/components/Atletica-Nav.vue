@@ -41,7 +41,7 @@
             <router-link to="/#parceiros">Parceiros</router-link>
           </li>
           <li class="page-scroll">
-            <router-link to="/#eventos">Galeria</router-link>
+            <router-link to="/#eventos">Eventos</router-link>
           </li>
           <li class="page-scroll">
             <router-link to="/#contato">Contato</router-link>

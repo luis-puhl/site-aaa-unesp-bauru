@@ -12,7 +12,7 @@
 - [x] Promover Usuário (componente, store, firebase)
 - [ ] Ao editar postagem publicada, copiar.
 - [ ] Não permitir edição em postagens publicadas
-- [ ] Mudar no NavBar de 'galeria' para 'eventos'
+- [x] Mudar no NavBar de 'galeria' para 'eventos'
 - [ ] Adicionar 'sobre'
 - [ ] Mais TREINOS e PARCEIROS (tg)
 - [ ] Mais PRODUTOS, EVENTOS e nomes das GESTÕES (altetica)
